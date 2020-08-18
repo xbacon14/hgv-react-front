@@ -1,8 +1,8 @@
-import { useState, React, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
 
-export default function SeleccionarEmpresa() {
+export default function Empresa() {
     const [empresas, setEmpresas] = useState([]);
 
     useEffect(() => {
@@ -13,24 +13,22 @@ export default function SeleccionarEmpresa() {
             });
 
             setEmpresas(response.data);
+
         }
         loadEmpresas();
-
     }, []);
 
     return (
-        
         <>
             <ul className="empresa-list">
                 {empresas.map(empresa => (
                     <li key={empresa._id}>
-                        <header style={{ backgroundImage: `url(${empresa.thumbnail_url})` }} />
+                        <header />
                         <strong>{empresa.razonSocial}</strong>
-                        <span>{empresa.ruc} </span>
+                        <span>{empresa.ruc}</span>
                     </li>
                 ))}
+
             </ul>
-        </>
-       
-    );
+        </>)
 }

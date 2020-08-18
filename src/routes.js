@@ -2,13 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import logo from './assets/navbar/logo-verde.png';
 
-// import Login from './pages/Login/index';
+import Login from './pages/Login/index';
 import Inicio from './pages/Inicio/index';
 import Footer from './components/footer/index';
 // import Registros from './pages/Registros/index';
 // import Account from './pages/Account/index';
 // import Home from './pages/Home';
-// import SeleccionarEmpresa from './pages/SeleccionarEmpresa';
+import SeleccionarEmpresa from './pages/SeleccionarEmpresa';
+import CrearEmpresa from './pages/CrearEmpresa';
 
 
 export default function Routes() {
@@ -17,7 +18,7 @@ export default function Routes() {
             <div className="container">
                 <div className="justify-content-center align-items-center" id="nav-bar">
                     <img src={logo} alt="Logo verde" id="logoverde" />
-                    <Link to="/inicio" className="btn" >
+                    <Link to="/" className="btn" >
                         Inicio
                     </Link>
                     <Link to="/registros" className="btn" >
@@ -38,9 +39,16 @@ export default function Routes() {
                     <Route path="/" exact>
                         <Inicio />
                     </Route>
-                    {/* <Route path="/inicio">
-                        <Inicio />
-                    </Route> */}
+                    <Route path="/login">
+                        <Login />
+                    </Route>
+                    <Route path="/empresas">
+                        <SeleccionarEmpresa />
+                    </Route>
+                    <Route path="/crear">
+                        <CrearEmpresa />
+                    </Route>
+
                     {/* <Route path="/clientes">
                         <Clientes />
                     </Route>
@@ -56,7 +64,7 @@ export default function Routes() {
 
 
                 </Switch>
-                <Footer/>
+                <Footer />
             </div>
         </Router>
     );

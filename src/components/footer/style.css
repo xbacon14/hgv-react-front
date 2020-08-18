@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 .footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    width: 100%;
-    margin: 0;
+    background-color: #EEEEEE;
+    border-width: 5px;
+    width: 500px;
+    flex-direction: column;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 h5 p {
