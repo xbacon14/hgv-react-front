@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body button {
+    font-family: 'Roboto', sans-serif;
+}
+
+h5 p {
+    font-family: 'Russo One', sans-serif;
+}
+
+#title-home {
+    font-size: 2.4em;
+    /* margin: 10px 30px; */
+    text-align: left;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+#text-home {
+    font-size: 1.5em;
+    /* margin: 10px 30px; */
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    text-align: start;
+}
+
+#text-status {
+    font-weight: 500;
+    font-family: 'Alata', sans-serif;
+    font-size: 1.8em;
+}
+
+#empecemos {
+    margin-left: 50px;
+    color: #fff;
+    font-size: 16px;
+    background-color: #5CB85C;
+    height: 50px;
+}
+
+.cuadrados {
+    margin-top: 50px;
+}
+
+#vector-ok {
+    width: 300px;
+}
+
+.cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-color: none;
+    padding: 10px 50px;
+    background-color: #ECECEC;
+}

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
 
+import './style.css';
+
 export default function Empresa() {
     const [empresas, setEmpresas] = useState([]);
 
@@ -18,17 +20,16 @@ export default function Empresa() {
         loadEmpresas();
     }, []);
 
-    return (
-        <>
-            <ul className="empresa-list">
-                {empresas.map(empresa => (
-                    <li key={empresa._id}>
-                        <header />
-                        <strong>{empresa.razonSocial}</strong>
-                        <span>{empresa.ruc}</span>
-                    </li>
-                ))}
+    return (<>
+        <ul className="empresa-list" > {
+            empresas.map(empresa => (
+                <li key={empresa._id} >
+                    <header />
+                    <strong>
+                        {empresa.razonSocial} </strong>
+                    <span> {empresa.ruc} </span> </li>
+            ))
+        }
 
-            </ul>
-        </>)
+        </ul> </>)
 }

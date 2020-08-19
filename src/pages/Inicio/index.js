@@ -1,8 +1,16 @@
 import React from 'react';
 
 import ok from '../../assets/home/ok.png';
+import './style.css'
 
 export default function Home() {
+    // function validarLogin(){
+    //     const id = localStorage.getItem('user', _id);
+    //     if(!id){
+    //         history.push('/login')
+    //     }
+    // }
+
     return (
         <>
             <div className="row cuadrados">

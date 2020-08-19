@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import logo from './assets/navbar/logo-verde.png';
 
-import Login from './pages/Login/index';
+// import Login from './pages/Login/index';
 import Inicio from './pages/Inicio/index';
 import Footer from './components/footer/index';
 // import Registros from './pages/Registros/index';
@@ -39,9 +39,9 @@ export default function Routes() {
                     <Route path="/" exact>
                         <Inicio />
                     </Route>
-                    <Route path="/login">
+                    {/* <Route path="/login">
                         <Login />
-                    </Route>
+                    </Route> */}
                     <Route path="/empresas">
                         <SeleccionarEmpresa />
                     </Route>
@@ -64,7 +64,7 @@ export default function Routes() {
 
 
                 </Switch>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </Router>
     );

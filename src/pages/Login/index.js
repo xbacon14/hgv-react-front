@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import './style.css';
 
 import api from '../../services/api';
-// import './Login.css';
+import logo from '../../assets/login/logo-login.png'
 
 
-export default function Login({history}) {
+export default function Login({ history }) {
 
     const [email, setEmail] = useState('');
 
@@ -16,27 +17,40 @@ export default function Login({history}) {
         const { _id } = response.data;
         console.log(_id);
         localStorage.setItem('user', _id);
-        history.push('/empresa');
 
-        
+
     }
 
-    return (
-        <>
-            <p>
-                Un < strong > &nbsp; textitalo &nbsp; </strong>     para convencerte que ingreses tu <strong > &nbsp; correo &nbsp; </strong >
-            </p>
-            <form onSubmit={handleSubmit} >
-                <label htmlFor="email" > E - mail * </label>
-                <input id="email"
-                    type="email"
-                    placeholder="Ingrese su correo"
-                    value={email}
-                    onChange={event => setEmail(event.target.value)} />
-                <button className="btn"
-                    type="submit"> Ingresar </button>
-            </form >
-        </>
+    return ( <
+        >
+        <
+        div className = "container" >
+        <
+        img src = { logo }
+        alt = "HGV Blanco"
+        id = "logoblanco" / >
+        <
+        div className = "content" >
+        <
+        p >
+        Un < strong > & nbsp; textitalo & nbsp; < /strong>     para convencerte que ingreses tu <strong > &nbsp; correo &nbsp; </strong >
+        <
+        /p> <
+        form onSubmit = { handleSubmit } >
+        <
+        label htmlFor = "email" > E - MAIL * < /label> <
+        input id = "email"
+        type = "email"
+        placeholder = "Ingrese su correo"
+        value = { email }
+        onChange = { event => setEmail(event.target.value) }
+        /> <
+        button className = "btn"
+        type = "submit" > INGRESAR < /button> <
+        /form > <
+        /div> <
+        /div> <
+        />
 
     )
 }
