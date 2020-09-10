@@ -38,7 +38,7 @@ h5 p {
 }
 
 .cuadrados {
-    margin-top: 50px;
+    margin-top: 150px;
 }
 
 #vector-ok {
@@ -51,7 +51,9 @@ h5 p {
     display: flex;
     flex-direction: column;
     position: relative;
-    border-color: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px grey;
     padding: 10px 50px;
     background-color: #ECECEC;
 }

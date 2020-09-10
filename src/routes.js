@@ -49,9 +49,11 @@ export default function Routes() {
                         <CrearEmpresa />
                     </Route>
 
-                    {/* <Route path="/clientes">
+                    <Route path="/clientes">
                         <Clientes />
                     </Route>
+
+                    {/* 
                     <Route path="/account">
                         <MiCuenta />
                     </Route>
