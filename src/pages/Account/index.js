@@ -9,7 +9,8 @@ import SeleccionarEmpresa from '../SeleccionarEmpresa'
 export default function Empresa() {
 
     return (<>
-        
-        <SeleccionarEmpresa/>
-         </>)
+
+        <SeleccionarEmpresa />
+        <div className=""></div>
+    </>)
 }

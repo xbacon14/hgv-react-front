@@ -4,7 +4,7 @@ import logo from './assets/navbar/logo-verde.png';
 
 // import Login from './pages/Login/index';
 import Inicio from './pages/Inicio/index';
-// import Footer from './components/footer/index';
+import Footer from './components/footer/index';
 // import Registros from './pages/Registros/index';
 import Account from './pages/Account/index';
 // import Home from './pages/Home';
@@ -49,9 +49,9 @@ export default function Routes() {
                         <CrearEmpresa />
                     </Route>
 
-                    <Route path="/clientes">
-                        <Clientes />
-                    </Route>
+                    {/* <Route path="/clientes">
+                        <Repor />
+                    </Route> */}
 
                     {/* 
                     <Route path="/account">
@@ -66,7 +66,7 @@ export default function Routes() {
 
 
                 </Switch>
-                {/* <Footer /> */}
+                <Footer />
             </div>
         </Router>
     );
