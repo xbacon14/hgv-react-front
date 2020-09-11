@@ -5,7 +5,7 @@ import logo from './assets/navbar/logo-verde.png';
 // import Login from './pages/Login/index';
 import Inicio from './pages/Inicio/index';
 import Footer from './components/footer/index';
-// import Registros from './pages/Registros/index';
+import Registros from './pages/Registros/index';
 import Account from './pages/Account/index';
 // import Home from './pages/Home';
 import SeleccionarEmpresa from './pages/SeleccionarEmpresa';
@@ -48,6 +48,9 @@ export default function Routes() {
                     <Route path="/crear">
                         <CrearEmpresa />
                     </Route>
+                    <Route path="/registros">
+                        <Registros />
+                    </Route>
 
                     {/* <Route path="/clientes">
                         <Repor />
@@ -57,9 +60,7 @@ export default function Routes() {
                     <Route path="/account">
                         <MiCuenta />
                     </Route>
-                    <Route path="/registros">
-                        <Registros />
-                    </Route>
+                  
                     <Route path="/logout">
                         <Logout />
                     </Route> */}
