@@ -1,5 +1,6 @@
 import React from 'react';
 import Routes from './routes';
+import Footer from './components/footer';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
             <div className="content">
                 <Routes />
+                <Footer />
             </div>
 
         </div>);

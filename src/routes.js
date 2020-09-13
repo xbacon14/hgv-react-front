@@ -4,12 +4,12 @@ import logo from './assets/navbar/logo-verde.png';
 
 // import Login from './pages/Login/index';
 import Inicio from './pages/Inicio/index';
-import Footer from './components/footer/index';
-import Registros from './pages/Registros/index';
+// import Footer from './components/footer/index';
+import Registro from './pages/Registros/index';
 import Account from './pages/Account/index';
-// import Home from './pages/Home';
 import SeleccionarEmpresa from './pages/SeleccionarEmpresa';
 import CrearEmpresa from './pages/CrearEmpresa';
+import Reportes from './pages/Reportes';
 
 
 export default function Routes() {
@@ -21,14 +21,14 @@ export default function Routes() {
                     <Link to="/" className="btn" >
                         Inicio
                     </Link>
-                    <Link to="/crear" className="btn" >
+                    <Link to="/registro" className="btn" >
                         Registro de Clientes
                     </Link>
                     <Link to="/account" className="btn">
                         Mi Cuenta
                     </Link>
-                    <Link to="/registros" className="btn" >
-                        Registros
+                    <Link to="/reportes" className="btn" >
+                        Reportes
                     </Link>
                     <Link to="/logout" className="btn" id="logout">
                         LOGOUT
@@ -43,31 +43,21 @@ export default function Routes() {
                         <Login />
                     </Route> */}
                     <Route path="/account">
-                        <SeleccionarEmpresa />
+                        <Account />
                     </Route>
                     <Route path="/crear">
                         <CrearEmpresa />
                     </Route>
-                    <Route path="/registros">
-                        <Registros />
+                    <Route path="/registro">
+                        <Registro />
                     </Route>
-
-                    {/* <Route path="/clientes">
-                        <Repor />
-                    </Route> */}
-
-                    {/* 
-                    <Route path="/account">
-                        <MiCuenta />
+                    <Route path="/reportes">
+                        <Reportes />
                     </Route>
-                  
-                    <Route path="/logout">
-                        <Logout />
-                    </Route> */}
 
 
                 </Switch>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </Router>
     );

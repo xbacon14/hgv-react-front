@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Sansita:ital,wght@0,400;1,700&display=swap');
+.tabla {
+    margin-top: 150px;
+    border: none;
+    background: #262626;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px grey;
+    padding: 10px;
+}
+
+.row {
+    margin-top: 50px;
+}
+
+th {
+    text-align: center;
+}
+
+tr {
+    text-align: center;
+}
+
+th tr {
+    font-family: 'Lato', sans-serif;
+}
+
+a {
+    background: none;
+}
+
+#tableSearch {
+    margin: 5px 10px 10px 10px;
+}

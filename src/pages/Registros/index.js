@@ -29,24 +29,60 @@ export default function Registro() {
     }
 
     return (
-        <div className="container-new">
-            <form onSubmit={handleSubmit} >
+        <div className="row">
 
-                <label htmlFor="ci" >CI *</label>
-                <input id="ci" placeholder="Ingrese su ci" value={ci} onChange={event => setci(event.target.value)} />
-                <label htmlFor="nombre">PRIMER NOMBRE *</label>
-                <input id="nombre" placeholder="Ingrese el nombre de su empresa" value={nombre} onChange={event => setnombre(event.target.value)} />
-                <label htmlFor="apellido">PRIMER APELLIDO *</label>
-                <input id="apellido" placeholder="Ingrese su apellido" value={apellido} onChange={event => setapellido(event.target.value)} />
-                <label htmlFor="direccion">DIRECCIÓN DE RESIDENCIA *</label>
-                <input id="direccion" placeholder="Ingrese su apellido" value={direccion} onChange={event => setDireccion(event.target.value)} />
-                <label htmlFor="telef">TELÉFONO *</label>
-                <input id="telef" placeholder="Ingrese su apellido" value={telef} onChange={event => setTelef(event.target.value)} />
-                <label htmlFor="ciudad">CIUDAD *</label>
-                <input id="ciudad" placeholder="Ingrese su apellido" value={ciudad} onChange={event => setCiudad(event.target.value)} />
+            <div className="container-new col-7">
+                <form onSubmit={handleSubmit} >
 
-                <button type="submit" className="btn">Crear</button>
-            </form>
-        </div >
+                    <label htmlFor="ci" >CI *</label>
+                    <input id="ci" placeholder="Ingrese su ci" value={ci} onChange={event => setci(event.target.value)} />
+                    <label htmlFor="nombre">NOMBRE *</label>
+                    <input id="nombre" placeholder="Ingrese solamente el primer nombre" value={nombre} onChange={event => setnombre(event.target.value)} />
+                    <label htmlFor="apellido">PRIMER APELLIDO *</label>
+                    <input id="apellido" placeholder="Ingrese solamente el segundo apellido" value={apellido} onChange={event => setapellido(event.target.value)} />
+                    <label htmlFor="direccion">DIRECCIÓN DE RESIDENCIA *</label>
+                    <input id="direccion" placeholder="Especifique la dirección" value={direccion} onChange={event => setDireccion(event.target.value)} />
+                    <label htmlFor="telef">TELÉFONO *</label>
+                    <input id="telef" placeholder="Ingrese su número de teléfono" value={telef} onChange={event => setTelef(event.target.value)} />
+                    <label htmlFor="ciudad">CIUDAD *</label>
+                    <input id="ciudad" placeholder="Especifique su ciudad de residencia" value={ciudad} onChange={event => setCiudad(event.target.value)} />
+
+                    <button type="submit" className="btn">Crear</button>
+                </form>
+            </div >
+            <div className="col-4 ">
+                <div className="card">
+                    <div className="card-body">
+                        <h5 className="card-title">Italo Golin</h5>
+                        <p className="card-text">15:03:06 - 24/10/2020</p>
+                    </div>
+                </div>
+                <div className="card">
+                    <div className="card-body">
+                        <h5 className="card-title">Italo Golin</h5>
+                        <p className="card-text">15:03:06 - 24/10/2020</p>
+                    </div>
+                </div>
+                <div className="card">
+                    <div className="card-body">
+                        <h5 className="card-title">Italo Golin</h5>
+                        <p className="card-text">15:03:06 - 24/10/2020</p>
+                    </div>
+                </div>
+                <div className="card">
+                    <div className="card-body">
+                        <h5 className="card-title">Italo Golin</h5>
+                        <p className="card-text">15:03:06 - 24/10/2020</p>
+                    </div>
+                </div>
+                <div className="card">
+                    <div className="card-body">
+                        <h5 className="card-title">Italo Golin</h5>
+                        <p className="card-text">15:03:06 - 24/10/2020</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     )
 }
