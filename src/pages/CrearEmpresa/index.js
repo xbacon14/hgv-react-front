@@ -35,7 +35,7 @@ export default function CrearEmpresa() {
 
     return (
         <div className="row">
-            <div className="container-new col8">
+            <div className="container-new">
                 <form onSubmit={handleSubmit} >
                     <label id="thumbnail" style={{ backgroundImage: `url(${preview})` }}>
                         <input type="file" onChange={event => setThumbnail(event.target.files[0])} />

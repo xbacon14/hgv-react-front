@@ -1,21 +1,26 @@
 import React from 'react';
 import Routes from './routes';
 import Footer from './components/footer';
+import SignIn from './pages/Login/signIn';
 import './App.css';
 
-function App() {
 
+
+function App() {
+    const user = 'a';
 
     return (
-        <div className="container" >
+        user ?
+            <SignIn />
+            :
+            <div className="container" >
 
+                <div className="content">
+                    <Routes />
+                    <Footer />
+                </div>
 
-            <div className="content">
-                <Routes />
-                <Footer />
-            </div>
-
-        </div>);
+            </div>)
 }
 
 export default App;

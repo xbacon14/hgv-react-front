@@ -32,9 +32,9 @@ export default function Empresa() {
     }
 
     return (
-        <div className="row">
+        <div className="row" id="row" >
 
-            <div className="container-new col-8">
+            <div className="container-new col-7">
                 <form onSubmit={handleSubmit} >
 
                     <label htmlFor="ruc" >RUC *</label>

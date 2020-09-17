@@ -29,7 +29,7 @@ export default function Registro() {
     }
 
     return (
-        <div className="row">
+        <div className="row" id="row">
 
             <div className="container-new col-7">
                 <form onSubmit={handleSubmit} >

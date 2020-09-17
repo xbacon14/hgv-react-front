@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import logo from './assets/navbar/logo-verde.png';
 
-// import Login from './pages/Login/index';
+import SignIn from './pages/Login/signIn/index';
 import Inicio from './pages/Inicio/index';
 // import Footer from './components/footer/index';
 import Registro from './pages/Registros/index';
@@ -10,13 +10,15 @@ import Account from './pages/Account/index';
 import SeleccionarEmpresa from './pages/SeleccionarEmpresa';
 import CrearEmpresa from './pages/CrearEmpresa';
 import Reportes from './pages/Reportes';
-
+import { auth } from './services/firebase';
+import { UserContext } from "./providers/UserProvider";
 
 export default function Routes() {
+
     return (
-        < Router >
+        <Router>
             <div className="container">
-                <div className="justify-content-center align-items-center" id="nav-bar">
+                <div className="navbar navbar-expand-lg navbar-dark bg-primar" id="nav-bar">
                     <img src={logo} alt="Logo verde" id="logoverde" />
                     <Link to="/" className="btn" >
                         Inicio
@@ -30,7 +32,7 @@ export default function Routes() {
                     <Link to="/reportes" className="btn" >
                         Reportes
                     </Link>
-                    <Link to="/logout" className="btn" id="logout">
+                    <Link onClick="" className="btn" id="logout">
                         LOGOUT
                     </Link>
                 </div>
@@ -39,9 +41,6 @@ export default function Routes() {
                     <Route path="/" exact>
                         <Inicio />
                     </Route>
-                    {/* <Route path="/login">
-                        <Login />
-                    </Route> */}
                     <Route path="/account">
                         <Account />
                     </Route>
@@ -53,6 +52,9 @@ export default function Routes() {
                     </Route>
                     <Route path="/reportes">
                         <Reportes />
+                    </Route>
+                    <Route path="/signIn">
+                        <SignIn />
                     </Route>
 
 

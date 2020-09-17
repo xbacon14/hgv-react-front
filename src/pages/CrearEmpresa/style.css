@@ -10,16 +10,14 @@ body input button {
     justify-content: center;
 }
 
-.container-new form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-}
-
 .container-new {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.container-new form {
+    width: 60%;
 }
 
 .container-new {
@@ -53,7 +51,6 @@ body input button {
 }
 
 label {
-    left: 0;
     margin-top: 10px;
 }
 
@@ -103,4 +100,8 @@ span {
 
 h5 p {
     font-family: 'Russo One', cursive, Helvetica, sans-serif !important;
+}
+
+h5 {
+    font-size: 3em !important;
 }
