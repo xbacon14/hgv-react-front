@@ -23,7 +23,7 @@ que todos estemos prevenidos.</p>
                 </div>
                 <div className="cards col-4" >
                     <img src={ok} alt="" id="vector-ok" />
-                    <h5 id="text-status">ESTAS APTO PARA REGISTRAR!</h5>
+                    <span id="text-status">ESTAS APTO PARA REGISTRAR!</span>
                     <button className="btn btn-large" id="empecemos">EMPEZAR</button>
                 </div>
             </div>

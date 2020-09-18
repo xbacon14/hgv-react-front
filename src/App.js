@@ -7,10 +7,10 @@ import './App.css';
 
 
 function App() {
-    const user = 'a';
+    const user =  'a';
 
     return (
-        user ?
+        !user ?
             <SignIn />
             :
             <div className="container" >

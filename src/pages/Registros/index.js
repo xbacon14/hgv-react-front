@@ -8,25 +8,38 @@ export default function Registro() {
     const [nombre, setnombre] = useState('');
     const [apellido, setapellido] = useState('');
     const [direccion, setDireccion] = useState('');
-    const [telef, setTelef] = useState('');
+    const [telefono, setTelefono] = useState('');
     const [ciudad, setCiudad] = useState('');
 
-    function handleSubmit(e) {
 
-        const data = new FormData();
+    const [values, setValues] = useState();
+
+    const handleInput = e => {
+        const { name, value } = e.target;
+        setValues({ ...values, [name]: value })
+
+    }
+
+    const handleSubmit = (e) => {
+
+        // const data = new FormData();
         // const user_id = localStorage.getItem('user');
 
-        data.append('ci', ci);
-        data.append('nombre', nombre);
-        data.append('apellido', apellido);
-        data.append('direccion', direccion);
-        data.append('telefono', telef);
-        data.append('ciudad', ciudad);
+        // data.append('ci', ci);
+        // data.append('nombre', nombre);
+        // data.append('apellido', apellido);
+        // data.append('direccion', direccion);
+        // data.append('telefono', telef);
+        // data.append('ciudad', ciudad);
+
+        console.log(values);
 
         e.preventDefault();
 
         //const response = await applicationCache.post('/empresas', data);
     }
+
+
 
     return (
         <div className="row" id="row">
@@ -35,17 +48,35 @@ export default function Registro() {
                 <form onSubmit={handleSubmit} >
 
                     <label htmlFor="ci" >CI *</label>
-                    <input id="ci" placeholder="Ingrese su ci" value={ci} onChange={event => setci(event.target.value)} />
+                    <input id="ci"
+                        name="ci"
+                        onChange={handleInput}
+                        placeholder="Ingrese su ci"  />
                     <label htmlFor="nombre">NOMBRE *</label>
-                    <input id="nombre" placeholder="Ingrese solamente el primer nombre" value={nombre} onChange={event => setnombre(event.target.value)} />
+                    <input id="nombre"
+                        onChange={handleInput}
+                        name="nombre"
+                        placeholder="Ingrese solamente el primer nombre"  />
                     <label htmlFor="apellido">PRIMER APELLIDO *</label>
-                    <input id="apellido" placeholder="Ingrese solamente el segundo apellido" value={apellido} onChange={event => setapellido(event.target.value)} />
+                    <input id="apellido"
+                        name="apellido"
+                        onChange={handleInput}
+                        placeholder="Ingrese solamente el segundo apellido"  />
                     <label htmlFor="direccion">DIRECCIÓN DE RESIDENCIA *</label>
-                    <input id="direccion" placeholder="Especifique la dirección" value={direccion} onChange={event => setDireccion(event.target.value)} />
-                    <label htmlFor="telef">TELÉFONO *</label>
-                    <input id="telef" placeholder="Ingrese su número de teléfono" value={telef} onChange={event => setTelef(event.target.value)} />
+                    <input id="direccion"
+                        name="direccion"
+                        onChange={handleInput}
+                        placeholder="Especifique la dirección"  />
+                    <label htmlFor="telefono">TELÉFONO *</label>
+                    <input id="telefono"
+                        name="telefono"
+                        onChange={handleInput}
+                        placeholder="Ingrese su número de teléfono" />
                     <label htmlFor="ciudad">CIUDAD *</label>
-                    <input id="ciudad" placeholder="Especifique su ciudad de residencia" value={ciudad} onChange={event => setCiudad(event.target.value)} />
+                    <input id="ciudad"
+                        name="ciudad"
+                        onChange={handleInput}
+                        placeholder="Especifique su ciudad de residencia" />
 
                     <button type="submit" className="btn">Crear</button>
                 </form>

@@ -14,18 +14,26 @@ export default function Empresa() {
     const [telef, setTelef] = useState('');
     const [ciudad, setCiudad] = useState('');
 
+    const handleInput = e => {
+        const { name, value } = e.target;
+        setValues({ ...values, [name]: value })
+    }
+
+    const [values, setValues] = useState();
+
     function handleSubmit(e) {
 
-        const data = new FormData();
+        // const data = new FormData();
         // const user_id = localStorage.getItem('user');
 
-        data.append('ruc', ruc);
-        data.append('razonSocial', razonSocial);
-        data.append('rubro', rubro);
-        data.append('direccion', direccion);
-        data.append('telefono', telef);
-        data.append('ciudad', ciudad);
+        // data.append('ruc', ruc);
+        // data.append('razonSocial', razonSocial);
+        // data.append('rubro', rubro);
+        // data.append('direccion', direccion);
+        // data.append('telefono', telef);
+        // data.append('ciudad', ciudad);
 
+        console.log(values);
         e.preventDefault();
 
         //const response = await applicationCache.post('/empresas', data);
@@ -38,17 +46,34 @@ export default function Empresa() {
                 <form onSubmit={handleSubmit} >
 
                     <label htmlFor="ruc" >RUC *</label>
-                    <input id="ruc" placeholder="Ingrese su ruc" value={ruc} onChange={event => setRuc(event.target.value)} />
+                    <input id="ruc"
+                        name="ruc"
+                        placeholder="Ingrese su ruc" maxLength="9" onChange={handleInput} />
                     <label htmlFor="razonSocial">RAZÓN SOCIAL *</label>
-                    <input id="razonSocial" placeholder="Ingrese el nombre de su empresa" value={razonSocial} onChange={event => setRazonSocial(event.target.value)} />
+                    <input id="razonSocial"
+                        name="razonSocial"
+                        onChange={handleInput}
+                        placeholder="Ingrese el nombre de su empresa" />
                     <label htmlFor="rubro">RUBRO *</label>
-                    <input id="rubro" placeholder="Especifique su rubro" value={rubro} onChange={event => setRubro(event.target.value)} />
+                    <input id="rubro"
+                        name="rubro"
+                        onChange={handleInput}
+                        placeholder="Especifique su rubro" />
                     <label htmlFor="direccion">DIRECCIÓN DE RESIDENCIA *</label>
-                    <input id="direccion" placeholder="Especifique la dirección" value={direccion} onChange={event => setDireccion(event.target.value)} />
-                    <label htmlFor="telef">TELÉFONO *</label>
-                    <input id="telef" placeholder="Ingrese su apellido" value={telef} onChange={event => setTelef(event.target.value)} />
+                    <input id="direccion"
+                        name="direccion"
+                        onChange={handleInput}
+                        placeholder="Especifique la dirección" />
+                    <label htmlFor="telefono">TELÉFONO *</label>
+                    <input id="telefono"
+                        name="telefono"
+                        onChange={handleInput}
+                        placeholder="Ingrese su apellido" />
                     <label htmlFor="ciudad">CIUDAD *</label>
-                    <input id="ciudad" placeholder="Defina la ciudad" value={ciudad} onChange={event => setCiudad(event.target.value)} />
+                    <input id="ciudad"
+                        name="ciudad"
+                        onChange={handleInput}
+                        placeholder="Defina la ciudad" />
 
                     <button type="submit" className="btn">Guardar</button>
                 </form>

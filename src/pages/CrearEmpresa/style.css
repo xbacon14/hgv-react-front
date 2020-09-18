@@ -3,9 +3,9 @@ body input button {
     font-family: 'Russo One', cursive, Helvetica, sans-serif;
 }
 
-.row {
+.rows {
     display: flex;
-    margin-top: 150px;
+    margin-top: 150px !important;
     flex-direction: row;
     justify-content: center;
 }
@@ -17,7 +17,7 @@ body input button {
 }
 
 .container-new form {
-    width: 60%;
+    width: 70%;
 }
 
 .container-new {
