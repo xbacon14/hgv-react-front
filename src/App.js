@@ -5,15 +5,19 @@ import './App.css';
 function App() {
 
 
-    return (
-        <div className="container" >
+    return ( <
+        div className = "container" >
 
 
-            <div className="content">
-                <Routes />
-            </div>
+        <
+        div className = "content" >
+        <
+        Routes / >
+        <
+        /div>
 
-        </div>);
-}
+        <
+        /div>);
+    }
 
-export default App;
+    export default App;
