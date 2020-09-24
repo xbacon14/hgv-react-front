@@ -14,11 +14,12 @@ var firebaseConfig = {
     appId: "1:629666576110:web:056fa38d809e1ce82c25ff",
     measurementId: "G-5Q68PGB60R"
 };
-firebase.initializeApp(firebaseConfig);
+const fb = firebase.initializeApp(firebaseConfig);
+export const db = fb.firestore();
 // Initialize Firebase
 // const provider = firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+
 // export const signInWithGoogle = () => {
 //     auth.signInWithPopup(provider);
 // }

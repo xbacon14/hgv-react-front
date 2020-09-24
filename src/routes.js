@@ -18,7 +18,7 @@ export default function Routes() {
     return (
         <Router>
             <div className="container">
-                <div className="navbar navbar-expand-lg navbar-dark bg-primar" id="nav-bar">
+                <div className="navbar" id="nav-bar">
                     <img src={logo} alt="Logo verde" id="logoverde" />
                     <Link to="/" className="btn" >
                         Inicio
@@ -32,7 +32,7 @@ export default function Routes() {
                     <Link to="/reportes" className="btn" >
                         Reportes
                     </Link>
-                    <Link onClick="" className="btn" id="logout">
+                    <Link to=""  className="btn" id="logout">
                         LOGOUT
                     </Link>
                 </div>
