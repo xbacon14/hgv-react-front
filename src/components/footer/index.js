@@ -2,13 +2,15 @@ import React from 'react';
 import './style.css'
 
 export default function Footer() {
-    return (< >
-        <div className="footer" >
+    return (
+        <div className="footer flex-fill d-flex justify-content-center" >
+            <div className="letras">
 
-            <p className="col-12" > Derechos Reservados Italo Golin™ </p>
+                <p > Derechos Reservados Italo Golin </p>
 
-            <h5 className="col-12" > 13: 02: 20 06 / 07 / 2020 </h5>
+                <span> 13:02:20 - 06/07/2020 </span>
+            </div>
 
         </div>
-    </>)
+    );
 }

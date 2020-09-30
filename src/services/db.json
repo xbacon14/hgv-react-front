@@ -1,0 +1,1004 @@
+{
+    "success": true,
+    "data": [{
+            "ciudad_id": 1,
+            "ciudad_nombre": "Asunción"
+        },
+        {
+            "ciudad_id": 2,
+            "ciudad_nombre": "Concepción"
+        },
+        {
+            "ciudad_id": 3,
+            "ciudad_nombre": "Belén"
+        },
+        {
+            "ciudad_id": 4,
+            "ciudad_nombre": "Horqueta"
+        },
+        {
+            "ciudad_id": 5,
+            "ciudad_nombre": "Loreto"
+        },
+        {
+            "ciudad_id": 6,
+            "ciudad_nombre": "San Carlos del Apa"
+        },
+        {
+            "ciudad_id": 7,
+            "ciudad_nombre": "San Lázaro"
+        },
+        {
+            "ciudad_id": 8,
+            "ciudad_nombre": "Yby Ya'ú"
+        },
+        {
+            "ciudad_id": 9,
+            "ciudad_nombre": "Azotey"
+        },
+        {
+            "ciudad_id": 10,
+            "ciudad_nombre": "Sargento José Félix López"
+        },
+        {
+            "ciudad_id": 11,
+            "ciudad_nombre": "San Alfredo"
+        },
+        {
+            "ciudad_id": 12,
+            "ciudad_nombre": "Paso Barreto (Arroyito)"
+        },
+        {
+            "ciudad_id": 13,
+            "ciudad_nombre": "San Pedro del Ycuamandiyú"
+        },
+        {
+            "ciudad_id": 14,
+            "ciudad_nombre": "Antequera"
+        },
+        {
+            "ciudad_id": 15,
+            "ciudad_nombre": "Choré"
+        },
+        {
+            "ciudad_id": 16,
+            "ciudad_nombre": "General Elizardo Aquino"
+        },
+        {
+            "ciudad_id": 17,
+            "ciudad_nombre": "Itacurubí del Rosario"
+        },
+        {
+            "ciudad_id": 18,
+            "ciudad_nombre": "Lima"
+        },
+        {
+            "ciudad_id": 19,
+            "ciudad_nombre": "Nueva Germania"
+        },
+        {
+            "ciudad_id": 20,
+            "ciudad_nombre": "San Estanislao"
+        },
+        {
+            "ciudad_id": 21,
+            "ciudad_nombre": "San Pablo"
+        },
+        {
+            "ciudad_id": 22,
+            "ciudad_nombre": "Tacuatí"
+        },
+        {
+            "ciudad_id": 23,
+            "ciudad_nombre": "Unión"
+        },
+        {
+            "ciudad_id": 24,
+            "ciudad_nombre": "25 de Diciembre"
+        },
+        {
+            "ciudad_id": 25,
+            "ciudad_nombre": "Villa del Rosario"
+        },
+        {
+            "ciudad_id": 26,
+            "ciudad_nombre": " General Isidoro Resquín"
+        },
+        {
+            "ciudad_id": 27,
+            "ciudad_nombre": "Yataity del Norte"
+        },
+        {
+            "ciudad_id": 28,
+            "ciudad_nombre": "Guayaibí"
+        },
+        {
+            "ciudad_id": 29,
+            "ciudad_nombre": "Capiibary"
+        },
+        {
+            "ciudad_id": 30,
+            "ciudad_nombre": "Santa Rosa del Aguaray"
+        },
+        {
+            "ciudad_id": 31,
+            "ciudad_nombre": "Yrybucuá"
+        },
+        {
+            "ciudad_id": 32,
+            "ciudad_nombre": "Liberación"
+        },
+        {
+            "ciudad_id": 33,
+            "ciudad_nombre": "Caacupé"
+        },
+        {
+            "ciudad_id": 34,
+            "ciudad_nombre": "Altos"
+        },
+        {
+            "ciudad_id": 35,
+            "ciudad_nombre": "Arroyos y Esteros"
+        },
+        {
+            "ciudad_id": 36,
+            "ciudad_nombre": "Atyrá"
+        },
+        {
+            "ciudad_id": 37,
+            "ciudad_nombre": "Caraguatay"
+        },
+        {
+            "ciudad_id": 38,
+            "ciudad_nombre": "Emboscada"
+        },
+        {
+            "ciudad_id": 39,
+            "ciudad_nombre": "Eusebio Ayala"
+        },
+        {
+            "ciudad_id": 40,
+            "ciudad_nombre": "Isla Pucú"
+        },
+        {
+            "ciudad_id": 41,
+            "ciudad_nombre": "Itacurubí de la Cordillera"
+        },
+        {
+            "ciudad_id": 42,
+            "ciudad_nombre": "Juan de Mena"
+        },
+        {
+            "ciudad_id": 43,
+            "ciudad_nombre": "Loma Grande"
+        },
+        {
+            "ciudad_id": 44,
+            "ciudad_nombre": "Mbocayaty del Yhaguy"
+        },
+        {
+            "ciudad_id": 45,
+            "ciudad_nombre": "Nueva Colombia"
+        },
+        {
+            "ciudad_id": 46,
+            "ciudad_nombre": "Piribebuy"
+        },
+        {
+            "ciudad_id": 47,
+            "ciudad_nombre": "Primero de Marzo"
+        },
+        {
+            "ciudad_id": 48,
+            "ciudad_nombre": "San Bernardino"
+        },
+        {
+            "ciudad_id": 49,
+            "ciudad_nombre": "Santa Elena"
+        },
+        {
+            "ciudad_id": 50,
+            "ciudad_nombre": "Tobatí"
+        },
+        {
+            "ciudad_id": 51,
+            "ciudad_nombre": "Valenzuela"
+        },
+        {
+            "ciudad_id": 52,
+            "ciudad_nombre": "San José Obrero"
+        },
+        {
+            "ciudad_id": 53,
+            "ciudad_nombre": "Villarrica"
+        },
+        {
+            "ciudad_id": 54,
+            "ciudad_nombre": "Borja"
+        },
+        {
+            "ciudad_id": 55,
+            "ciudad_nombre": "Mauricio José Troche"
+        },
+        {
+            "ciudad_id": 56,
+            "ciudad_nombre": "Coronel Martínez"
+        },
+        {
+            "ciudad_id": 57,
+            "ciudad_nombre": "Félix Pérez Cardozo"
+        },
+        {
+            "ciudad_id": 58,
+            "ciudad_nombre": "General Eugenio A. Garay"
+        },
+        {
+            "ciudad_id": 59,
+            "ciudad_nombre": "Colonia Independencia"
+        },
+        {
+            "ciudad_id": 60,
+            "ciudad_nombre": "Itapé"
+        },
+        {
+            "ciudad_id": 61,
+            "ciudad_nombre": "Iturbe"
+        },
+        {
+            "ciudad_id": 62,
+            "ciudad_nombre": "José Fassardi"
+        },
+        {
+            "ciudad_id": 63,
+            "ciudad_nombre": "Mbocayaty"
+        },
+        {
+            "ciudad_id": 64,
+            "ciudad_nombre": "Natalicio Talavera"
+        },
+        {
+            "ciudad_id": 65,
+            "ciudad_nombre": "Ñumí"
+        },
+        {
+            "ciudad_id": 66,
+            "ciudad_nombre": "San Salvador"
+        },
+        {
+            "ciudad_id": 67,
+            "ciudad_nombre": "Yataity"
+        },
+        {
+            "ciudad_id": 68,
+            "ciudad_nombre": "Doctor Bottrell"
+        },
+        {
+            "ciudad_id": 69,
+            "ciudad_nombre": "Paso Yobái"
+        },
+        {
+            "ciudad_id": 70,
+            "ciudad_nombre": "Tebicuary"
+        },
+        {
+            "ciudad_id": 71,
+            "ciudad_nombre": "Coronel Oviedo"
+        },
+        {
+            "ciudad_id": 72,
+            "ciudad_nombre": "Caaguazú"
+        },
+        {
+            "ciudad_id": 73,
+            "ciudad_nombre": "Carayaó"
+        },
+        {
+            "ciudad_id": 74,
+            "ciudad_nombre": "Doctor Cecilio Báez"
+        },
+        {
+            "ciudad_id": 75,
+            "ciudad_nombre": "Santa Rosa del Mbutuy"
+        },
+        {
+            "ciudad_id": 76,
+            "ciudad_nombre": "Doctor Juan Manuel Frutos"
+        },
+        {
+            "ciudad_id": 77,
+            "ciudad_nombre": "Repatriación"
+        },
+        {
+            "ciudad_id": 78,
+            "ciudad_nombre": "Nueva Londres"
+        },
+        {
+            "ciudad_id": 79,
+            "ciudad_nombre": "San Joaquín"
+        },
+        {
+            "ciudad_id": 80,
+            "ciudad_nombre": "San José de los Arroyos"
+        },
+        {
+            "ciudad_id": 81,
+            "ciudad_nombre": "Yhú"
+        },
+        {
+            "ciudad_id": 82,
+            "ciudad_nombre": "Doctor J. Eulogio Estigarribia"
+        },
+        {
+            "ciudad_id": 83,
+            "ciudad_nombre": "R. I. Tres Corrales"
+        },
+        {
+            "ciudad_id": 84,
+            "ciudad_nombre": "Raúl Arsenio Oviedo"
+        },
+        {
+            "ciudad_id": 85,
+            "ciudad_nombre": "José Domingo Ocampos"
+        },
+        {
+            "ciudad_id": 86,
+            "ciudad_nombre": "Mariscal Francisco Solano López"
+        },
+        {
+            "ciudad_id": 87,
+            "ciudad_nombre": "La Pastora"
+        },
+        {
+            "ciudad_id": 88,
+            "ciudad_nombre": "3 de Febrero"
+        },
+        {
+            "ciudad_id": 89,
+            "ciudad_nombre": "Simón Bolívar"
+        },
+        {
+            "ciudad_id": 90,
+            "ciudad_nombre": "Vaquería"
+        },
+        {
+            "ciudad_id": 91,
+            "ciudad_nombre": "Tembiaporá"
+        },
+        {
+            "ciudad_id": 92,
+            "ciudad_nombre": "Nueva Toledo"
+        },
+        {
+            "ciudad_id": 93,
+            "ciudad_nombre": "Caazapá"
+        },
+        {
+            "ciudad_id": 94,
+            "ciudad_nombre": "Abaí"
+        },
+        {
+            "ciudad_id": 95,
+            "ciudad_nombre": "Buena Vista"
+        },
+        {
+            "ciudad_id": 96,
+            "ciudad_nombre": "Doctor Moisés S. Bertoni"
+        },
+        {
+            "ciudad_id": 97,
+            "ciudad_nombre": "General Higinio Morínigo"
+        },
+        {
+            "ciudad_id": 98,
+            "ciudad_nombre": "Maciel"
+        },
+        {
+            "ciudad_id": 99,
+            "ciudad_nombre": "San Juan Nepomuceno"
+        },
+        {
+            "ciudad_id": 100,
+            "ciudad_nombre": "Tavaí"
+        },
+        {
+            "ciudad_id": 101,
+            "ciudad_nombre": "Fulgencio Yegros"
+        },
+        {
+            "ciudad_id": 102,
+            "ciudad_nombre": "Yuty"
+        },
+        {
+            "ciudad_id": 103,
+            "ciudad_nombre": "3 de Mayo"
+        },
+        {
+            "ciudad_id": 104,
+            "ciudad_nombre": "Encarnacion"
+        },
+        {
+            "ciudad_id": 105,
+            "ciudad_nombre": "Bella Vista"
+        },
+        {
+            "ciudad_id": 106,
+            "ciudad_nombre": "Cambyreta"
+        },
+        {
+            "ciudad_id": 107,
+            "ciudad_nombre": "Capitan Meza"
+        },
+        {
+            "ciudad_id": 108,
+            "ciudad_nombre": "Capitan Miranda"
+        },
+        {
+            "ciudad_id": 109,
+            "ciudad_nombre": "Nueva Alborada"
+        },
+        {
+            "ciudad_id": 110,
+            "ciudad_nombre": "Carmen Del Parana"
+        },
+        {
+            "ciudad_id": 111,
+            "ciudad_nombre": "Coronel Bogado"
+        },
+        {
+            "ciudad_id": 112,
+            "ciudad_nombre": "Carlos Antonio Lopez"
+        },
+        {
+            "ciudad_id": 113,
+            "ciudad_nombre": "Natalio"
+        },
+        {
+            "ciudad_id": 114,
+            "ciudad_nombre": "Fram"
+        },
+        {
+            "ciudad_id": 115,
+            "ciudad_nombre": "General Artigas"
+        },
+        {
+            "ciudad_id": 116,
+            "ciudad_nombre": "General Delgado"
+        },
+        {
+            "ciudad_id": 117,
+            "ciudad_nombre": "Hohenau"
+        },
+        {
+            "ciudad_id": 118,
+            "ciudad_nombre": "Jesus"
+        },
+        {
+            "ciudad_id": 119,
+            "ciudad_nombre": "Leandro Oviedo"
+        },
+        {
+            "ciudad_id": 120,
+            "ciudad_nombre": "Obligado"
+        },
+        {
+            "ciudad_id": 121,
+            "ciudad_nombre": "Mayor Otaño"
+        },
+        {
+            "ciudad_id": 122,
+            "ciudad_nombre": "San Cosme Y Damian"
+        },
+        {
+            "ciudad_id": 123,
+            "ciudad_nombre": "San Pedro Del Parana"
+        },
+        {
+            "ciudad_id": 124,
+            "ciudad_nombre": "San Rafael Del Parana"
+        },
+        {
+            "ciudad_id": 125,
+            "ciudad_nombre": "Trinidad"
+        },
+        {
+            "ciudad_id": 126,
+            "ciudad_nombre": "Edelira"
+        },
+        {
+            "ciudad_id": 127,
+            "ciudad_nombre": "Tomas Romero Pereira"
+        },
+        {
+            "ciudad_id": 128,
+            "ciudad_nombre": "Alto Vera"
+        },
+        {
+            "ciudad_id": 129,
+            "ciudad_nombre": "La Paz"
+        },
+        {
+            "ciudad_id": 130,
+            "ciudad_nombre": "Yatytay"
+        },
+        {
+            "ciudad_id": 131,
+            "ciudad_nombre": "San Juan Del Parana"
+        },
+        {
+            "ciudad_id": 132,
+            "ciudad_nombre": "Pirapo"
+        },
+        {
+            "ciudad_id": 133,
+            "ciudad_nombre": "Itapua Poty"
+        },
+        {
+            "ciudad_id": 134,
+            "ciudad_nombre": "San Juan Bautista"
+        },
+        {
+            "ciudad_id": 135,
+            "ciudad_nombre": "Ayolas"
+        },
+        {
+            "ciudad_id": 136,
+            "ciudad_nombre": "San Ignacio"
+        },
+        {
+            "ciudad_id": 137,
+            "ciudad_nombre": "San Miguel"
+        },
+        {
+            "ciudad_id": 138,
+            "ciudad_nombre": "San Patricio"
+        },
+        {
+            "ciudad_id": 139,
+            "ciudad_nombre": "Santa Maria"
+        },
+        {
+            "ciudad_id": 140,
+            "ciudad_nombre": "Santa Rosa"
+        },
+        {
+            "ciudad_id": 141,
+            "ciudad_nombre": "Santiago"
+        },
+        {
+            "ciudad_id": 142,
+            "ciudad_nombre": "Villa Florida"
+        },
+        {
+            "ciudad_id": 143,
+            "ciudad_nombre": "Yabebyry"
+        },
+        {
+            "ciudad_id": 144,
+            "ciudad_nombre": "Paraguarí"
+        },
+        {
+            "ciudad_id": 145,
+            "ciudad_nombre": "Acahay"
+        },
+        {
+            "ciudad_id": 146,
+            "ciudad_nombre": "Caapucú"
+        },
+        {
+            "ciudad_id": 147,
+            "ciudad_nombre": "General Bernardino Caballero"
+        },
+        {
+            "ciudad_id": 148,
+            "ciudad_nombre": "Carapeguá"
+        },
+        {
+            "ciudad_id": 149,
+            "ciudad_nombre": "Escobar"
+        },
+        {
+            "ciudad_id": 150,
+            "ciudad_nombre": "La Colmena"
+        },
+        {
+            "ciudad_id": 151,
+            "ciudad_nombre": "Mbuyapey"
+        },
+        {
+            "ciudad_id": 152,
+            "ciudad_nombre": "Pirayú"
+        },
+        {
+            "ciudad_id": 153,
+            "ciudad_nombre": "Quiindy"
+        },
+        {
+            "ciudad_id": 154,
+            "ciudad_nombre": "Quyquyhó"
+        },
+        {
+            "ciudad_id": 155,
+            "ciudad_nombre": "San Roque González de Santa Cruz"
+        },
+        {
+            "ciudad_id": 156,
+            "ciudad_nombre": "Sapucai"
+        },
+        {
+            "ciudad_id": 157,
+            "ciudad_nombre": "Tebicuarymí"
+        },
+        {
+            "ciudad_id": 158,
+            "ciudad_nombre": "Yaguarón"
+        },
+        {
+            "ciudad_id": 159,
+            "ciudad_nombre": "Ybycui"
+        },
+        {
+            "ciudad_id": 160,
+            "ciudad_nombre": "Yvytimi"
+        },
+        {
+            "ciudad_id": 161,
+            "ciudad_nombre": "Ciudad del Este"
+        },
+        {
+            "ciudad_id": 162,
+            "ciudad_nombre": "Presidente Franco"
+        },
+        {
+            "ciudad_id": 163,
+            "ciudad_nombre": "Domingo Martínez de Irala"
+        },
+        {
+            "ciudad_id": 164,
+            "ciudad_nombre": "Doctor Juan León Mallorquín"
+        },
+        {
+            "ciudad_id": 165,
+            "ciudad_nombre": "Hernandarias"
+        },
+        {
+            "ciudad_id": 166,
+            "ciudad_nombre": "Itakyry"
+        },
+        {
+            "ciudad_id": 167,
+            "ciudad_nombre": "Juan Emilio O'Leary"
+        },
+        {
+            "ciudad_id": 168,
+            "ciudad_nombre": "Ñacunday"
+        },
+        {
+            "ciudad_id": 169,
+            "ciudad_nombre": "Yguazú"
+        },
+        {
+            "ciudad_id": 170,
+            "ciudad_nombre": "Los Cedrales"
+        },
+        {
+            "ciudad_id": 171,
+            "ciudad_nombre": "Minga Guazú"
+        },
+        {
+            "ciudad_id": 172,
+            "ciudad_nombre": "San Cristóbal"
+        },
+        {
+            "ciudad_id": 173,
+            "ciudad_nombre": "Santa Rita"
+        },
+        {
+            "ciudad_id": 174,
+            "ciudad_nombre": "Naranjal"
+        },
+        {
+            "ciudad_id": 175,
+            "ciudad_nombre": "Santa Rosa del Monday"
+        },
+        {
+            "ciudad_id": 176,
+            "ciudad_nombre": "Minga Porá"
+        },
+        {
+            "ciudad_id": 177,
+            "ciudad_nombre": "Mbaracayú"
+        },
+        {
+            "ciudad_id": 178,
+            "ciudad_nombre": "San Alberto"
+        },
+        {
+            "ciudad_id": 179,
+            "ciudad_nombre": "Iruña"
+        },
+        {
+            "ciudad_id": 180,
+            "ciudad_nombre": "Santa Fe del Paraná"
+        },
+        {
+            "ciudad_id": 181,
+            "ciudad_nombre": "Tavapy"
+        },
+        {
+            "ciudad_id": 182,
+            "ciudad_nombre": "Doctor Raúl Peña"
+        },
+        {
+            "ciudad_id": 183,
+            "ciudad_nombre": "Areguá"
+        },
+        {
+            "ciudad_id": 184,
+            "ciudad_nombre": "Capiatá"
+        },
+        {
+            "ciudad_id": 185,
+            "ciudad_nombre": "Fernando De La Mora"
+        },
+        {
+            "ciudad_id": 186,
+            "ciudad_nombre": "Guarambaré"
+        },
+        {
+            "ciudad_id": 187,
+            "ciudad_nombre": "Itá"
+        },
+        {
+            "ciudad_id": 188,
+            "ciudad_nombre": "Itauguá"
+        },
+        {
+            "ciudad_id": 189,
+            "ciudad_nombre": "Lambaré"
+        },
+        {
+            "ciudad_id": 190,
+            "ciudad_nombre": "Limpio"
+        },
+        {
+            "ciudad_id": 191,
+            "ciudad_nombre": "Luque"
+        },
+        {
+            "ciudad_id": 192,
+            "ciudad_nombre": "Mariano Roque Alonso"
+        },
+        {
+            "ciudad_id": 193,
+            "ciudad_nombre": "Nueva Italia"
+        },
+        {
+            "ciudad_id": 194,
+            "ciudad_nombre": "Ñemby"
+        },
+        {
+            "ciudad_id": 195,
+            "ciudad_nombre": "San Antonio"
+        },
+        {
+            "ciudad_id": 196,
+            "ciudad_nombre": "San Lorenzo"
+        },
+        {
+            "ciudad_id": 197,
+            "ciudad_nombre": "Villa Elisa"
+        },
+        {
+            "ciudad_id": 198,
+            "ciudad_nombre": "Villeta"
+        },
+        {
+            "ciudad_id": 199,
+            "ciudad_nombre": "Ypacaraí"
+        },
+        {
+            "ciudad_id": 200,
+            "ciudad_nombre": "Ypané"
+        },
+        {
+            "ciudad_id": 201,
+            "ciudad_nombre": "Julián Augusto Saldívar"
+        },
+        {
+            "ciudad_id": 202,
+            "ciudad_nombre": "Pilar"
+        },
+        {
+            "ciudad_id": 203,
+            "ciudad_nombre": "Alberdi"
+        },
+        {
+            "ciudad_id": 204,
+            "ciudad_nombre": "Cerrito"
+        },
+        {
+            "ciudad_id": 205,
+            "ciudad_nombre": "Desmochados"
+        },
+        {
+            "ciudad_id": 206,
+            "ciudad_nombre": "General José Eduvigis Díaz"
+        },
+        {
+            "ciudad_id": 207,
+            "ciudad_nombre": "Guazú Cuá"
+        },
+        {
+            "ciudad_id": 208,
+            "ciudad_nombre": "Humaitá"
+        },
+        {
+            "ciudad_id": 209,
+            "ciudad_nombre": "Isla Umbú"
+        },
+        {
+            "ciudad_id": 210,
+            "ciudad_nombre": "Los Laureles"
+        },
+        {
+            "ciudad_id": 211,
+            "ciudad_nombre": "Mayor José J. Martínez"
+        },
+        {
+            "ciudad_id": 212,
+            "ciudad_nombre": "Paso de Patria"
+        },
+        {
+            "ciudad_id": 213,
+            "ciudad_nombre": "San Juan Bautista del Ñeembucú"
+        },
+        {
+            "ciudad_id": 214,
+            "ciudad_nombre": "Tacuaras"
+        },
+        {
+            "ciudad_id": 215,
+            "ciudad_nombre": "Villa Franca"
+        },
+        {
+            "ciudad_id": 216,
+            "ciudad_nombre": "Villa Oliva"
+        },
+        {
+            "ciudad_id": 217,
+            "ciudad_nombre": "Villalbín"
+        },
+        {
+            "ciudad_id": 218,
+            "ciudad_nombre": "Pedro Juan Caballero"
+        },
+        {
+            "ciudad_id": 219,
+            "ciudad_nombre": "Bella Vista"
+        },
+        {
+            "ciudad_id": 220,
+            "ciudad_nombre": "Capitán Bado"
+        },
+        {
+            "ciudad_id": 221,
+            "ciudad_nombre": "Zanja Pytá"
+        },
+        {
+            "ciudad_id": 222,
+            "ciudad_nombre": "Karapaí"
+        },
+        {
+            "ciudad_id": 223,
+            "ciudad_nombre": "Salto del Guairá"
+        },
+        {
+            "ciudad_id": 224,
+            "ciudad_nombre": "Corpus Christi"
+        },
+        {
+            "ciudad_id": 225,
+            "ciudad_nombre": "Curuguaty"
+        },
+        {
+            "ciudad_id": 226,
+            "ciudad_nombre": "Villa Ygatimí"
+        },
+        {
+            "ciudad_id": 227,
+            "ciudad_nombre": "Itanará"
+        },
+        {
+            "ciudad_id": 228,
+            "ciudad_nombre": "Ypejhú"
+        },
+        {
+            "ciudad_id": 229,
+            "ciudad_nombre": "Genaral Francisco Caballero Álvarez"
+        },
+        {
+            "ciudad_id": 230,
+            "ciudad_nombre": "Katueté"
+        },
+        {
+            "ciudad_id": 231,
+            "ciudad_nombre": "La Paloma"
+        },
+        {
+            "ciudad_id": 232,
+            "ciudad_nombre": "Nueva Esperanza"
+        },
+        {
+            "ciudad_id": 233,
+            "ciudad_nombre": "Yasy Kañy"
+        },
+        {
+            "ciudad_id": 234,
+            "ciudad_nombre": "Ybyrarovaná"
+        },
+        {
+            "ciudad_id": 235,
+            "ciudad_nombre": "Yby Pytá"
+        },
+        {
+            "ciudad_id": 236,
+            "ciudad_nombre": "Benjamín Aceval"
+        },
+        {
+            "ciudad_id": 237,
+            "ciudad_nombre": "Puerto Pinasco"
+        },
+        {
+            "ciudad_id": 238,
+            "ciudad_nombre": "Villa Hayes"
+        },
+        {
+            "ciudad_id": 239,
+            "ciudad_nombre": "Nanawa"
+        },
+        {
+            "ciudad_id": 240,
+            "ciudad_nombre": "Doctor José Falcón"
+        },
+        {
+            "ciudad_id": 241,
+            "ciudad_nombre": "Teniente Primero Manuel Irala Fernández"
+        },
+        {
+            "ciudad_id": 242,
+            "ciudad_nombre": "Teniente Esteban Martínez"
+        },
+        {
+            "ciudad_id": 243,
+            "ciudad_nombre": "General José María Bruguez"
+        },
+        {
+            "ciudad_id": 244,
+            "ciudad_nombre": "Mariscal Estigarribia"
+        },
+        {
+            "ciudad_id": 245,
+            "ciudad_nombre": "Filadelfia"
+        },
+        {
+            "ciudad_id": 246,
+            "ciudad_nombre": "Loma Plata"
+        },
+        {
+            "ciudad_id": 247,
+            "ciudad_nombre": "Fuerte Olimpo"
+        },
+        {
+            "ciudad_id": 248,
+            "ciudad_nombre": "Puerto Casado"
+        },
+        {
+            "ciudad_id": 249,
+            "ciudad_nombre": "Bahía Negra"
+        },
+        {
+            "ciudad_id": 250,
+            "ciudad_nombre": "Capitán Carmelo Peralta"
+        }
+    ]
+}

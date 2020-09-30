@@ -8,25 +8,36 @@ export default function CrearEmpresa() {
     const [razonSocial, setRazonSocial] = useState('');
     const [rubro, setRubro] = useState('');
     const [direccion, setDireccion] = useState('');
-    const [telef, setTelef] = useState('');
+    const [telefono, setTelefono] = useState('');
     const [ciudad, setCiudad] = useState('');
 
     const preview = useMemo(() => {
         return thumbnail ? URL.createObjectURL(thumbnail) : null;
     }, [thumbnail])
 
-    function handleSubmit(e) {
+    const [values, setValues] = useState();
 
-        const data = new FormData();
+    const handleInput = e => {
+
+        const { name, value } = e.target;
+        setValues({ ...values, [name]: value })
+
+    }
+
+    const handleSubmit = (e) => {
+
+        // const data = new FormData();
         // const user_id = localStorage.getItem('user');
 
-        data.append('thumbnail', thumbnail);
-        data.append('ruc', ruc);
-        data.append('razonSocial', razonSocial);
-        data.append('rubro', rubro);
-        data.append('direccion', direccion);
-        data.append('telefono', telef);
-        data.append('ciudad', ciudad);
+        // data.append('thumbnail', thumbnail);
+        // data.append('ruc', ruc);
+        // data.append('razonSocial', razonSocial);
+        // data.append('rubro', rubro);
+        // data.append('direccion', direccion);
+        // data.append('telefono', telefono);
+        // data.append('ciudad', ciudad);
+
+        console.log(values);
 
         e.preventDefault();
 
@@ -34,28 +45,47 @@ export default function CrearEmpresa() {
     }
 
     return (
-        <div className="container-new">
-            <form onSubmit={handleSubmit} >
-                <label id="thumbnail" style={{ backgroundImage: `url(${preview})` }}>
-                    <input type="file" onChange={event => setThumbnail(event.target.files[0])} />
-                    <img src={imagen} alt="Seleccionar Imagen" />
+        <div className="row rows">
+            <div className="container-new col-6">
+                <form onSubmit={handleSubmit} >
+                    <label id="thumbnail" style={{ backgroundImage: `url(${preview})` }}>
+                        <input type="file" onChange={event => setThumbnail(event.target.files[0])} />
+                        <img src={imagen} alt="Seleccionar Imagen" />
 
-                </label>
-                <label htmlFor="ruc" >RUC *</label>
-                <input id="ruc" placeholder="Ingrese su ruc" value={ruc} onChange={event => setRuc(event.target.value)} />
-                <label htmlFor="razonSocial">RAZON SOCIAL *</label>
-                <input id="razonSocial" placeholder="Ingrese el nombre de su empresa" value={razonSocial} onChange={event => setRazonSocial(event.target.value)} />
-                <label htmlFor="rubro">RUBRO *</label>
-                <input id="rubro" placeholder="Ingrese su rubro" value={rubro} onChange={event => setRubro(event.target.value)} />
-                <label htmlFor="direccion">DIRECCIÓN *</label>
-                <input id="direccion" placeholder="Ingrese su rubro" value={direccion} onChange={event => setDireccion(event.target.value)} />
-                <label htmlFor="telef">TELÉFONO *</label>
-                <input id="telef" placeholder="Ingrese su rubro" value={telef} onChange={event => setTelef(event.target.value)} />
-                <label htmlFor="ciudad">CIUDAD *</label>
-                <input id="ciudad" placeholder="Ingrese su rubro" value={ciudad} onChange={event => setCiudad(event.target.value)} />
+                    </label>
+                    <label htmlFor="ruc" >RUC *</label>
+                    <input id="ruc"
+                        placeholder="Ingrese su ruc"
+                        maxLength="7"
+                        name="ruc"
+                        onChange={handleInput} />
+                    <label htmlFor="razonSocial">RAZON SOCIAL *</label>
+                    <input
+                        name="razonSocial"
+                        onChange={handleInput}
+                        placeholder="Ingrese su razón social" />
+                    <label htmlFor="rubro">RUBRO *</label>
+                    <input name="rubro"
+                        onChange={handleInput}
+                        placeholder="Ingrese su rubro" />
+                    <label htmlFor="direccion"
+                    >DIRECCIÓN *</label>
+                    <input id="direccion"
+                        onChange={handleInput}
+                        name="direccion"
+                        placeholder="Ingrese su rubro" />
+                    <label htmlFor="telefono">TELÉFONO *</label>
+                    <input id="telef" name="telefono"
+                        onChange={handleInput}
+                        placeholder="Ingrese su rubro" />
+                    <label htmlFor="ciudad">CIUDAD *</label>
+                    <input id="ciudad" name="ciudad"
+                        placeholder="Ingrese su rubro" onChange={handleInput} maxLength="40" />
 
-                <button type="submit" className="btn">Crear</button>
-            </form>
+                    <button type="submit" className="btn">Crear</button>
+                </form>
+            </div>
+            <div className="container-new col-4"></div>
         </div>
-    )
+    );
 }
