@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import cities from '../../../services/db.json';
 
 export default function RegistroForm(props) {
     const handleInput = e => {
@@ -8,6 +8,13 @@ export default function RegistroForm(props) {
     }
 
     const [values, setValues] = useState();
+
+    const [ciudades, setCiudades] = useState();
+
+   function loadCiudades() {
+        ciudades = cities.data;
+        console.log(ciudades[0]);
+    }
 
     function handleSubmit(e) {
         console.log(values);

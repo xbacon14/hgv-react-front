@@ -7,7 +7,7 @@ import './App.css';
 
 
 function App() {
-    const user = 'a';
+    const user = null;
 
     return (
         !user ?
@@ -17,7 +17,7 @@ function App() {
 
                 <div className="content">
                     <Routes />
-                    {/* <Footer /> */}
+                    <Footer />
                 </div>
 
             </div>)

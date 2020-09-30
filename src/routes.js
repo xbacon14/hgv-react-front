@@ -36,7 +36,6 @@ export default function Routes() {
                         LOGOUT
                     </Link>
                 </div>
-                <hr />
                 <Switch>
                     <Route path="/" exact>
                         <Inicio />

@@ -3,11 +3,13 @@ import './style.css'
 
 export default function Footer() {
     return (
-        <div className="footer" >
+        <div className="footer flex-fill d-flex justify-content-center" >
+            <div className="letras">
 
-            <p > Derechos Reservados Italo Golin </p>
+                <p > Derechos Reservados Italo Golin </p>
 
-            <h5 > 13:02:20 - 06/07/2020 </h5>
+                <span> 13:02:20 - 06/07/2020 </span>
+            </div>
 
         </div>
     );

@@ -7,15 +7,18 @@ import '../CrearEmpresa/style.css';
 
 export default function Registro() {
 
-    const addOrEditLink = async (linkObject) => {
-        await db.collection('registros').doc().set(linkObject);
-        console.log('Registro guardado :)');
-    }
+    // const addOrEditLink = async (linkObject) => {
+    //     await db.collection('registros').doc().set(linkObject);
+    //     console.log('Registro guardado :)');
+    // }
 
     const getRegistros = async () => {
         const querySnapShot = await db.collection('registros').get();
+        var nombre = querySnapShot.nombre;
+        var horaEntrada = querySnapShot.horaEntrada;
         querySnapShot.forEach(doc => {
-            console.log(doc.data())
+            // console.log(doc.data())
+            console.log(doc.data());
         })
     }
 
