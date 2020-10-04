@@ -19,16 +19,16 @@ export default function Routes() {
             <div className="container">
                 <div className="navbar" id="nav-bar">
                     <img src={logo} alt="Logo verde" id="logoverde" />
-                    <Link to="/" className="btn-header" >
+                    <Link to="/" className="btn btn-header" >
                         Inicio
                     </Link>
-                    <Link to="/registro" className="btn-header" >
+                    <Link to="/registro" className="btn btn-header" >
                         Registro de Clientes
                     </Link>
-                    <Link to="/account" className="btn-header">
+                    <Link to="/account" className="btn btn-header">
                         Mi Cuenta
                     </Link>
-                    <Link to="/reportes" className="btn-header" >
+                    <Link to="/reportes" className="btn btn-header" >
                         Reportes
                     </Link>
                     <Link to=""  className="btn-header" id="logout">

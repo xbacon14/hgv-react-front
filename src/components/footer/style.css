@@ -1,7 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;1,700&display=swap');
 .footer {
-    background-color: #1b5e20;
+    background-color: #187000;
+    box-shadow: 2px 2px 10px grey;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    border: none;
+    border-radius: 5px;
+}
+
+#espacio {
+    height: 11vh;
 }
 
 .letras {

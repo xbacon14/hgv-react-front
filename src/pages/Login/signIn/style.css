@@ -3,7 +3,7 @@
 html,
 body {
     /* background: #64ffda!important */
-    background: #b9f6ca!important
+    background: #b9f6ca!
 }
 
 .login {
@@ -22,19 +22,27 @@ body {
     min-width: 320px;
     max-width: 500px;
     height: 40vh;
+    box-shadow: 2px 2px 10px grey;
+}
+
+.content {
+    text-align: center;
 }
 
 #logoblanco {
     width: 10em;
     margin-top: 5vh;
+    border: none;
 }
 
 #ingresar {
     background-color: #187000 !important;
     margin-top: 10px;
+    padding: 10px;
     color: white;
     font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100px;
+    cursor: pointer;
 }
 
 #ingresar:hover {
@@ -57,10 +65,9 @@ form label {
 
 #email {
     font-size: 2em;
-    position: static;
     font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #placeholder {
-    padding: 5px 5px;
+    padding: 10px!important;
 }

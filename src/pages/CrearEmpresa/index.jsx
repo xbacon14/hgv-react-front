@@ -3,17 +3,17 @@ import imagen from '../../assets/empresas/image.svg';
 import './style.css';
 
 export default function CrearEmpresa() {
-    const [thumbnail, setThumbnail] = useState('');
-    const [ruc, setRuc] = useState('');
-    const [razonSocial, setRazonSocial] = useState('');
-    const [rubro, setRubro] = useState('');
-    const [direccion, setDireccion] = useState('');
-    const [telefono, setTelefono] = useState('');
-    const [ciudad, setCiudad] = useState('');
+    // const [thumbnail, setThumbnail] = useState('');
+    // const [ruc, setRuc] = useState('');
+    // const [razonSocial, setRazonSocial] = useState('');
+    // const [rubro, setRubro] = useState('');
+    // const [direccion, setDireccion] = useState('');
+    // const [telefono, setTelefono] = useState('');
+    // const [ciudad, setCiudad] = useState('');
 
-    const preview = useMemo(() => {
-        return thumbnail ? URL.createObjectURL(thumbnail) : null;
-    }, [thumbnail])
+    // const preview = useMemo(() => {
+    //     return thumbnail ? URL.createObjectURL(thumbnail) : null;
+    // }, [thumbnail])
 
     const [values, setValues] = useState();
 
@@ -48,11 +48,11 @@ export default function CrearEmpresa() {
         <div className="row rows">
             <div className="container-new col-6">
                 <form onSubmit={handleSubmit} >
-                    <label id="thumbnail" style={{ backgroundImage: `url(${preview})` }}>
+                    {/* <label id="thumbnail" style={{ backgroundImage: `url(${preview})` }}>
                         <input type="file" onChange={event => setThumbnail(event.target.files[0])} />
                         <img src={imagen} alt="Seleccionar Imagen" />
 
-                    </label>
+                    </label> */}
                     <label htmlFor="ruc" >RUC *</label>
                     <input id="ruc"
                         placeholder="Ingrese su ruc"

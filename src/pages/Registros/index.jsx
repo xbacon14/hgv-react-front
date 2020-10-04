@@ -7,30 +7,30 @@ import '../CrearEmpresa/style.css';
 
 export default function Registro() {
 
-    // const addOrEditLink = async (linkObject) => {
-    //     await db.collection('registros').doc().set(linkObject);
-    //     console.log('Registro guardado :)');
-    // }
-
-    const getRegistros = async () => {
-        const querySnapShot = await db.collection('registros').get();
-        var nombre = querySnapShot.nombre;
-        var horaEntrada = querySnapShot.horaEntrada;
-        querySnapShot.forEach(doc => {
-            // console.log(doc.data())
-            console.log(doc.data());
-        })
+    const addOrEditLink = async (linkObject) => {
+        // await db.collection('registros').doc().set(linkObject);
+        console.log('Registro guardado :)');
     }
 
-    useEffect(() => {
-        getRegistros();
-    })
+    // const getRegistros = async () => {
+    //     const querySnapShot = await db.collection('registros').get();
+    //     var nombre = querySnapShot.nombre;
+    //     var horaEntrada = querySnapShot.horaEntrada;
+    //     querySnapShot.forEach(doc => {
+    //         // console.log(doc.data())
+    //         console.log(doc.data());
+    //     })
+    // }
+
+    // useEffect(() => {
+    //     getRegistros();
+    // })
 
     return (
 
         <div className="row"
             id="row" >
-            <RegistroForm />
+            <RegistroForm addOrEditLink={addOrEditLink} />
 
 
             <div className="col-4 " >
@@ -43,12 +43,6 @@ export default function Registro() {
                     <div className="card-body" >
                         <h5 className="card-title" > Italo Golin </h5>
                         <p className="card-text" > 15: 03: 06 - 24 / 10 / 2020 </p> </div> </div>
-                <div className="card" >
-                    <div className="card-body" >
-                        <h5 className="card-title" > Italo Golin </h5>
-                        <p className="card-text" > 15: 03: 06 - 24 / 10 / 2020 </p>
-                    </div>
-                </div>
                 <div className="card" >
                     <div className="card-body" >
                         <h5 className="card-title" > Italo Golin </h5>

@@ -6,12 +6,13 @@ export default function AccountForm(props) {
     // const [rubro, setRubro] = useState('');
     // const [direccion, setDireccion] = useState('');
     // const [telef, setTelef] = useState('');
-    // const [ciudad, setCiudad] = useState('');
+    const [ciudad, setCiudad] = useState('');
 
     const handleInput = e => {
         const { name, value } = e.target;
         setValues({ ...values, [name]: value })
     }
+
 
     const [values, setValues] = useState();
 
@@ -27,7 +28,7 @@ export default function AccountForm(props) {
 
     return (
 
-        <div className="container-new col-7">
+        <div className="container-new col-6">
             <form onSubmit={handleSubmit} >
 
                 <label htmlFor="ruc" >RUC *</label>
@@ -63,7 +64,7 @@ export default function AccountForm(props) {
 
                 <button type="submit" className="btn">Guardar</button>
             </form>
-    </div>)
+        </div>)
 
 
 }
