@@ -9,6 +9,13 @@
     box-sizing: border-box;
 }
 
+html {
+    --text-xs: 14px;
+    --text-base: 24px;
+    --text-xl: 36;
+    --text-4xl: 60px;
+}
+
 html,
 body {
     background: white;
@@ -33,7 +40,7 @@ form {
     /* margin-right: 50px; */
 }
 
-.btn {
+.btn-header {
     font-size: 1.2rem;
     font-family: 'Alata', sans-serif;
     color: #262626;
@@ -68,9 +75,10 @@ h5 p {
 
 #logout {
     margin-left: 36px;
-    padding: 10px;
     width: 150px;
     color: #fff;
+    border: none;
+    border-radius: 5px;
     background-color: #E21111;
     height: 50px;
 }
@@ -99,17 +107,3 @@ h5 p {
     /* box-shadow: 2px 2px 10px grey; */
     z-index: 50;
 }
-
-
-/* @media only screen and (max-width: 500) {
-    .btn {
-        
-    }
-} */
-
-
-/* @media only screen and (max-width: 1366) {
-    .btn {}
-}
-
-@media only screen and (max-width: 1920) {} */

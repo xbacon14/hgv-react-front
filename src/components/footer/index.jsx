@@ -3,7 +3,7 @@ import './style.css'
 
 export default function Footer() {
     return (
-        <div className="footer flex-fill d-flex justify-content-center" >
+        <div className="footer" >
             <div className="letras">
 
                 <p > Derechos Reservados Italo Golin </p>

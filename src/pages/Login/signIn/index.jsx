@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
-// import './style.css';
 
 // import api from '../../services/api';
 import logo from '../../../assets/login/logo-login@2x.png';
 import personas from '../../../assets/login/personas.png'
 import './style.css';
+
+// import styled from 'styled-components';
+
+// const Content = styled.div`
+//     background-image: url(${personas});
+//     width: 1366px;
+// `;
 
 
 export default function Login() {
@@ -31,18 +37,15 @@ export default function Login() {
 
 
     return (
-        <>
-            <div className="background">
-                <img src={personas} alt="background" />
-            </div>
+        <div className="login">
+            <img src={logo}
+                alt="HGV Blanco"
+                id="logoblanco" />
+            <div className="container-login col-4" >
 
-            <div className="container-login col-5" >
-                <img src={logo}
-                    alt="HGV Blanco"
-                    id="logoblanco" />
-                <div className="content col-8 ">
+                <div className="content">
                     <p id="textitalo">
-                        Un <strong> &nbsp; textitalo &nbsp; </strong> para convencerte que ingreses tu <strong > &nbsp; correo &nbsp; </strong>
+                        Ingresá tu <strong> correo </strong>, no esperes más para <strong > informatizarte.  </strong>
                     </p>
                     <form>
                         <label id="email" htmlFor="email" > E - MAIL * </label>
@@ -54,19 +57,14 @@ export default function Login() {
                         // value={email}
                         // onChange={event => setEmail(event.target.value)}
                         />
-                        <button className="btn"
+                        <button className="btn align-self-end" id="ingresar"
                         // onClick={goLogin} 
                         >
                             INGRESAR </button>
                     </form >
                 </div>
             </div>
-            {/* <div className="mt-8 signIn" >
-                <div class="g-signin2" data-onsuccess="onSignIn" >
-                </div>
-            </div> */}
-
-        </>
+        </div>
 
     )
 }

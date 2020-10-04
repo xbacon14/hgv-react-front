@@ -4,7 +4,6 @@ import logo from './assets/navbar/logo-verde.png';
 
 import SignIn from './pages/Login/signIn/index';
 import Inicio from './pages/Inicio/index';
-// import Footer from './components/footer/index';
 import Registro from './pages/Registros/index';
 import Account from './pages/Account/index';
 import SeleccionarEmpresa from './pages/SeleccionarEmpresa';
@@ -20,19 +19,19 @@ export default function Routes() {
             <div className="container">
                 <div className="navbar" id="nav-bar">
                     <img src={logo} alt="Logo verde" id="logoverde" />
-                    <Link to="/" className="btn" >
+                    <Link to="/" className="btn-header" >
                         Inicio
                     </Link>
-                    <Link to="/registro" className="btn" >
+                    <Link to="/registro" className="btn-header" >
                         Registro de Clientes
                     </Link>
-                    <Link to="/account" className="btn">
+                    <Link to="/account" className="btn-header">
                         Mi Cuenta
                     </Link>
-                    <Link to="/reportes" className="btn" >
+                    <Link to="/reportes" className="btn-header" >
                         Reportes
                     </Link>
-                    <Link to=""  className="btn" id="logout">
+                    <Link to=""  className="btn-header" id="logout">
                         LOGOUT
                     </Link>
                 </div>
@@ -58,7 +57,6 @@ export default function Routes() {
 
 
                 </Switch>
-                {/* <Footer /> */}
             </div>
         </Router>
     );

@@ -1,12 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-body {
-    background: #000 url('../../assets/login/personas@2x.png');
-    background-size: cover;
-    -webkit-font-smoothing: antialiased !important;
-}
-
 body input button {
     font-family: 'Russo One', cursive, Helvetica, sans-serif;
 }
@@ -62,4 +56,4 @@ body input button {
 
 #logoblanco {
     width: 20%;
-}
+} */

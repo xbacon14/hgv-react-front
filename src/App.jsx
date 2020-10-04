@@ -1,5 +1,5 @@
 import React from 'react';
-import Routes from './routes';
+import Routes from './routes.jsx';
 import Footer from './components/footer';
 import SignIn from './pages/Login/signIn';
 import './App.css';
@@ -7,6 +7,7 @@ import './App.css';
 
 
 function App() {
+    // const user =  'a';
     const user = null;
 
     return (
@@ -15,7 +16,7 @@ function App() {
             :
             <div className="container" >
 
-                <div className="content">
+                <div className="content">   
                     <Routes />
                     <Footer />
                 </div>
