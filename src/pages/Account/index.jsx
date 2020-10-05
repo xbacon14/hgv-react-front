@@ -2,30 +2,32 @@ import React, { useState, useEffect } from 'react';
 
 import AccountForm from './components/accountForm';
 import './style.css';
-import { db } from '../../services/firebase';
+// import { db } from '../../services/firebase';
 
 
 export default function Empresa() {
 
-    const addOrEditLink = async (linkObject) => {
-        await db.collection('account').doc().set(linkObject);
-        console.log('Cuenta guardada :)');
-    }
+    // const addOrEditLink = async (linkObject) => {
+    //     await db.collection('account').doc().set(linkObject);
+    //     console.log('Cuenta guardada :)');
+    // }
 
-    const getAccounts = async () => {
-        const querySnapShot = await db.collection('account').get();
-        querySnapShot.forEach(doc => {
-            console.log(doc.data())
-        })
-    }
+    // const getAccounts = async () => {
+    //     const querySnapShot = await db.collection('account').get();
+    //     querySnapShot.forEach(doc => {
+    //         console.log(doc.data())
+    //     })
+    // }
 
-    useEffect(() => {
-        getAccounts();
-    })
+    // useEffect(() => {
+    //     getAccounts();
+    // })
 
     return (
         <div className="row" id="row">
-            <AccountForm addOrEditLink={addOrEditLink} />
+            <AccountForm
+            //  addOrEditLink={addOrEditLink}
+              />
             <div className="col-4 ">
                 <div className="card">
                     <div className="card-body">

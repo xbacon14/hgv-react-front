@@ -18,7 +18,7 @@ body button {
 }
 
 .cuadrados {
-    margin-top: 20vh!important;
+    /* margin-top: 20vh!important; */
     display: flex;
     flex-direction: row;
     justify-content: center;

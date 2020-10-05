@@ -47,6 +47,7 @@ body {
 
 #ingresar:hover {
     background-color: #008CBA !important;
+    color: white;
 }
 
 form label {

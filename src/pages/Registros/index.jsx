@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import RegistroForm from './components/registroForm.jsx';
-import { db } from "../../services/firebase";
+// import { db } from "../../services/firebase";
 
 
 import '../CrearEmpresa/style.css';
