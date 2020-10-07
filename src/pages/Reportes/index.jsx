@@ -3,50 +3,44 @@ import './style.css';
 import { db } from '../../services/firebase';
 import { Component } from 'react';
 
-
 export default class Reportes extends Component {
 
     state = {
-        data: []
+        data: [],
     }
 
     async componentDidMount() {
-        // this.loadregistroGetDocs();
+        this.loadRegistroGetDocs();
+
+    }
+
+    async loadRegistroGetDocs() {
+
+        var lista = new Array();
+
+        var cont = 1;
         const registrosRef = await db.collection('registros').get().then(
             (snapshot) => {
                 snapshot.docs.forEach(doc => {
-                    console.log(doc.data());
-                    this.setState = doc.data();
+                    // console.log(doc);
+                    var datos = doc.data();
+                    // var datos = doc;
+                    lista.push({ ...datos, cont });
+                    cont++;
                 });
+
+                this.setState({ data: lista })
+                console.log(this.state.data);
+
                 // const registros = snapshot.docs;
                 // console.log(registros);
             }
         );
+
     }
 
-    // async loadregistroGetDocs() {
-    //     this.registrosRef(
-    //         (snapshot) => {
-    //             //  snapshot.docs.forEach(doc => doc.data());
-    //             snapshot.docs.forEach(doc => {
-    //                 console.log(doc.data())
-    //                 this.data = doc.data();
-    //             })
-    //         }
-    //     );
-    //     console.log(registrosRef);
-
-    //     (function (doc) {
-    //         if (doc.exists) {
-    //             console.log("Document data: ", doc.data());
-    //         } else {
-    //             console.log("undefinido!");
-    //         }
-    //     });
-
-    // }
-
     render() {
+
         return (
             <>
 
@@ -65,16 +59,20 @@ export default class Reportes extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {/* {this.state.map((doc) => {
-                                <tr>
-                                    <td>{doc.id}</td>
-                                    <td>{doc.nombre}</td>
-                                    <td>{doc.ci}</td>
-                                    <td>{doc.direccion}</td>
-                                    <td>{doc.ciudad}</td>
-                                </tr>
-                            })
-                            } */}
+                            {
+                                this.state.data.map((data) => {
+                                    return (
+                                        <tr key={data.cont}>
+                                            <td >{data.cont}</td>
+                                            <td>{data.nombre}</td>
+                                            <td>{data.ci}</td>
+                                            <td>{data.telefono}</td>
+                                            <td>{data.direccion}</td>
+                                            <td>{data.ciudad}</td>
+                                        </tr>
+                                    )
+                                })
+                            }
                         </tbody>
                     </table>
                 </div>

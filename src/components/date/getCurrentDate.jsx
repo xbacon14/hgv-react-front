@@ -9,5 +9,8 @@ export default function GetCurrentDate(separator = '/') {
     let minutes = newDate.getMinutes();
     let seconds = newDate.getSeconds();
 
-    return `${year}${separator}${month < 10 ? `0${month}` : `${month}`}${separator}${date} - ${hour}:${minutes}:${seconds}`
+    // return `${year}${separator}${month < 10 ? `0${month}` : `${month}`}${separator}${date} `
+    return `${date} / ${month < 10 ? `0${month}` : `${month}`} / ${year}  -  ${hour} : ${minutes} : ${seconds}   `
 }
+
+// - ${hour}:${minutes}:${seconds}

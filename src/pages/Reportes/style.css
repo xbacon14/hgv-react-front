@@ -8,11 +8,9 @@
     padding: 30px;
 }
 
-.container-tabla{
-    min-width: 770px;
+.container-tabla {
+    min-width: 690px;
 }
-
-
 
 .row {
     margin-top: 50px;
