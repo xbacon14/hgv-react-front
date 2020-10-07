@@ -8,6 +8,12 @@
     padding: 30px;
 }
 
+.container-tabla{
+    min-width: 770px;
+}
+
+
+
 .row {
     margin-top: 50px;
 }
@@ -30,6 +36,7 @@ a {
 
 #tableSearch {
     margin: 5px 10px 10px 10px;
+    min-width: 260px;
 }
 
 .controlador-pagina {

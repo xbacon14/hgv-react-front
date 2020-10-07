@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import RegistroForm from './components/registroForm.jsx';
 // import { db } from "../../services/firebase";
 

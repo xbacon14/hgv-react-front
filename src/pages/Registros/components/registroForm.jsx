@@ -1,8 +1,7 @@
-import React, { useState, useEffect, Component } from 'react';
-import GetCurrentDate from '../../../components/date/getCurrentDate';
+import React, { useState } from 'react';
+// import GetCurrentDate from '../../../components/date/getCurrentDate';
 // import api from '../../../services/api';
 // import ciudades from '../../../services/ciudades'
-import AutoComplete from './autocomplete.jsx';
 
 import "../../CrearEmpresa/style.css";
 
@@ -16,8 +15,6 @@ export default function RegistroForm() {
         setValues({ ...values, [name]: value })
     }
 
-    function loadRegistros() {
-    }
 
 
     // handleSubmit(e) {

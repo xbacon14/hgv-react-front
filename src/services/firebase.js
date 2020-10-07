@@ -16,6 +16,7 @@ var firebaseConfig = {
 };
 const fb = firebase.initializeApp(firebaseConfig);
 export const db = fb.firestore();
+// db.settings({timestampsInSnapshots: true});
 
 // Initialize Firebase
 // const provider = firebase.auth.GoogleAuthProvider();

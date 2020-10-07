@@ -6,7 +6,7 @@ export default function AccountForm(props) {
     // const [rubro, setRubro] = useState('');
     // const [direccion, setDireccion] = useState('');
     // const [telef, setTelef] = useState('');
-    const [ciudad, setCiudad] = useState('');
+    // const [ciudad, setCiudad] = useState('');
 
     const handleInput = e => {
         const { name, value } = e.target;

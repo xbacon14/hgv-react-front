@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from 'react';
-import imagen from '../../assets/empresas/image.svg';
+import React, { useState } from 'react';
+// import imagen from '../../assets/empresas/image.svg';
 import './style.css';
 
 export default function CrearEmpresa() {

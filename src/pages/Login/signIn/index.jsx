@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // import api from '../../services/api';
 import logo from '../../../assets/login/logo-login@2x.png';
@@ -7,8 +7,8 @@ import './style.css';
 
 export default function Login() {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('');
     // const [error, setError] = useState(null);
     // const signInWithEmailAndPasswordHandler =
     //     (event, email, password) => {
