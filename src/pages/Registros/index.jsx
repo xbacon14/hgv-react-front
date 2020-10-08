@@ -21,24 +21,24 @@ export default class Registro extends Component {
     }
 
     async loadRegistroGetDocs() {
-        var lista = new Array();
+        var lista = [];
+        var count = 1;
 
-        // function dateToTime(secs) {
-        //     var t = new Date(Date.UTC(1, 0, 1970));
-        //     t.setUTCSeconds(secs);
-        //     return t;
-        // }
-        const registrosRef = await db.collection('registros').get().then(
+         await db.collection('registros').get().then(
             (snapshot) => {
                 snapshot.docs.forEach(
                     doc => {
                         var datos = doc.data();
-                        // var fecha = dateToTime(doc.data.timestamp);
-                        lista.push({ ...datos });
+                        var fecha = datos.timestamp.toDate();
+                        var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(fecha);
+                        lista.push({ ...datos, count, fechitalo });
+                        count++;
+
                     }
                 );
                 this.setState({ data: lista })
                 console.log(this.state.data);
+                console.log(count);
 
 
             }
@@ -66,16 +66,18 @@ export default class Registro extends Component {
                 id="row" >
                 <RegistroForm addOrEditLink={this.addOrEditLink} />
 
-                <div className="col-4">
+                <div className="col-5">
 
                     {
                         this.state.data.map((data) => {
                             return (
-                                <div className="card" >
+                                <div key={data.count} className="card" >
                                     <div className="card-body" >
-                                        <h5 className="card-title" > {data.nombre} </h5> <p className="card-text" > 
-                                        {/* {data.timestamp.toString()} */}
-                                         </p>
+                                        <span className="card-title" > {data.nombre} </span>
+                                        <p className="card-text" >
+                                            {/* {data.fecha.toString()} */}
+                                            {data.fechitalo} Hs.
+                                        </p>
                                     </div>
                                 </div>
                             )

@@ -12,9 +12,9 @@ export default function RegistroForm() {
     function handleInput(e) {
         const { name, value } = e.target;
         console.log(name, value);
+        
         setValues({ ...values, [name]: value })
     }
-
 
 
     // handleSubmit(e) {

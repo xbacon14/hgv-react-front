@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function GetCurrentDate(separator = '/') {
     let newDate = new Date();

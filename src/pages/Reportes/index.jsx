@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.css';
 import { db } from '../../services/firebase';
 import { Component } from 'react';
@@ -16,10 +16,10 @@ export default class Reportes extends Component {
 
     async loadRegistroGetDocs() {
 
-        var lista = new Array();
+        var lista = [];
 
         var cont = 1;
-        const registrosRef = await db.collection('registros').get().then(
+        await db.collection('registros').get().then(
             (snapshot) => {
                 snapshot.docs.forEach(doc => {
                     // console.log(doc);
