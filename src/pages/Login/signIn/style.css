@@ -3,7 +3,7 @@
 html,
 body {
     /* background: #64ffda!important */
-    background: #b9f6ca!
+    background: #F5F5F5!important;
 }
 
 .login {
@@ -18,7 +18,7 @@ body {
     margin-top: 5vh;
     padding: 30px 30px;
     /* background: #01A100; */
-    background: white;
+    background: #239334;
     min-width: 320px;
     max-width: 500px;
     height: 40vh;
@@ -46,7 +46,8 @@ body {
 }
 
 #ingresar:hover {
-    background-color: #008CBA !important;
+    /* background-color: #008CBA !important; */
+    background-color: #14333D !important;
     color: white;
 }
 
@@ -58,14 +59,16 @@ form label {
 }
 
 #textitalo {
-    color: #262626;
+    color: white;
+    text-align: center !important;
     font-size: 1.4em;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Raleway', sans-serif;
     text-align: start;
 }
 
 #email {
     font-size: 2em;
+    color: white;
     font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

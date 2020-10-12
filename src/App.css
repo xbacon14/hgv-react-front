@@ -96,6 +96,7 @@ h5 p {
     /* top: 0; */
     /* padding-left: 70px; */
     /* padding-right: 5%; */
+    min-width: 320px!important;
     background: white;
     min-width: 690px;
     /* border: none; */

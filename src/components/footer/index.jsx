@@ -15,9 +15,6 @@ export default class Footer extends Component {
         // )
     }
 
-    componentWillUnmount() {
-
-    }
 
     getHora() {
         var ahora = this.state.fecha;

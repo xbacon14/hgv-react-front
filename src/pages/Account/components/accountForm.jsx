@@ -1,35 +1,43 @@
 import React, { useState } from 'react';
 
-export default function AccountForm(props) {
-    // const [ruc, setRuc] = useState('');
-    // const [razonSocial, setRazonSocial] = useState('');
-    // const [rubro, setRubro] = useState('');
-    // const [direccion, setDireccion] = useState('');
-    // const [telef, setTelef] = useState('');
-    // const [ciudad, setCiudad] = useState('');
+const AccountForm = (props) => {
 
-    const handleInput = e => {
+
+    var idUsuario = 42;
+
+    const initialStateValues = {
+        ruc: '',
+        razonSocial: '',
+        rubro: '',
+        direccion: '',
+        telefono: '',
+        ciudad: '',
+        idUsuario: idUsuario,
+    }
+
+    const [values, setValues] = useState(initialStateValues);
+
+
+    const handleInput = (e) => {
         const { name, value } = e.target;
         setValues({ ...values, [name]: value })
+
+        // valores.push({ ...values, [name]: value })
     }
 
 
-    const [values, setValues] = useState();
-
-    function handleSubmit(e) {
-
-
-        console.log(values);
+    const handleSubmit = (e) => {
+        var enviado = true;
         e.preventDefault();
         props.addOrEditLink(values);
-
-        //const response = await applicationCache.post('/empresas', data);
+        console.log(e);
     }
+
 
     return (
 
         <div className="container-new col-6">
-            <form onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit} id="formulario">
 
                 <label htmlFor="ruc" >RUC *</label>
                 <input id="ruc"
@@ -68,3 +76,27 @@ export default function AccountForm(props) {
 
 
 }
+
+export default AccountForm;
+
+// export default class RegistroForm extends Component {
+
+//     state = {
+//         values: []
+//     }
+
+//     handleInput(e) {
+//         var valores = [];
+//         const { name, value } = e.target;
+//         console.log(name, value);
+
+//     valores.push({ ...values, [name]: value })
+//     }
+
+//     handleSubmit(e) {
+//         var now = Date.now();
+//         values.push({ timestamp: now });
+//         console.log(this.state.values);
+//         e.preventDefault();
+//         this.props.addOrEditLink(values);
+//     }

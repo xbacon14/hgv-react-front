@@ -16,6 +16,7 @@ var firebaseConfig = {
 };
 const fb = firebase.initializeApp(firebaseConfig);
 export const db = fb.firestore();
+export const timestamp = firebase.firestore.FieldValue.serverTimestamp();
 // db.settings({timestampsInSnapshots: true});
 
 // Initialize Firebase
