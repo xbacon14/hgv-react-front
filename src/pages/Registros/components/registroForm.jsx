@@ -6,8 +6,9 @@ import React, { Component, useState } from 'react';
 
 import "../../CrearEmpresa/style.css";
 
-const RegistroForm = () => {
+const RegistroForm = (props) => {
     var idUsuario = 42;
+    var enviado = false;
 
     const initialStateValues = {
         ci: '',
@@ -19,21 +20,20 @@ const RegistroForm = () => {
         idUsuario: idUsuario,
     }
 
-    const handleInput = (e) => {
-        var valores = [];
-        const { name, value } = e.target;
-        console.log(name, value);
+    const [values, setValues] = useState();
 
-        this.state.values.push({ ...valores, [name]: value })
+    const handleInput = (e) => {
+        const { name, value } = e.target;
+        setValues({ ...values, [name]: value })
     }
 
 
+
     const handleSubmit = (e) => {
-        var now = Date.now();
-        this.state.values.push({ timestamp: now });
-        console.log(this.state.values);
+        enviado = true;
         e.preventDefault();
-        this.props.addOrEditLink();
+        props.addOrEditLink(values);
+        console.log(e);
     }
 
     return (

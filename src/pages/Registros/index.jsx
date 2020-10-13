@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RegistroForm from './components/registroForm.jsx';
-import { db } from "../../services/firebase";
+import { db, timestamp } from "../../services/firebase";
 
 
 import '../CrearEmpresa/style.css';
@@ -10,29 +10,25 @@ const Registro = () => {
     const [data, setData] = useState([]);
 
     const addOrEditLink = async (linkObject) => {
-        // await db.collection('registros').doc().set(linkObject);
+        await db.collection('registros').doc().set({ linkObject, createdAt: timestamp });
         console.log('Registro guardado :)');
+        loadRegistroGetDocs();
     }
-
-    // const getRegistros = async () => {
-    //     const querySnapshot = await db.collection('registros').get();
-    //     querySnapshot.forEach(doc => {
-    //         console.log(doc.data())
-    //     })
-    // }
 
     const loadRegistroGetDocs = async () => {
         var lista = [];
         var count = 1;
 
-        await db.collection('registros').get().then(
+        await db.collection('registros').limit(4).get().then(
             (snapshot) => {
                 snapshot.docs.forEach(
                     doc => {
                         var datos = doc.data();
-                        var fecha = datos.timestamp.toDate();
+                        var objeto = datos.linkObject;
+                        var fecha = datos.createdAt.toDate();
                         var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(fecha);
-                        lista.push({ ...datos, count, fechitalo });
+                        lista.push({ ...objeto, count, fechitalo });
+                        // console.log(lista);
                         count++;
 
                     }

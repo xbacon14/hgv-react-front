@@ -30,7 +30,12 @@ const AccountForm = (props) => {
         var enviado = true;
         e.preventDefault();
         props.addOrEditLink(values);
-        console.log(e);
+        document.getElementById("ruc").value = ""
+        document.getElementById("razonSocial").value = ""
+        document.getElementById("rubro").value = ""
+        document.getElementById("direccion").value = ""
+        document.getElementById("telefono").value = ""
+        document.getElementById("ciudad").value = ""
     }
 
 
@@ -42,11 +47,13 @@ const AccountForm = (props) => {
                 <label htmlFor="ruc" >RUC *</label>
                 <input id="ruc"
                     name="ruc"
+                    defaultValue=""
                     onChange={handleInput}
                     placeholder="Ingrese su ruc" maxLength="10" onChange={handleInput} />
                 <label htmlFor="razonSocial">RAZÓN SOCIAL *</label>
                 <input id="razonSocial"
                     name="razonSocial"
+                    defaultValue=""
                     onChange={handleInput}
                     placeholder="Ingrese el nombre de su empresa" />
                 <label htmlFor="rubro">RUBRO *</label>
