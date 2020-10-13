@@ -19,7 +19,7 @@ const Registro = () => {
         var lista = [];
         var count = 1;
 
-        await db.collection('registros').limit(4).get().then(
+        await db.collection('registros').orderBy("createdAt", "desc").limit(4).get().then(
             (snapshot) => {
                 snapshot.docs.forEach(
                     doc => {

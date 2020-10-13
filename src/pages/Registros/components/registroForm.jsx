@@ -1,4 +1,5 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
+import '../../../components/formatadores/ci';
 // import moment from 'moment';
 // import GetCurrentDate from '../../../components/date/getCurrentDate';
 // import api from '../../../services/api';
@@ -23,16 +24,29 @@ const RegistroForm = (props) => {
     const [values, setValues] = useState();
 
     const handleInput = (e) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target
+
+        if (name === "ci") {
+            console.log(value)
+        }
+
+
         setValues({ ...values, [name]: value })
+
     }
 
+    const validarCampos = () => {
+        values.forEach(element => {
+            console.log(element)
 
+        });
+    }
 
     const handleSubmit = (e) => {
         enviado = true;
+        validarCampos();
         e.preventDefault();
-        props.addOrEditLink(values);
+        // props.addOrEditLink(values);
         console.log(e);
     }
 
@@ -44,36 +58,36 @@ const RegistroForm = (props) => {
 
                 <label htmlFor="ci" >CI *</label>
                 <input id="ci"
-                    name="ci"
                     required
+                    name="ci"
                     // autoComplete="off"
                     onChange={handleInput}
                     placeholder="Ingrese su ci" />
                 <label htmlFor="nombre">NOMBRE Y APELLIDO *</label>
                 <input id="nombre"
                     onChange={handleInput}
-                    name="nombre"
                     required
+                    name="nombre"
                     // autoComplete="off"
                     placeholder="Nombre y Apellido" />
                 <label htmlFor="direccion">DIRECCIÓN DE RESIDENCIA *</label>
                 <input id="direccion"
-                    name="direccion"
                     required
+                    name="direccion"
                     // autoComplete="off"
                     onChange={handleInput}
                     placeholder="Especifique la dirección" />
                 <label htmlFor="telefono">TELÉFONO *</label>
                 <input id="telefono"
-                    name="telefono"
                     required
+                    name="telefono"
                     // autoComplete="off"
                     onChange={handleInput}
                     placeholder="Ingrese su número de teléfono" />
                 <label htmlFor="ciudad">CIUDAD *</label>
                 <input id="ciudad"
-                    name="ciudad"
                     required
+                    name="ciudad"
                     // autoComplete="off"
                     // onChange={event => this.setCiudades(event.target.value)}
                     onChange={handleInput}

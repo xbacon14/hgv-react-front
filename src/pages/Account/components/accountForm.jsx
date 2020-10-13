@@ -70,7 +70,7 @@ const AccountForm = (props) => {
                 <input id="telefono"
                     name="telefono"
                     onChange={handleInput}
-                    placeholder="Ingrese su apellido" />
+                    placeholder="Especifique su direccion de residencia" />
                 <label htmlFor="ciudad">CIUDAD *</label>
                 <input id="ciudad"
                     name="ciudad"
