@@ -4,6 +4,7 @@ import { db, timestamp } from "../../services/firebase";
 
 
 import '../CrearEmpresa/style.css';
+import { Link } from '@material-ui/core';
 
 const Registro = () => {
 
@@ -34,12 +35,12 @@ const Registro = () => {
                     }
                 );
                 setData(lista)
-                console.log(lista);
-                console.log(count);
+                // console.log(lista);
+                // console.log(count);
 
 
             }
-        )
+        ).catch(err => <Link to="/error404" />)
     }
 
     useEffect(() => {
