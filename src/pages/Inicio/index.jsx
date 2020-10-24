@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { db } from '../../services/firebase';
-import { Alert } from 'react-bootstrap';
-
+import Alert from 'react-bootstrap/Alert';
 import './style.css'
+import '../../components/alerts/alertCiNotFound.jsx';
 
 const Home = () => {
 
-    const [timeOut, setTimeout] = useState(0)
+    // const [timeOut, setTimeout] = useState(0)
 
     const [data, setData] = useState([]);
     const [cic, setCi] = useState();
+    const [show, setShow] = useState(true);
+
 
     const loadRegistros = async () => {
         var lista = [];
@@ -18,7 +20,7 @@ const Home = () => {
 
         await db.collection('registros').orderBy("createdAt", "desc").limit(4).get().then(
             (snapshot) => {
-                console.log(snapshot)
+                // console.log(snapshot)
                 snapshot.docs.forEach(
                     doc => {
                         var datos = doc.data();
@@ -45,14 +47,37 @@ const Home = () => {
         if (ci.length > 5 & ci.length < 8) {
             await db.collection('personas').where("ci", "==", ci).get().then(
                 (querySnapshot) => {
-                    querySnapshot.forEach((doc) => {
-                        console.log(doc.id, "=>", doc.data())
-                    })
+                    if (querySnapshot.empty) {
+                        AlertCiNotFound()
+                    } else {
+                        querySnapshot.forEach((doc) => {
+                            console.log(doc.id, "=>", doc.data())
+                        })
+                    }
                 }
 
             )
         } else {
             return (<Alert> El campo CI deve tener al menos 6 carácteres</Alert>)
+        }
+    }
+
+    const AlertCiNotFound = () => {
+
+
+        if (show) {
+            console.log("Esta intentando alertar")
+            return (<>
+                <Alert variant="danger" show={show} onClose={() => setShow(false)} dismissible>
+                    <Alert.Heading>
+                        C.I. no encontrada
+                    </Alert.Heading>
+                </Alert>
+            </>
+            )
+        } else {
+            return <button onclick={() => setShow(true)}>Show Alert modafoca</button>;
+
         }
     }
 
@@ -68,8 +93,8 @@ const Home = () => {
     }, [])
 
     return (
-        <>
-            <div className="container-inicio col-6">
+        <div >
+            <div className="registro-container col-6">
                 <label htmlFor="ci" >CONSULTE POR CI *</label>
                 <div className="row d-flex " id="row-home">
                     <input id="ci-home"
@@ -116,7 +141,7 @@ que todos estemos prevenidos.</p>
                     <button className="btn btn-large" id="empecemos">EMPEZAR</button>
                 </div>
             </div> */}
-        </>
+        </div >
     )
 }
 

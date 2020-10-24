@@ -110,6 +110,7 @@ span {
     background: #003600;
     color: white;
     box-shadow: 2px 2px 10px black;
+    border-radius: 50% !important;
 }
 
 .card-title {
