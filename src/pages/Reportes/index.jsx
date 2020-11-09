@@ -21,13 +21,22 @@ export default class Reportes extends Component {
         var cont = 1;
         await db.collection('registros').get().then(
             (snapshot) => {
-                snapshot.docs.forEach(doc => {
-                    // console.log(doc);
-                    var datos = doc.data();
-                    // var datos = doc;
-                    lista.push({ ...datos, cont });
-                    cont++;
-                });
+                if (snapshot.empty) {
+                    return console.log("La consulta no retorno registros")
+                } else {
+                    snapshot.docs.forEach(doc => {
+                        // console.log(doc.data());
+                        var datos = doc.data();
+                        var objeto = datos.linkObject;
+                        var fecha = datos.createdAt.toDate();
+                        var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(fecha);
+
+
+                        // var datos = doc;
+                        lista.push({ ...objeto, cont, fechitalo });
+                        cont++;
+                    });
+                }
 
                 this.setState({ data: lista })
                 console.log(this.state.data);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import { db } from '../../services/firebase';
+import { db, timestamp } from '../../services/firebase';
 import { Alert } from 'react-bootstrap';
 
 import './style.css'
@@ -11,6 +11,7 @@ const Home = () => {
 
     const [data, setData] = useState([]);
     const [cic, setCi] = useState();
+    const [persona, setPersona] = useState([]);
 
     const loadRegistros = async () => {
         var lista = [];
@@ -18,7 +19,7 @@ const Home = () => {
 
         await db.collection('registros').orderBy("createdAt", "desc").limit(4).get().then(
             (snapshot) => {
-                console.log(snapshot)
+                // console.log(snapshot)
                 snapshot.docs.forEach(
                     doc => {
                         var datos = doc.data();
@@ -40,19 +41,55 @@ const Home = () => {
         ).catch(err => <Link to="/error404" />)
     }
 
+    const agregarRegistro = async (linkObject) => {
+
+        await db.collection('account/').doc().set({ linkObject, createdAt: timestamp }).then(
+            console.log("Registro guardado"))
+    }
+
     const consultarCi = async () => {
         var ci = cic;
+        const personasRef = await db.collection('personas');
         if (ci.length > 5 & ci.length < 8) {
-            await db.collection('personas').where("ci", "==", ci).get().then(
-                (querySnapshot) => {
-                    querySnapshot.forEach((doc) => {
-                        console.log(doc.id, "=>", doc.data())
-                    })
-                }
+            console.log("entro para validar el ci " + ci);
+            personasRef
+                // .where("ci", "==", ci)
+                .get()
+                .then(
+                    (snapshot) => {
+                        if (snapshot.empty) {
+                            return console.log("La consulta no retorno registros")
+                        } else {
+                            snapshot.docs.forEach(doc => {
+                                var datos = doc.data();
+                                console.log(snapshot.docs[0].id)
+                                // var id = datos;
+                                var linkObject = datos.linkObject;
+                                var ci = linkObject.ci;
+                                agregarRegistro(linkObject);
+                            })
+                        }
+                    }
+                    // (querySnapshot) => {
+                    //     console.log(querySnapshot.docs)
+                    //     var datos = querySnapshot;
+                    //     var objeto = datos.linkObject;
+                    //     console.log(objeto)
+                    //     if (querySnapshot.empty) {
+                    //         console.log("el registro no se encontró")
+                    //     } else {
+                    //         // agregarRegistro()
+                    //         querySnapshot.forEach((doc) => {
+                    //             console.log(doc.id, "=>", doc.data())
+                    //             agregarRegistro()
+                    //             return console.log("operacion concluida con exito")
+                    //         })
+                    //     }
+                    // }
 
-            )
+                ).catch(err => console.log(err))
         } else {
-            return (<Alert> El campo CI deve tener al menos 6 carácteres</Alert>)
+            return console.log("No funciono kk")
         }
     }
 

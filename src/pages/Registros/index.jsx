@@ -11,7 +11,7 @@ const Registro = () => {
     const [data, setData] = useState([]);
 
     const addOrEditLink = async (linkObject) => {
-        await db.collection('registros').doc().set({ linkObject, createdAt: timestamp });
+        await db.collection('personas').doc().set({ linkObject, createdAt: timestamp });
         console.log('Registro guardado :)');
         loadRegistroGetDocs();
     }
@@ -20,7 +20,7 @@ const Registro = () => {
         var lista = [];
         var count = 1;
 
-        await db.collection('registros').orderBy("createdAt", "desc").limit(4).get().then(
+        await db.collection('personas').orderBy("createdAt", "desc").limit(4).get().then(
             (snapshot) => {
                 snapshot.docs.forEach(
                     doc => {

@@ -18,30 +18,32 @@ export default function Routes() {
     return (
         <Router>
             <div className="container">
-                <nav className="navbar nav-bar navbar-expand-lg navbar-light bg-light col-12 " id="nav-bar">
-                    <img src={logo} alt="Logo verde" id="logoverde" />
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <div className="navegator">
+                    <nav className="navbar nav-bar navbar-expand-lg navbar-light bg-light col-12 " id="nav-bar">
+                        <img src={logo} alt="Logo verde" id="logoverde" />
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
-                        <Link to="/" className="btn btn-header" >
-                            Inicio
+                            <Link to="/" className="btn btn-header" >
+                                Inicio
                     </Link>
-                        <Link to="/registro" className="btn btn-header" >
-                            Registro de Clientes
+                            <Link to="/registro" className="btn btn-header" >
+                                Registro de Personas
                     </Link>
-                        <Link to="/account" className="btn btn-header">
-                            Mi Cuenta
+                            <Link to="/account" className="btn btn-header">
+                                Mi Cuenta
                     </Link>
-                        <Link to="/reportes" className="btn btn-header" >
-                            Reportes
+                            <Link to="/reportes" className="btn btn-header" >
+                                Reportes
                     </Link>
-                        <Link to="" className="btn-header" id="logout">
-                            LOGOUT
+                            <Link to="" className="btn-header" id="logout">
+                                LOGOUT
                     </Link>
-                    </div>
-                </nav>
+                        </div>
+                    </nav>
+                </div>
                 <Switch>
                     <Route path="/" exact>
                         <Inicio />

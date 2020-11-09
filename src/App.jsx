@@ -7,17 +7,17 @@ import './App.css';
 
 
 function App() {
-    const user =  'a';
+    const user = 'a';
     // const user = null;
 
     return (
         !user ?
             <SignIn />
             :
-            <div className="container" >
+            <div className="main-container" >
 
-                <div className="content">   
-                    <Routes />
+                <div className="content">
+                    <Routes className="body" />
                     <Footer />
                 </div>
 

@@ -4,22 +4,6 @@ import Clock from './clock'
 // import GetCurrentDate from '../date/getCurrentDate';
 
 export default class Footer extends Component {
-
-    // getHora() {
-    //     var ahora = this.state.fecha;
-    //     console.log(ahora);
-    //     // var ahoritalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(ahora);
-    //     var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(ahora);
-    //     var hora = new Intl.DateTimeFormat('es-PY', { hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(ahora);
-    //     this.timerID = setInterval(
-    //         () => hora, 1000
-    //     )
-    //     // console.log(ahoritalo);
-    //     var fecha = fechitalo + " - " + hora;
-    //     return fecha;
-    //     // this.setState({ fecha: fecha })
-    // }
-
     render() {
         return (
             <>

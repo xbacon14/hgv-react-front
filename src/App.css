@@ -1,5 +1,5 @@
 * {
-    margin: 0px auto;
+    margin: 0;
     top: 0;
     padding: 0;
     outline: 0;
@@ -18,11 +18,56 @@ body {
     background: white;
 }
 
+body {
+    height: 10vmax;
+}
+
 
 /* 
 html body #root {
     min-height: 100%;
 } */
+
+
+/* .main-container { */
+
+#root {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 'header' 'body' 'footer';
+}
+
+#root>.navegator {
+    grid-area: header;
+}
+
+#root>.body {
+    grid-area: body;
+    overflow: auto;
+    padding: 15px 5px 10px 5px;
+}
+
+#root>.footer {
+    grid-area: footer;
+}
+
+.header {
+    grid-column: span 12;
+}
+
+.container-new {
+    grid-column: span 5;
+}
+
+.content {
+    grid-column: span 7;
+}
+
+.footer {
+    grid-column: span 8;
+}
 
 form {
     display: flex;
