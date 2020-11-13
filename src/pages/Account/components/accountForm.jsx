@@ -19,37 +19,10 @@ const AccountForm = (props) => {
 
 
     const handleInput = (e) => {
-        // const { name, value } = e.target;
-        // setValues({ ...values, [name]: value })
+        const { name, value } = e.target;
+        setValues({ ...values, [name]: value })
+
         // valores.push({ ...values, [name]: value })
-        const { name, value } = e.target
-
-        if (name === "razonSocial") {
-            var razonSocial = value.toUpperCase();
-            console.log(razonSocial)
-            setValues({ ...values, [name]: razonSocial })
-        }
-        if (name === "direccion") {
-            var direccion = value.toUpperCase();
-            console.log(direccion)
-            setValues({ ...values, [name]: direccion })
-        }
-        if (name === "rubro") {
-            var rubro = value.toUpperCase();
-            console.log(rubro)
-            setValues({ ...values, [name]: rubro })
-        }
-        if (name === "ciudad") {
-            var ciudad = value.toUpperCase();
-            console.log(ciudad)
-            setValues({ ...values, [name]: ciudad })
-        } else {
-            if (name !== "razonSocial" & name !== "direccion" & name !== "ciudad") {
-                // console.log("rafa gay")
-                setValues({ ...values, [name]: value })
-            }
-        }
-
     }
 
 
@@ -88,7 +61,7 @@ const AccountForm = (props) => {
                     name="rubro"
                     onChange={handleInput}
                     placeholder="Especifique su rubro" />
-                <label htmlFor="direccion">DIRECCIÓN COMERCIAL *</label>
+                <label htmlFor="direccion">DIRECCIÓN DE RESIDENCIA *</label>
                 <input id="direccion"
                     name="direccion"
                     onChange={handleInput}
@@ -97,7 +70,7 @@ const AccountForm = (props) => {
                 <input id="telefono"
                     name="telefono"
                     onChange={handleInput}
-                    placeholder="Especifique su número de teléfono" />
+                    placeholder="Especifique su direccion de residencia" />
                 <label htmlFor="ciudad">CIUDAD *</label>
                 <input id="ciudad"
                     name="ciudad"

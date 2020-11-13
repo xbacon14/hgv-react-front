@@ -9,7 +9,6 @@ import Account from './pages/Account/index';
 // import SeleccionarEmpresa from './pages/SeleccionarEmpresa';
 import CrearEmpresa from './pages/CrearEmpresa';
 import Reportes from './pages/Reportes';
-import Error404 from './components/error/404'
 // import { auth } from './services/firebase';
 // import { UserContext } from "./providers/UserProvider";
 
@@ -62,9 +61,6 @@ export default function Routes() {
                     </Route>
                     <Route path="/signIn">
                         <SignIn />
-                    </Route>
-                    <Route path="/error404">
-                        <Error404 />
                     </Route>
 
 

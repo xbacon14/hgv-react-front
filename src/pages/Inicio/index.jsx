@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 <<<<<<< HEAD
@@ -8,9 +9,15 @@ import { Alert } from 'react-bootstrap';
 import { db } from '../../services/firebase';
 import Alert from 'react-bootstrap/Alert';
 >>>>>>> c6fa67f2df6f334de6c4b775d9ec8b6302071c19
+=======
+import React from 'react';
+
+import ok from '../../assets/home/ok.png';
+>>>>>>> parent of cc7e9d3... v1.0
 import './style.css'
 import '../../components/alerts/alertCiNotFound.jsx';
 
+<<<<<<< HEAD
 const Home = () => {
 
 <<<<<<< HEAD
@@ -223,6 +230,19 @@ const Home = () => {
         }
       </div>
       {/* <div className="row cuadrados">
+=======
+export default function Home() {
+    // function validarLogin(){
+    //     const id = localStorage.getItem('user', _id);
+    //     if(!id){
+    //         history.push('/login')
+    //     }
+    // }
+
+    return (
+        <>
+            <div className="row cuadrados">
+>>>>>>> parent of cc7e9d3... v1.0
                 <div className="cards col-6" id="textos-home">
                     <div className="card-title" id="title-home">AYUDEMOS A FRENAR EL CORONGA.</div>
                     <p id="text-home">Registrando tu entrada en algún establecimiento aherido
@@ -235,9 +255,16 @@ que todos estemos prevenidos.</p>
                     <span id="text-status">ESTAS APTO PARA REGISTRAR!</span>
                     <button className="btn btn-large" id="empecemos">EMPEZAR</button>
                 </div>
+<<<<<<< HEAD
             </div> */}
     </div >
   )
 }
 
 export default Home;
+=======
+            </div>
+        </>
+    )
+}
+>>>>>>> parent of cc7e9d3... v1.0

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../../components/formatadores/ci';
 // import moment from 'moment';
 // import GetCurrentDate from '../../../components/date/getCurrentDate';
 // import api from '../../../services/api';
@@ -25,36 +26,28 @@ const RegistroForm = (props) => {
     const handleInput = (e) => {
         const { name, value } = e.target
 
-        if (name === "nombre") {
-            var nombre = value.toUpperCase();
-            console.log(nombre)
-            setValues({ ...values, [name]: nombre })
-        }
-        if (name === "direccion") {
-            var direccion = value.toUpperCase();
-            console.log(direccion)
-            setValues({ ...values, [name]: direccion })
-        }
-        if (name === "ciudad") {
-            var ciudad = value.toUpperCase();
-            console.log(ciudad)
-            setValues({ ...values, [name]: ciudad })
-        } else {
-            if (name !== "nombre" & name !== "direccion" & name !== "ciudad") {
-                // console.log("rafa gay")
-                setValues({ ...values, [name]: value })
-            }
+        if (name === "ci") {
+            console.log(value)
         }
 
+
+        setValues({ ...values, [name]: value })
 
     }
 
+    const validarCampos = () => {
+        values.forEach(element => {
+            console.log(element)
+
+        });
+    }
 
     const handleSubmit = (e) => {
         enviado = true;
+        validarCampos();
         e.preventDefault();
-        props.addOrEditLink(values);
-        console.log(values);
+        // props.addOrEditLink(values);
+        console.log(e);
     }
 
     return (
@@ -66,8 +59,6 @@ const RegistroForm = (props) => {
                 <label htmlFor="ci" >CI *</label>
                 <input id="ci"
                     required
-                    type="number"
-                    maxLength='7'
                     name="ci"
                     // autoComplete="off"
                     onChange={handleInput}
