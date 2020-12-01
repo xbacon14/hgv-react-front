@@ -11,10 +11,6 @@
         "axios": "^0.20.0",
         "firebase": "^7.21.0",
         "react": "^16.13.1",
-<<<<<<< HEAD
-        "react-bootstrap": "^1.4.0",
-=======
->>>>>>> parent of cc7e9d3... v1.0
         "react-dom": "^16.13.1",
         "react-router-dom": "^5.2.0",
         "react-scripts": "^3.4.3",
