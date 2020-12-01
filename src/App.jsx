@@ -7,21 +7,21 @@ import './App.css';
 
 
 function App() {
-    const user = 'a';
+    // const user = 'a';
     // const user = null;
 
     return (
-        !user ?
-            <SignIn />
-            :
-            <div className="main-container" >
+        // !user ?
+        // <SignIn />
+        // :
+        <div className="main-container" >
 
-                <div className="content">
-                    <Routes className="body" />
-                    <Footer />
-                </div>
+            <div className="content">
+                <Routes className="body" />
+                <Footer />
+            </div>
 
-            </div>)
+        </div>)
 }
 
 export default App;

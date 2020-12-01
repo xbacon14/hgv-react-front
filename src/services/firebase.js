@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
-// import "firebase/auth";
+import "firebase/auth";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -15,6 +15,7 @@ var firebaseConfig = {
     measurementId: "G-5Q68PGB60R"
 };
 const fb = firebase.initializeApp(firebaseConfig);
+export const auth = fb.auth();
 export const db = fb.firestore();
 export const timestamp = firebase.firestore.FieldValue.serverTimestamp();
 // db.settings({timestampsInSnapshots: true});
