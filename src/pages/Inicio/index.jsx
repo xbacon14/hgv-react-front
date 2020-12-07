@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { db } from '../../services/firebase';
 
 import ok from '../../assets/home/ok.png';
-import './style.css'
+// import './style.css'
 
 const Home = () => {
 

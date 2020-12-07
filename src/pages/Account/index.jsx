@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import AccountForm from './components/accountForm';
-import '../CrearEmpresa/style.css';
+// import '../CrearEmpresa/style.css';
 import { db, timestamp } from '../../services/firebase';
 
 

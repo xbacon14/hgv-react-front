@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css'
+// import './style.css'
 import Clock from './clock'
 // import GetCurrentDate from '../date/getCurrentDate';
 

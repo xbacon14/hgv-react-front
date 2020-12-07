@@ -3,7 +3,7 @@ import RegistroForm from './components/registroForm.jsx';
 import { db, timestamp } from "../../services/firebase";
 
 
-import '../CrearEmpresa/style.css';
+// import '../CrearEmpresa/style.css';
 import { Link } from '@material-ui/core';
 
 const Registro = () => {

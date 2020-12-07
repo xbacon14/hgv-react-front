@@ -1,0 +1,14 @@
+html{
+  --text-2xs: 10px;
+  --text-xs: 12px;
+  --text-s: 14px;
+  --text-base: 16;
+  --text-m: var(--text-base);
+  --text-l: 18;
+  --text-xl: 20;
+  --text-2xl: 24;
+  --text-3xl: 30;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
+  --text-6xl: 64px;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import imagen from '../../assets/empresas/image.svg';
-import './style.css';
+// import './style.css';
 
 export default function CrearEmpresa() {
     // const [thumbnail, setThumbnail] = useState('');

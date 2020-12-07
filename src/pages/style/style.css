@@ -1,0 +1,26 @@
+/* Base */
+
+@import url("base/reset.css");
+@import url("base/typography.css");
+@import url("base/grid.css");
+@import url("base/grid-cols.css");
+
+/* Variables */
+
+@import url("variables/v-grid.css");
+@import url("variables/v-spacer.css");
+@import url("variables/v-typography.css");
+@import url("variables/v-zindex.css");
+
+/* Layout */
+
+@import url("layout/content.css");
+@import url("layout/formularios.css");
+@import url("layout/login.css");
+@import url("layout/logout.css");
+@import url("layout/reporte.css");
+@import url("layout/inicio.css");
+
+/* Variables */
+
+/* @import url("color/color.css"); */

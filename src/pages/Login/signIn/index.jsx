@@ -1,26 +1,36 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 import { useAuth } from '../../../context/AuthContext';
 
 // import api from '../../services/api';
 import logo from '../../../assets/login/logo-login@2x.png';
-import './style.css';
+// import './style.css';
 
 
-export default function Login() {
+const Login = () => {
 
-    const { login } = useAuth();
+    // const { login } = useAuth();
 
-    const { error, setError } = useState('');
-    const { email, setEmail } = useState('');
-    const { password, setPassword } = useState('');
+    const [error, setError] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const history = useHistory();
 
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
+    }
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(email+password)
         try {
-            await login(email, password);
+            // await login(email, password);
             history.push('/');
         } catch (error) {
             setError('Error en la comprobación de credenciales');
@@ -28,8 +38,7 @@ export default function Login() {
         }
     }
 
-    const handleEmail = (e) => setEmail(e.target.value);
-    const handlePassword = (e) => setPassword(e.target.value);
+
 
 
     // const [email, setEmail] = useState('');
@@ -66,30 +75,32 @@ export default function Login() {
                     </p>
                     <div className="email col-12">
                         <form>
-                            <label id="email" htmlFor="email" > E - MAIL * </label>
+                            <label id="labels" htmlFor="email" > E - MAIL * </label>
                             <input
                                 type="email"
-                                id="placeholder"
-                                className="my-1 p-1 w-full"
+                                // id="placeholder"
+                                onChange={handleEmail}
+                                className="my-1 p-1 w-full placeholder"
                                 placeholder="Ingrese su correo"
                             // value={email}
                             // onChange={event => setEmail(event.target.value)}
                             />
-                            <button className="btn align-self-end" id="ingresar"
+                            {/* <button className="btn align-self-end" id="ingresar"
                             // onClick={goLogin} 
                             >
-                                INGRESAR </button>
-                            <label id="password" htmlFor="password" > E - MAIL * </label>
+                                INGRESAR </button> */}
+                            <label id="labels" htmlFor="password" > PASSWORD * </label>
                             <input
                                 type="password"
-                                id="placeholder"
-                                className="my-1 p-1 w-full"
+                                // id="placeholder"
+                                onChange={handlePassword}
+                                className="my-1 p-1 w-full placeholder"
                                 placeholder="Ingrese su password"
                             // value={email}
                             // onChange={event => setEmail(event.target.value)}
                             />
                             <button className="btn align-self-end" id="ingresar"
-                            // onClick={goLogin} 
+                                onClick={handleSubmit}
                             >
                                 INGRESAR </button>
                         </form >
@@ -100,3 +111,5 @@ export default function Login() {
 
     )
 }
+
+export default Login;
