@@ -14,16 +14,15 @@ import { auth } from './services/firebase';
 // import Error404 from './components/error/404'
 
 
-import { PrivateRoute } from './services/PrivateRoute';
 
-import { AuthProvider, useAuth } from './context/AuthContext';
+import AuthProvider from './context/AuthContext';
 
 
 const Routes = () => {
 
     // const { logout } = useAuth();
 
-    const currentUser = auth.currentUser;
+    // const currentUser = auth.currentUser;
     // const handleLogout = async () => {
     //     try { await logout(); } catch (error) {
 
@@ -31,7 +30,7 @@ const Routes = () => {
     //     }
     // }
 
-    if (currentUser) {
+    // if (currentUser) {
         return (
             <AuthProvider>
                 <Router>
@@ -65,11 +64,11 @@ const Routes = () => {
                             </nav>
                         </div>
                         <Switch>
-                            <PrivateRoute path="/" exact component={Inicio} />
-                            <PrivateRoute path="/account" component={Account} />
-                            <PrivateRoute path="/crear" component={CrearEmpresa} />
-                            <PrivateRoute path="/registro" component={Registro} />
-                            <PrivateRoute path="/reportes" component={Reportes} />
+                            <Route path="/" exact component={Inicio} />
+                            <Route path="/account" component={Account} />
+                            <Route path="/crear" component={CrearEmpresa} />
+                            <Route path="/registro" component={Registro} />
+                            <Route path="/reportes" component={Reportes} />
                             <Route path="/signIn" component={SignIn} />
                             {/* <Route path="/error404" component={Error404} /> */}
 
@@ -81,7 +80,7 @@ const Routes = () => {
 
             </AuthProvider>
         );
-    } else { return (<SignIn />) }
+    // } else { return (<SignIn />) }
 }
 
 export default Routes;

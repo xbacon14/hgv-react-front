@@ -1,18 +1,56 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Redirect } from "react-router-dom";
+import { auth } from '../../../services/firebase';
+// import { useAuth } from '../../../context/AuthContext';
 
-import { useAuth } from '../../../context/AuthContext';
-
-// import api from '../../services/api';
 import logo from '../../../assets/login/logo-login@2x.png';
-// import './style.css';
+import AuthContext from '../../../context/AuthContext';
+
 
 
 const Login = () => {
 
-    // const { login } = useAuth();
+    const { user } = useContext(AuthContext);
+
+    const uiConfig = {
+        signInFlow: "popup",
+        signInOptions: [
+            auth.GoogleAuthProvider.PROVIDER_ID,
+            auth.FacebookAuthProvider.PROVIDER_ID,
+            firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        ],
+        callbacks: {
+            signInSuccess: () => false,
+        }
+    }
+
+    return (
+        <>
+            {!!user ? (
+                <Redirect to={{ params: "/" }} />
+            ) : (
+                    <div>
+                        <p>Por favor, Inicie Sesión</p>
+                        <FirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
+                    </div>
+                )}
+        </>
+    );
+
+    export default Login;
+
+    // useEffect(() => {
+    //     auth.onAuthStateChanged((user) => {
+    //         setCurrentUser(user);
+    //         console.log(user);
+    //     })
+    // }, [])
+
+
+    // const {login} = useAuth();
 
     const [error, setError] = useState('');
+    const [currentUser, setCurrentUser] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -28,7 +66,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(email+password)
+        console.log(email + password)
         try {
             // await login(email, password);
             history.push('/');
@@ -50,7 +88,7 @@ const Login = () => {
     //     };
 
     // const onChangeHandler = (event) => {
-    //     const { name, value } = event.currentTarget;
+    //     const {name, value} = event.currentTarget;
 
     //     if (name === 'userEmail') {
     //         setEmail(value);
@@ -62,18 +100,18 @@ const Login = () => {
 
 
     return (
-        <div className="login">
+        <div className="login col-6">
             {error && <p className='error'>{error}</p>}
-            <img src={logo}
-                alt="HGV Blanco"
-                id="logoblanco" />
-            <div className="container-login col-4" >
 
-                <div className="content">
+            <div className="container-login col-10" >
+                <img src={logo}
+                    alt="HGV Blanco"
+                    id="logoblanco" />
+                <div className="loginContent ">
                     <p id="textitalo">
                         Ingresá tu <strong> correo </strong>, no esperes más para <strong > informatizarte.  </strong>
                     </p>
-                    <div className="email col-12">
+                    <div className="email ">
                         <form>
                             <label id="labels" htmlFor="email" > E - MAIL * </label>
                             <input

@@ -1,10 +1,9 @@
 import firebase from "firebase/app";
-import "firebase/firestore";
 import "firebase/auth";
+import "firebase/firestore";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var firebaseConfig = {
+
+const app = firebase.initializeApp({
     apiKey: "AIzaSyAS_cpWxwqCtufsKnmZRcsBeDqmXZWAPJY",
     authDomain: "hgv-react.firebaseapp.com",
     databaseURL: "https://hgv-react.firebaseio.com",
@@ -13,10 +12,9 @@ var firebaseConfig = {
     messagingSenderId: "629666576110",
     appId: "1:629666576110:web:056fa38d809e1ce82c25ff",
     measurementId: "G-5Q68PGB60R"
-};
-const fb = firebase.initializeApp(firebaseConfig);
-export const auth = fb.auth();
-export const db = fb.firestore();
+});
+export const auth = app.auth();
+export const db = app.firestore();
 export const timestamp = firebase.firestore.FieldValue.serverTimestamp();
 // db.settings({timestampsInSnapshots: true});
 

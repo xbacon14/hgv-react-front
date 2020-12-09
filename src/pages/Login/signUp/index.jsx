@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "@reach/router";
+
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+      console.log(user);
+    })
+  }, [])
+
   const createUserWithEmailAndPasswordHandler = (event, email, password) => {
     event.preventDefault();
     setEmail("");
