@@ -43,9 +43,33 @@ export const AuthContext = React.createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  const provider = app.auth.FacebookAuthProvider();
+
+
   useEffect(() => {
     auth.onAuthStateChanged(setUser);
   }, []);
+
+  const signInWithPopup = () => auth.signInWithPopup(provider).then((result) => {
+    var token = result.credential.accessToken;
+    var user = result.user;
+  }).catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.errorMessage;
+    var email = error.email;
+    var credential = error.credential;
+    console.log(errorCode + errorMessage + email + credential);
+
+  });
+
+  const signOutFacebook = () => auth.signOut().then(() => {
+    console.log("Se cerró la sesión correctamente");
+  }).catch((error) => {
+    console.log("Ha ocurrido un error");
+  });
+
+
+
 
   return (
     <AuthContext.Provider value={{ user }}>
