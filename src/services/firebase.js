@@ -13,16 +13,37 @@ const app = firebase.initializeApp({
     appId: "1:629666576110:web:056fa38d809e1ce82c25ff",
     measurementId: "G-5Q68PGB60R"
 });
+
+export const login = async (email, password) => {
+    const user = await firebase.auth().signInWithEmailAndPassword(email, password).catch(err => {
+        console.log(err);
+        return err;
+    });
+    return user;
+}
+
+export const signup = async (email, password) => {
+    const user = await firebase.auth().createUserWithEmailAndPassword(email, password).catch(err => {
+        console.log(err);
+        return err;
+    });
+    return user;
+}
+
+export const logout = async () => {
+    return await firebase.auth().signOut();
+}
+
 export const auth = app.auth();
 export const db = app.firestore();
 export const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-export default app;
-// db.settings({timestampsInSnapshots: true});
+// db.settings({ timestampsInSnapshots: true });
 
-// Initialize Firebase
+// //Initialize Firebase
 // const provider = firebase.auth.GoogleAuthProvider();
 // export const auth = firebase.auth();
 
 // export const signInWithGoogle = () => {
 //     auth.signInWithPopup(provider);
 // }
+

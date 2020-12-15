@@ -9,12 +9,14 @@ export default class Reportes extends Component {
         data: [],
     }
 
+
     async componentDidMount() {
         this.loadRegistroGetDocs();
 
     }
 
     async loadRegistroGetDocs() {
+
 
         var lista = [];
 

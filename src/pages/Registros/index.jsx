@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RegistroForm from './components/registroForm.jsx';
-import { db, timestamp } from "../../services/firebase";
+import { timestamp, db } from "../../services/firebase";
 
 
 // import '../CrearEmpresa/style.css';
@@ -20,7 +20,8 @@ const Registro = () => {
         var lista = [];
         var count = 1;
 
-        await db.collection('personas').orderBy("createdAt", "desc").limit(4).get().then(
+
+        await db.collection('personas').orderBy("createdAt", "desc").get().then(
             (snapshot) => {
                 snapshot.docs.forEach(
                     doc => {
@@ -40,7 +41,7 @@ const Registro = () => {
 
 
             }
-        ).catch(err => <Link to="/error404" />)
+        ).catch(err => console.log(err))
     }
 
     useEffect(() => {

@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom'
 import { db } from '../../services/firebase';
-import { useAuth } from '../../context/AuthContext';
 
 import ok from '../../assets/home/ok.png';
 // import './style.css'
 
 const Home = () => {
 
-  const { logout, currentUser } = useAuth();
   const history = useHistory();
 
   const [data, setData] = useState({});
   const { ci, setCi } = useState('')
-
 
 
 
@@ -23,7 +20,7 @@ const Home = () => {
 
     await db.collection('registros').orderBy("createdAt", "desc").limit(4).get().then(
       (snapshot) => {
-        // console.log(snapshot)
+        console.log(snapshot)
         snapshot.docs.forEach(
           doc => {
             var datos = doc.data();
@@ -42,7 +39,7 @@ const Home = () => {
 
 
       }
-    ).catch(err => <Link to="/error404" />)
+    ).catch((err => console.log(err)))
   }
 
   const consultarCi = async () => {

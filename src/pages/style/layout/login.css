@@ -1,8 +1,0 @@
-.login {
-    display: grid;
-    grid-template-areas: "a a a" "b c c" "b c c";
-    /* Global values */
-    grid-template-areas: inherit;
-    grid-template-areas: initial;
-    grid-template-areas: unset;
-}
