@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { db } from '../../services/firebase';
+import { useAuth } from '../../context/AuthContext';
 
 import ok from '../../assets/home/ok.png';
 // import './style.css'
 
 const Home = () => {
 
-  // const [timeOut, setTimeout] = useState(0)
+  const { logout, currentUser } = useAuth();
+  const history = useHistory();
 
-  const [data, setData] = useState([]);
-  const [cic, setCi] = useState();
-  const [show, setShow] = useState(true);
+  const [data, setData] = useState({});
+  const { ci, setCi } = useState('')
+
+
 
 
   const loadRegistros = async () => {
@@ -28,7 +31,7 @@ const Home = () => {
             var fecha = datos.createdAt.toDate();
             var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(fecha);
             lista.push({ ...objeto, count, fechitalo });
-            // console.log(lista);
+            console.log(lista);
             count++;
 
           }
@@ -43,7 +46,7 @@ const Home = () => {
   }
 
   const consultarCi = async () => {
-    var ci = cic;
+    var ci = ci;
     if (ci.length > 5 & ci.length < 8) {
       await db.collection('personas').where("ci", "==", ci).get().then(
         (querySnapshot) => {
@@ -87,7 +90,7 @@ const Home = () => {
 
 
       <div className="ult-registros col-4">
-        {
+        {/* {
           data.map((data) => {
             return (
               <div key={data.count} className="card" >
@@ -100,7 +103,7 @@ const Home = () => {
               </div>
             )
           })
-        }
+        } */}
       </div>
     </div>)
 }

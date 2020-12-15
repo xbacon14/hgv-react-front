@@ -1,82 +1,38 @@
-// import React, { createContext, useState, useEffect, useContext } from 'react';
-// import { auth } from '../services/firebase';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { auth } from '../services/firebase';
 
-// const AuthContext = createContext({});
+const AuthContext = createContext();
 
-// export const useAuth = () => useContext(AuthContext);
-// export const AuthProvider = (props) => {
+export const useAuth = () => useContext(AuthContext);
 
-//   const [currentUser, setCurrentUser] = useState({});
-
-//   useEffect(() => {
-//     auth.onAuthStateChanged((user) => {
-//       setCurrentUser(user);
-//       console.log(user);
-//     })
-//   }, [])
-
-//   const signup = (email, senha) => {
-//     return auth.createUserWithEmailAndPassword(email, senha);
-//   }
-
-//   const login = (email, senha) => {
-//     return auth.signInWithEmailAndPassword(email, senha);
-//   }
-
-//   const logout = () => {
-//     return auth.signOut();
-//   }
-
-//   // const value = { signup, logout, login, currentUser };
-//   return (
-//     <AuthContext.Provider value={value}>
-//       {props.children}
-//     </AuthContext.Provider>
-//   )
-// }
-
-import React, { useEffect, useState } from 'react';
-import { auth } from "../services/firebase";
-
-export const AuthContext = React.createContext();
-
-const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-
-  const provider = app.auth.FacebookAuthProvider();
-
+export const AuthProvider = (props) => {
+  const [currentUser, setCurrentUser] = useState({});
 
   useEffect(() => {
-    auth.onAuthStateChanged(setUser);
-  }, []);
+    auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+    })
+  }, [])
 
-  const signInWithPopup = () => auth.signInWithPopup(provider).then((result) => {
-    var token = result.credential.accessToken;
-    var user = result.user;
-  }).catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.errorMessage;
-    var email = error.email;
-    var credential = error.credential;
-    console.log(errorCode + errorMessage + email + credential);
+  const signup = (email, password) => {
+    return auth.createUserWithEmailAndPassword(email, password);
+  }
 
-  });
+  const login = (email, password) => {
+    return auth.signInWithEmailAndPassword(email, password);
+  }
 
-  const signOutFacebook = () => auth.signOut().then(() => {
-    console.log("Se cerró la sesión correctamente");
-  }).catch((error) => {
-    console.log("Ha ocurrido un error");
-  });
+  const logout = () => auth.signOut();
 
-
-
-
+  const value = {
+    currentUser,
+    login,
+    logout,
+    signup
+  };
   return (
-    <AuthContext.Provider value={{ user }}>
-      {children}
+    <AuthContext.Provider value={value}>
+      {props.children}
     </AuthContext.Provider>
-  );
+  )
 }
-
-export default AuthProvider;
-

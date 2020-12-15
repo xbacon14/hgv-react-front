@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, useHistory, Route, Link } from 'react-router-dom';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { PrivateRoute } from './services/PrivateRoute';
 
 import logo from './assets/navbar/logo-verde.png';
 
@@ -10,15 +12,12 @@ import Account from './pages/Account/index';
 import CrearEmpresa from './pages/CrearEmpresa';
 import Reportes from './pages/Reportes';
 import Footer from './components/footer';
-import { auth } from './services/firebase';
-// import Error404 from './components/error/404'
 
 
-
-import AuthProvider from './context/AuthContext';
 
 
 const Routes = () => {
+
 
     // const { logout } = useAuth();
 
@@ -31,9 +30,10 @@ const Routes = () => {
     // }
 
     // if (currentUser) {
-        return (
-            <AuthProvider>
-                <Router>
+    return (
+        <>
+            <Router>
+                <AuthProvider>
                     <div className="container">
                         <div className="navegator">
                             <nav className="navbar nav-bar navbar-expand-lg navbar-light bg-light col-12 " id="nav-bar">
@@ -56,7 +56,7 @@ const Routes = () => {
                                      </Link>
                                     <Link to="" className="btn-header"
                                         id="logout"
-                                        // onClick={handleLogout}
+                                    // onClick={handleLogout}
                                     >
                                         LOGOUT
                                      </Link>
@@ -64,22 +64,23 @@ const Routes = () => {
                             </nav>
                         </div>
                         <Switch>
-                            <Route path="/" exact component={Inicio} />
-                            <Route path="/account" component={Account} />
-                            <Route path="/crear" component={CrearEmpresa} />
-                            <Route path="/registro" component={Registro} />
-                            <Route path="/reportes" component={Reportes} />
+                            <PrivateRoute path="/" exact component={Inicio} />
+                            <PrivateRoute path="/account" component={Account} />
+                            <PrivateRoute path="/crear" component={CrearEmpresa} />
+                            <PrivateRoute path="/registro" component={Registro} />
+                            <PrivateRoute path="/reportes" component={Reportes} />
                             <Route path="/signIn" component={SignIn} />
                             {/* <Route path="/error404" component={Error404} /> */}
 
 
                         </Switch>
                     </div>
-                </Router>
-                <Footer />
+                </AuthProvider>
+            </Router>
+            <Footer />
 
-            </AuthProvider>
-        );
+        </>
+    );
     // } else { return (<SignIn />) }
 }
 
