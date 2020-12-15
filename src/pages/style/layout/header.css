@@ -3,3 +3,7 @@
     padding-top: var(--space-m);
     padding-bottom: var(--space-m);
 }
+
+#logoverde{
+    width: 200px;
+}

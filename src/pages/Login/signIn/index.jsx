@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from "react-router-dom";
-// import { useAuth } from '../../../context/AuthContext';
+import { Auth } from '../../../context/AuthContext';
 import { login } from '../../../services/firebase';
 
 // import logo from '../../../assets/login/logo-login@2x.png';
@@ -17,44 +17,51 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleEmail = (e) => setEmail(e.target.value);
-    const handlePass = (e) => setPassword(e.target.value);
+    const { state, dispatch } = React.useContext(Auth);
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true);
-        try {
-            await login(email, password);
-            setLoading(true);
-            history.push('/');
-        } catch (error) {
-            setLoading(false);
-            setError('Credenciales incorrectas');
-            setTimeout(() => setError(''), 5000);
+
+
+        let response = await login(email, password);
+        if (response.hasOwnProperty("message")) {
+            console.log(response);
+        } else {
+            console.log(response)
+            return dispatch({
+                type: "SIGNIN",
+                payload: response
+            })
         }
+        console.log(state.user);
+        history.push('/inicio');
     }
 
+
     return (
-        <div className="card col-6">
+
+        <div className="card col-6 card-login">
             <div >
                 {error && <p className='error'>{error}</p>}
-                <h1 className="title-display ">Inicie Sesión</h1>
+                <h1 className="title-display title-login ">Inicie Sesión</h1>
             </div>
             <div className="card-body">
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="emailLabel">Correo</label>
-                        <input type="email" className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={handleEmail} />
+                        <input type="email" className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="passLabel">Contraseña</label>
-                        <input type="password" className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={handlePass} />
+                        <input type="password" className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <button type="submit" className="btn btn-success">Iniciar Sesión</button>
                     <div className="form-group"></div>
                 </form>
                 {loading && <img src={Spinner} alt="Cargando" />}
-                <p>No posees una cuenta? Contacte con nostros <a href="https://www.facebook.com/italo.golin.5">www.italus.com</a></p>
+                <p>No posees una cuenta? Contacte con nostros <a href="https://wa.me/595981383068"> aquí</a></p>
             </div>
         </div>
     );

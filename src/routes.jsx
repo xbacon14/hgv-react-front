@@ -15,16 +15,19 @@ import Footer from './components/footer';
 
 const Routes = () => {
 
+    const history = useHistory();
+
 
     const handleLogout = async () => {
         try {
-            await logout();
+            console.log("buscando")
+            await logout()
+            
         } catch (error) {
             console.log(error);
         }
     }
 
-    // if (currentUser) {
     return (
         <>
             <Router>
@@ -58,12 +61,12 @@ const Routes = () => {
                         </nav>
                     </div>
                     <Switch>
-                        <Route path="/signIn" exact component={SignIn} />
                         <Route path="/" exact component={Inicio} />
                         <Route path="/account" component={Account} />
                         <Route path="/crear" component={CrearEmpresa} />
                         <Route path="/registro" component={Registro} />
                         <Route path="/reportes" component={Reportes} />
+                        <Route path="/signIn" exact component={SignIn} />
                         {/* <Route path="/error404" component={Error404} /> */}
 
 

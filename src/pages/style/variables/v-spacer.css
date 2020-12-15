@@ -7,3 +7,14 @@ html {
   --spacer-xl: 80px;
   --spacer-2xl: 160px;
 }
+
+.card-login{
+  padding: 30px;
+}
+
+.title-login{
+  padding-left: 20px;
+}
+
+
+
