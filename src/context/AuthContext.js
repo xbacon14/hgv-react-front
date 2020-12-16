@@ -38,20 +38,40 @@
 //   )
 // }
 
-import React, { useState } from 'react';
-import { firebaseAuth } from './AuthReducer';
-//firebase reducer
+// MODELO 2 DEL CONTEXT
+// import React, { useState } from 'react';
+// import { firebaseAuth } from './AuthReducer';
+// //firebase reducer
 
-export const Auth = React.createContext();
+// export const Auth = React.createContext();
 
-export const AuthProvider = (props) => {
-  const [user, setUser] = useState({});
+// export const AuthProvider = (props) => {
+//   const [user, setUser] = useState({});
 
 
-  const [state, dispatch] = React.useReducer(firebaseAuth, user);
-  const value = { state, dispatch };
+//   const [state, dispatch] = React.useReducer(firebaseAuth, user);
+//   const value = { state, dispatch };
 
-  return <Auth.Provider value={value}>
-    {props.children}
-  </Auth.Provider>
+//   return <Auth.Provider value={value}>
+//     {props.children}
+//   </Auth.Provider>
+// }
+
+// MODELO 2 DEL CONTEXT
+import React, { useEffect, useState, createContext } from 'react';
+import { auth } from '../services/firebase';
+export const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged(setCurrentUser)
+  }, [])
+
+  return (
+    <AuthContext.Provider value={{ currentUser }}>
+      {children}
+    </AuthContext.Provider>
+  )
 }

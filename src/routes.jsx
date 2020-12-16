@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, useHistory, Route, Link } from 'react-router-dom';
 import { logout } from "./services/firebase";
-
+import { AuthProvider } from './context/AuthContext';
+import PrivateRoute from './services/PrivateRoute';
 import logo from './assets/login/logo-login.png';
 
 import SignIn from './pages/Login/signIn/index';
@@ -15,21 +16,20 @@ import Footer from './components/footer';
 
 const Routes = () => {
 
-    const history = useHistory();
+    // const history = useHistory();
 
 
-    const handleLogout = async () => {
+    const handleLogout = () => {
         try {
             console.log("buscando")
-            await logout()
-            
+            logout();
         } catch (error) {
             console.log(error);
         }
     }
 
     return (
-        <>
+        <AuthProvider>
             <Router>
                 <div className="container">
                     <div className="navegator">
@@ -51,7 +51,7 @@ const Routes = () => {
                                 <Link to="/reportes" className="btn btn-header" >
                                     Reportes
                                      </Link>
-                                <Link to="" className="btn-header"
+                                <Link to="" className="btn-header btn btn-outline-danger"
                                     id="logout"
                                     onClick={handleLogout}
                                 >
@@ -61,11 +61,11 @@ const Routes = () => {
                         </nav>
                     </div>
                     <Switch>
-                        <Route path="/" exact component={Inicio} />
-                        <Route path="/account" component={Account} />
-                        <Route path="/crear" component={CrearEmpresa} />
-                        <Route path="/registro" component={Registro} />
-                        <Route path="/reportes" component={Reportes} />
+                        <PrivateRoute path="/" exact component={Inicio} />
+                        <PrivateRoute path="/account" component={Account} />
+                        <PrivateRoute path="/crear" component={CrearEmpresa} />
+                        <PrivateRoute path="/registro" component={Registro} />
+                        <PrivateRoute path="/reportes" component={Reportes} />
                         <Route path="/signIn" exact component={SignIn} />
                         {/* <Route path="/error404" component={Error404} /> */}
 
@@ -75,7 +75,7 @@ const Routes = () => {
             </Router>
             <Footer />
 
-        </>
+        </AuthProvider>
     );
     // } else { return (<SignIn />) }
 }

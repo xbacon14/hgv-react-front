@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from "react-router-dom";
+import {  useHistory } from "react-router-dom";
 import { Auth } from '../../../context/AuthContext';
 import { login } from '../../../services/firebase';
 
@@ -17,7 +17,6 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { state, dispatch } = React.useContext(Auth);
 
 
 
@@ -30,13 +29,13 @@ const Login = () => {
             console.log(response);
         } else {
             console.log(response)
-            return dispatch({
-                type: "SIGNIN",
-                payload: response
-            })
+            // return dispatch({
+            //     type: "SIGNIN",
+            //     payload: response
+            // })
         }
-        console.log(state.user);
-        history.push('/inicio');
+        history.push("/")
+        console.log("Redireccionando");
     }
 
 

@@ -13,3 +13,7 @@
 .nav a.active {
     border-bottom: 2px solid;
 }
+
+.navegator{
+    height: 10px;
+}
