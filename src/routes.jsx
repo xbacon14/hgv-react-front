@@ -17,19 +17,11 @@ import Footer from './components/footer';
 const Routes = () => {
 
     // const history = useHistory();
-    const [user, setUser] = useState(null);
+    const [currentUser, setCurrentUser] = useState({});
 
     useEffect(() => {
-        if (!user) {
-            const user = auth.currentUser;
-            setUser(user);
-        }
+        auth.onAuthStateChanged(setCurrentUser);
     }, [])
-
-
-
-
-
 
     const handleLogout = () => {
         try {
@@ -46,7 +38,7 @@ const Routes = () => {
         <AuthProvider>
             <Router>
                 <div className="container">
-                    {user ? <div></div> :
+                    {!currentUser ? <div></div> :
                         <div className="navegator">
                             <nav className="navbar nav-bar navbar-expand-lg navbar-light bg-light col-12 " id="nav-bar">
                                 <img src={logo} alt="Logo verde" id="logoverde" />
@@ -66,7 +58,7 @@ const Routes = () => {
                                     <Link to="/reportes" className="btn btn-header" >
                                         Reportes
                                      </Link>
-                                    <Link to="" className="btn-header btn btn-outline-danger"
+                                    <Link to="" className="btn-header btn btn-danger"
                                         id="logout"
                                         onClick={handleLogout}
                                     >
@@ -89,7 +81,7 @@ const Routes = () => {
                 </div>
             </Router>
 
-            {user ? <div></div> : <Footer />}
+            {!currentUser ? <div></div> : <Footer />}
 
         </AuthProvider>
     );

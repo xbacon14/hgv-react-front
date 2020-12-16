@@ -2,7 +2,7 @@
     color: inherit;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 10px;
+    margin-right: var(--spacer-s);
     display: inline-block;
 }
 
@@ -14,6 +14,22 @@
     border-bottom: 2px solid;
 }
 
-.navegator{
-    height: 10px;
+#logoverde {
+    width: 10%;
+    min-width: 110px;
+}
+
+.nav-bar {
+    background-color: var(--color-header);
+    padding-top: var(--space-m);
+    padding-bottom: var(--space-m);
+    border: none;
+    border-radius: 30px;
+    margin-left: var(--spacer-m);
+    margin-right: var(--spacer-m);
+}
+
+
+.btn-header {
+    margin-right: var(--spacer-l);
 }

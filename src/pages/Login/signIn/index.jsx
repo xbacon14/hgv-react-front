@@ -53,15 +53,15 @@ const Login = (props) => {
                 <center>
                     <div >
                         {error && <p className='error'>{error}</p>}
-                        <h1 className="title-jumbo title-login ">Inicie Sesión</h1>
+                        <h1 className="title-display title-login ">Inicie Sesión</h1>
                     </div>
                 </center>
                 <form onSubmit={handleSubmit}>
                     <center>
                         <div className="form-group">
-                            <label htmlFor="emailLabel" className="text-display">Correo</label>
+                            <label htmlFor="emailLabel" className="text-headline">Correo</label>
                             <input type="email" className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
-                            <label htmlFor="passLabel" className="text-display">Contraseña</label>
+                            <label htmlFor="passLabel" className="text-headline">Contraseña</label>
                             <input type="password" className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
                         </div></center>
                     <center>
@@ -70,7 +70,7 @@ const Login = (props) => {
                     </center>
                 </form>
                 {loading && <img src={Spinner} alt="Cargando" />}
-                <center><p className="align-text-bottom">No posees una cuenta? Contacte con nostros <a href="https://wa.me/595981383068"> aquí</a></p></center>
+                <center><p className="align-text-bottom p-login">No posees una cuenta? Contacte con nostros <a href="https://wa.me/595981383068"> aquí</a></p></center>
             </div>
         </div>
     );

@@ -1,0 +1,11 @@
+html {
+    --color-primary: #239334;
+    --color-secondary: #707070;
+    --color-three: #545654;
+    --color-font: hsl(0, 0%, 15%);
+    --color-button: #017FB4;
+    --color-header: lightgrey;
+}
+
+
+/* .card-login {} */

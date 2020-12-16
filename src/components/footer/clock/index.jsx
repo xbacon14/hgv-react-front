@@ -30,7 +30,7 @@ class Clock extends Component {
 
     render() {
         return (
-            <span>{this.state.time}</span>
+            <span className="title-title">{this.state.time}</span>
         );
     }
 }

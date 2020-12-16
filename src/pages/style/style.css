@@ -11,6 +11,7 @@
 @import url("variables/v-spacer.css");
 @import url("variables/v-typography.css");
 @import url("variables/v-zindex.css");
+@import url("variables/v-color.css");
 
 /* Layout */
 
@@ -20,7 +21,10 @@
 @import url("layout/logout.css");
 @import url("layout/reporte.css");
 @import url("layout/inicio.css");
+@import url("layout/nav.css");
+@import url("layout/footer.css");
 
 /* Variables */
+
 
 /* @import url("color/color.css"); */

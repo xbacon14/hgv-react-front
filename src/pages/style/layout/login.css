@@ -9,11 +9,13 @@
     border-radius: 30px;
     border: none;
     margin: 0 auto;
+    margin-top: var(--spacer-l);
+
 }
 
 .logo {
-    min-width: 200px;
-    width: 60%;
+    min-width: 110px;
+    width: 50%;
 }
 
 .form-group {
@@ -24,7 +26,7 @@
 /* COLOR */
 
 .card-login {
-    background-color: #545654;
+    background-color: var(--color-three);
 }
 
 .title-login {
@@ -35,6 +37,6 @@ form label {
     color: white;
 }
 
-p {
+.p-login {
     color: white
 }

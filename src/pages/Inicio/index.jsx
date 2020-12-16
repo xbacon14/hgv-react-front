@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { db, auth } from '../../services/firebase';
 
 import ok from '../../assets/home/ok.png';
 
 const Home = () => {
 
-  // const history = useHistory();
+  const history = useHistory();
 
-  const [email, setEmail] = useState({});
+  const [error, setError] = useState(null);
   const [data, setData] = useState({});
-  const { setCi } = useState('')
+  const [value, setValue] = useState({});
+  const [user, setUser] = useState(null);
 
 
 
@@ -38,53 +40,70 @@ const Home = () => {
 
 
       }
-    ).catch((err => console.log(err)))
+    ).catch((err => setError(err)))
+  }
+
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+
+    setValue({ name, value });
   }
 
   const consultarCi = async () => {
-    var ci = ci;
-    if (ci.length > 5 & ci.length < 8) {
-      await db.collection('personas').where("ci", "==", ci).get().then(
-        (querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            console.log(doc.id, "=>", doc.data())
-          })
-        }
+    console.log(value);
 
-      )
-    }
+    await db.collection('personas').where("ci", "==", value.value).get().then(
+      (querySnapShot) => {
+        querySnapShot.forEach((doc) => {
+          console.log(doc.id, "=>", doc.data())
+        })
+      }
+    ).catch((err) => setError(err))
+    // if (cedula.length > 5 & cedula.length < 8) {
+    //   await db.collection('personas').where("ci", "==", cedula).get().then(
+    //     (querySnapshot) => {
+    //       querySnapshot.forEach((doc) => {
+    //         console.log(doc.id, "=>", doc.data())
+    //       })
+    //     }
+
+    //   )
+    // }
   }
 
-
-  const handleInput = (e) => {
-    var ci = e.target.value;
-    setCi(ci)
+  const crearPersona = () => {
+    history.push('/registro')
   }
 
   useEffect(() => {
     loadRegistros();
-    const user = auth.currentUser;
-    setEmail(user.email);
-    console.log(user.email);
+    if (!user) {
+      const user = auth.currentUser;
+      setUser(user);
+    }
 
   }, [])
 
   return (
-    <div >
-      <div className="registro-container col-6">
-        <label htmlFor="ci" >CONSULTE POR CI *</label>
-        <div className="row d-flex " id="row-home">
-          <input id="ci-home"
-            required
-            className="col-6"
-            type="number"
-            maxLength='7'
-            name="ci"
-            // autoComplete="off"
-            onChange={handleInput}
-            placeholder="Ingrese su ci" />
-          <button className="btn btn-success" onClick={consultarCi} id="consultar"> Registrar </button>
-        </div>
+    <div className="registro-container" >
+      <div className="registro-form col-6">
+        <form>
+          <label htmlFor="ci" className="label-home title-title">CONSULTE POR CI *</label>
+          <div className="row d-flex row-home ">
+            <input id="ci-home"
+              required
+              className="col-6"
+              type="text"
+              name="ci"
+              // autoComplete="off"
+              onChange={handleInput}
+              // value={(e) => setCi(e.target.value)}
+              placeholder="Ingrese su ci" />
+            <button className="btn btn-success" onClick={consultarCi} id="consultar"> Registrar </button>
+            <button className="btn btn-primary" onClick={crearPersona} id="crear"> Crear </button>
+          </div>
+        </form>
+        {error && <p className="error">{error}</p>}
       </div>
 
 
