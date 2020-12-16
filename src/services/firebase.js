@@ -30,7 +30,7 @@ export const signup = async (email, password) => {
     return user;
 }
 
-export const logout = async () => firebase.auth().signOut() ;
+export const logout = async () => firebase.auth().signOut();
 export const auth = app.auth();
 export const db = app.firestore();
 export const timestamp = firebase.firestore.FieldValue.serverTimestamp();

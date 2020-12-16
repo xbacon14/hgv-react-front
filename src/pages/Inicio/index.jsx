@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom'
-import { db } from '../../services/firebase';
+import { db, auth } from '../../services/firebase';
 
 import ok from '../../assets/home/ok.png';
-// import './style.css'
 
 const Home = () => {
 
-  const history = useHistory();
+  // const history = useHistory();
 
+  const [email, setEmail] = useState({});
   const [data, setData] = useState({});
-  const { ci, setCi } = useState('')
+  const { setCi } = useState('')
 
 
 
@@ -20,7 +19,7 @@ const Home = () => {
 
     await db.collection('registros').orderBy("createdAt", "desc").limit(4).get().then(
       (snapshot) => {
-        console.log(snapshot)
+        // console.log(snapshot)
         snapshot.docs.forEach(
           doc => {
             var datos = doc.data();
@@ -28,7 +27,7 @@ const Home = () => {
             var fecha = datos.createdAt.toDate();
             var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(fecha);
             lista.push({ ...objeto, count, fechitalo });
-            console.log(lista);
+            // console.log(lista);
             count++;
 
           }
@@ -64,6 +63,9 @@ const Home = () => {
 
   useEffect(() => {
     loadRegistros();
+    const user = auth.currentUser;
+    setEmail(user.email);
+    console.log(user.email);
 
   }, [])
 

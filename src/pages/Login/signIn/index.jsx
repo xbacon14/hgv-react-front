@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import {  useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Auth } from '../../../context/AuthContext';
 import { login } from '../../../services/firebase';
 
-// import logo from '../../../assets/login/logo-login@2x.png';
+import logo from '../../../assets/login/logo-login.png';
 
 import Spinner from '../../../assets/cargando/spinner.svg'
 
 
-const Login = () => {
+const Login = (props) => {
+
+    const { classes } = props;
 
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
@@ -26,41 +28,49 @@ const Login = () => {
 
         let response = await login(email, password);
         if (response.hasOwnProperty("message")) {
-            console.log(response);
+            // console.log(response);
         } else {
-            console.log(response)
+            // console.log(response)
             // return dispatch({
             //     type: "SIGNIN",
             //     payload: response
             // })
         }
-        history.push("/")
+        history.push("/");
         console.log("Redireccionando");
     }
 
 
     return (
 
-        <div className="card col-6 card-login">
-            <div >
-                {error && <p className='error'>{error}</p>}
-                <h1 className="title-display title-login ">Inicie Sesión</h1>
-            </div>
-            <div className="card-body">
+        <div className="col-4 card-login">
+            <div className="card-body align-content-center">
+                <center>
+                    <div className="logo">
+                        <img src={logo} alt="HGV" />
+                    </div>
+                </center>
+                <center>
+                    <div >
+                        {error && <p className='error'>{error}</p>}
+                        <h1 className="title-jumbo title-login ">Inicie Sesión</h1>
+                    </div>
+                </center>
                 <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="emailLabel">Correo</label>
-                        <input type="email" className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="passLabel">Contraseña</label>
-                        <input type="password" className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
-                    </div>
-                    <button type="submit" className="btn btn-success">Iniciar Sesión</button>
-                    <div className="form-group"></div>
+                    <center>
+                        <div className="form-group">
+                            <label htmlFor="emailLabel" className="text-display">Correo</label>
+                            <input type="email" className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
+                            <label htmlFor="passLabel" className="text-display">Contraseña</label>
+                            <input type="password" className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
+                        </div></center>
+                    <center>
+                        <button type="submit" className="btn btn-primary btn-lg">Entrar</button>
+
+                    </center>
                 </form>
                 {loading && <img src={Spinner} alt="Cargando" />}
-                <p>No posees una cuenta? Contacte con nostros <a href="https://wa.me/595981383068"> aquí</a></p>
+                <center><p className="align-text-bottom">No posees una cuenta? Contacte con nostros <a href="https://wa.me/595981383068"> aquí</a></p></center>
             </div>
         </div>
     );

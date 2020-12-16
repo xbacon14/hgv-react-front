@@ -1,0 +1,40 @@
+/* LAYOUT */
+
+.card-login {
+    display: flex;
+    flex-direction: column;
+    height: 600 px;
+    min-width: 500px;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    border: none;
+    margin: 0 auto;
+}
+
+.logo {
+    min-width: 200px;
+    width: 60%;
+}
+
+.form-group {
+    width: 70%;
+}
+
+
+/* COLOR */
+
+.card-login {
+    background-color: #545654;
+}
+
+.title-login {
+    color: white;
+}
+
+form label {
+    color: white;
+}
+
+p {
+    color: white
+}
