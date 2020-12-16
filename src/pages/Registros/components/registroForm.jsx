@@ -8,17 +8,17 @@ import React, { useState } from 'react';
 
 const RegistroForm = (props) => {
     var idUsuario = 42;
-    var enviado = false;
+    // var enviado = false;
 
-    const initialStateValues = {
-        ci: '',
-        nombre: '',
-        rubro: '',
-        direccion: '',
-        telefono: '',
-        ciudad: '',
-        idUsuario: idUsuario,
-    }
+    // const initialStateValues = {
+    //     ci: '',
+    //     nombre: '',
+    //     rubro: '',
+    //     direccion: '',
+    //     telefono: '',
+    //     ciudad: '',
+    //     idUsuario: idUsuario,
+    // }
 
     const [values, setValues] = useState();
 
@@ -51,20 +51,20 @@ const RegistroForm = (props) => {
 
 
     const handleSubmit = (e) => {
-        enviado = true;
         e.preventDefault();
         props.addOrEditLink(values);
         console.log(values);
     }
 
     return (
-        <div className="container-new col-6">
-            <form
+        <div className="form-container col-6">
+            <form className="formulario"
                 onSubmit={handleSubmit}
             >
 
-                <label htmlFor="ci" >CI *</label>
+                <label htmlFor="ci" className="labels" >CI *</label>
                 <input id="ci"
+                    className="inputs"
                     required
                     type="number"
                     maxLength='7'
@@ -72,29 +72,33 @@ const RegistroForm = (props) => {
                     // autoComplete="off"
                     onChange={handleInput}
                     placeholder="Ingrese su ci" />
-                <label htmlFor="nombre">NOMBRE Y APELLIDO *</label>
+                <label htmlFor="nombre" className="labels">NOMBRE Y APELLIDO *</label>
                 <input id="nombre"
+                    className="inputs"
                     onChange={handleInput}
                     required
                     name="nombre"
                     // autoComplete="off"
                     placeholder="Nombre y Apellido" />
-                <label htmlFor="direccion">DIRECCIÓN DE RESIDENCIA *</label>
+                <label htmlFor="direccion" className="labels">DIRECCIÓN DE RESIDENCIA *</label>
                 <input id="direccion"
+                    className="inputs"
                     required
                     name="direccion"
                     // autoComplete="off"
                     onChange={handleInput}
                     placeholder="Especifique la dirección" />
-                <label htmlFor="telefono">TELÉFONO *</label>
+                <label htmlFor="telefono" className="labels">TELÉFONO *</label>
                 <input id="telefono"
+                    className="inputs"
                     required
                     name="telefono"
                     // autoComplete="off"
                     onChange={handleInput}
                     placeholder="Ingrese su número de teléfono" />
-                <label htmlFor="ciudad">CIUDAD *</label>
+                <label htmlFor="ciudad" className="labels">CIUDAD *</label>
                 <input id="ciudad"
+                    className="inputs"
                     required
                     name="ciudad"
                     // autoComplete="off"
@@ -102,7 +106,7 @@ const RegistroForm = (props) => {
                     onChange={handleInput}
                     placeholder="Especifique su ciudad de residencia" />
 
-                <button type="submit" className="btn">Crear</button>
+                <button type="submit" className="btn btn-primary btn-lg btn-form">Crear</button>
             </form>
         </div >
     )

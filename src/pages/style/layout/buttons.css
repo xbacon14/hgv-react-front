@@ -1,0 +1,11 @@
+.btn-header {
+    margin-right: var(--spacer-l);
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+.btn-form{
+    min-width: 250px;
+}

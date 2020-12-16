@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita&display=swap');
 
 /* General tipografia */
 
@@ -11,8 +12,14 @@ p {
     margin-bottom: 1em;
 }
 
-h1, input, label, button {
+h1,
+input,
+label {
     font-family: 'Raleway', sans-serif;
+}
+
+button {
+    font-family: 'Sansita', sans-serif;
 }
 
 

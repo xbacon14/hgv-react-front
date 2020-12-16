@@ -40,7 +40,7 @@ const Routes = () => {
                 <div className="container">
                     {!currentUser ? <div></div> :
                         <div className="navegator">
-                            <nav className="navbar nav-bar navbar-expand-lg navbar-light bg-light col-12 " id="nav-bar">
+                            <nav className="navbar nav-bar navbar-expand-lg navbar-light bg-light col-10 " id="nav-bar">
                                 <img src={logo} alt="Logo verde" id="logoverde" />
                                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"></span>

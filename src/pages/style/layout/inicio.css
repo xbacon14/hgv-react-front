@@ -1,33 +1,37 @@
 /* LAYOUT */
 
-.registro-container{
-    height: 480px;
-}
-
-.registro-form{
+.registro-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 200px;
-    min-width: 500px;
-    /* flex-wrap: wrap; */
+    justify-content: start;
+    height: 250px;
+    min-width: 450px;
     border: none;
     border-radius: 30px;
     margin: 0 auto;
+    margin-top: var(--spacer-xl);
 }
 
-.row-home{
-    justify-content: space-evenly ;
+.row-home {
+    justify-content: space-evenly;
 }
+
+.label-home {
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
 
 /* COLORES */
-.registro-form{
+
+.registro-form {
     background-color: var(--color-secondary);
 }
 
-.label-home{
+.label-home {
     color: white;
 }
+
 
 /* .registro-container{
 

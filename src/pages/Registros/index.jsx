@@ -50,19 +50,19 @@ const Registro = () => {
 
     return (
 
-        <div className="row"
-            id="row" >
+        <div className="row col-10">
+
             <RegistroForm addOrEditLink={addOrEditLink} />
 
-            <div className="col-5">
+            <div className="col-5 container-1">
 
                 {
                     data.map((data) => {
                         return (
                             <div key={data.count} className="card" >
                                 <div className="card-body" >
-                                    <span className="card-title" > {data.nombre} </span>
-                                    <p className="card-text" >
+                                    <span className="card-title card-letter title-title" > {data.nombre} </span>
+                                    <p className="card-text card-letter" >
                                         {data.fechitalo} Hs.
                                                 </p>
                                 </div>

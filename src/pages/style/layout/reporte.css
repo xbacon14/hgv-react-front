@@ -1,0 +1,7 @@
+/* LAYOUT */
+
+.container-tabla {
+    margin: 0 auto;
+    margin-top: var(--spacer-xl);
+    min-height: 420px;
+}

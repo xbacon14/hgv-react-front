@@ -68,43 +68,49 @@ const AccountForm = (props) => {
 
     return (
 
-        <div className="container-new col-6">
-            <form onSubmit={handleSubmit} id="formulario">
+        <div className="form-container  col-6">
+            <form onSubmit={handleSubmit} className="formulario">
 
-                <label htmlFor="ruc" >RUC *</label>
+                <label htmlFor="ruc" className="labels" >RUC *</label>
                 <input id="ruc"
                     name="ruc"
+                    className="inputs"
                     defaultValue=""
                     onChange={handleInput}
                     placeholder="Ingrese su ruc" maxLength="10" onChange={handleInput} />
-                <label htmlFor="razonSocial">RAZÓN SOCIAL *</label>
+                <label htmlFor="razonSocial" className="labels">RAZÓN SOCIAL *</label>
                 <input id="razonSocial"
                     name="razonSocial"
+                    className="inputs"
                     defaultValue=""
                     onChange={handleInput}
                     placeholder="Ingrese el nombre de su empresa" />
-                <label htmlFor="rubro">RUBRO *</label>
-                <input id="rubro"
+                <label htmlFor="rubro" className="labels">RUBRO *</label>
+                {/* <input id="rubro"
                     name="rubro"
+                    className="inputs"
                     onChange={handleInput}
                     placeholder="Especifique su rubro" />
-                <label htmlFor="direccion">DIRECCIÓN COMERCIAL *</label>
+                <label htmlFor="direccion" className="labels">DIRECCIÓN COMERCIAL *</label> */}
                 <input id="direccion"
                     name="direccion"
+                    className="inputs"
                     onChange={handleInput}
                     placeholder="Especifique la dirección" />
-                <label htmlFor="telefono">TELÉFONO *</label>
+                <label htmlFor="telefono" className="labels">TELÉFONO *</label>
                 <input id="telefono"
                     name="telefono"
+                    className="inputs"
                     onChange={handleInput}
                     placeholder="Especifique su número de teléfono" />
-                <label htmlFor="ciudad">CIUDAD *</label>
+                <label htmlFor="ciudad" className="labels">CIUDAD *</label>
                 <input id="ciudad"
                     name="ciudad"
+                    className="inputs"
                     onChange={handleInput}
                     placeholder="Defina la ciudad" />
 
-                <button type="submit" className="btn">Guardar</button>
+                <button type="submit" className="btn btn-primary btn-lg btn-form">Guardar</button>
             </form>
         </div>)
 

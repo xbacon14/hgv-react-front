@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { Auth } from '../../../context/AuthContext';
 import { login } from '../../../services/firebase';
 
 import logo from '../../../assets/login/logo-login.png';
@@ -8,11 +7,9 @@ import logo from '../../../assets/login/logo-login.png';
 import Spinner from '../../../assets/cargando/spinner.svg'
 
 
-const Login = (props) => {
+const Login = () => {
 
-    const { classes } = props;
-
-    const [error, setError] = useState('');
+    const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
@@ -20,30 +17,39 @@ const Login = (props) => {
     const [password, setPassword] = useState('');
 
 
-
-
     const handleSubmit = async (e) => {
         e.preventDefault();
+        try {
+            const response = await login(email, password);
+            console.log(response);
+            // setCurrentUser(response);
+            history.push("/");
 
-
-        let response = await login(email, password);
-        if (response.hasOwnProperty("message")) {
-            // console.log(response);
-        } else {
-            // console.log(response)
-            // return dispatch({
-            //     type: "SIGNIN",
-            //     payload: response
-            // })
+        } catch (error) {
+            setError("Credenciales invalidas");
+            setTimeout(() => setError(''), 4000);
         }
-        history.push("/");
-        console.log("Redireccionando");
+        // let response = await login(email, password);
+        // if (response.code === "auth/wrong-password") {
+        //     var error = "Error en las credenciales"
+        //     console.log(error);
+        //     setError(error);
+        //     setTimeout(() => setError(''), 4000);
+        // } else {
+        // console.log(response)
+        // return dispatch({
+        //     type: "SIGNIN",
+        //     payload: response
+        // })
+        // }
+        // console.log("Redireccionando");
     }
 
 
     return (
 
         <div className="col-4 card-login">
+            {error && <p className='error'>{error}</p>}
             <div className="card-body align-content-center">
                 <center>
                     <div className="logo">
@@ -72,7 +78,7 @@ const Login = (props) => {
                 {loading && <img src={Spinner} alt="Cargando" />}
                 <center><p className="align-text-bottom p-login">No posees una cuenta? Contacte con nostros <a href="https://wa.me/595981383068"> aquí</a></p></center>
             </div>
-        </div>
+        </div >
     );
 
 }

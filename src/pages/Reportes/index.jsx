@@ -55,10 +55,10 @@ export default class Reportes extends Component {
         return (
             <>
 
-                <div className="container-tabla tabla col-12">
-                    <input className="form-control mb-6 col-4" id="tableSearch" type="text"
-                        placeholder="Filtre por Nombre, Apellido, o CI" />
-                    <table className="table table-dark col-12">
+                <div className="container-tabla tabla col-10">
+                    {/* <input className="form-control mb-6 col-4" id="tableSearch" type="text"
+                        placeholder="Filtre por Nombre, Apellido, o CI" /> */}
+                    <table className="table table-dark">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
