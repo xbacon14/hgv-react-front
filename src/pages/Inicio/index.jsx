@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { db } from '../../services/firebase';
+import { db, timestamp } from '../../services/firebase';
 
 import ok from '../../assets/home/ok.svg';
 import add from '../../assets/home/add.svg';
@@ -8,46 +8,47 @@ import add from '../../assets/home/add.svg';
 const Home = () => {
 
   useEffect(() => {
-    // loadRegistros();
-    setRegistro(null)
+    loadRegistros();
   }, [])
 
   const history = useHistory();
 
   const [error, setError] = useState(null);
   const [registro, setRegistro] = useState({});
+  const [data, setData] = useState({});
   const [values, setValues] = useState({});
   // const [user, setUser] = useState(null);
 
 
 
-  // const loadRegistros = async () => {
-  //   var lista = [];
-  //   var count = 1;
+  const loadRegistros = async () => {
+    var lista = [];
+    var count = 1;
 
-  //   await db.collection('registros').orderBy("createdAt", "desc").limit(4).get().then(
-  //     (snapshot) => {
-  //       // console.log(snapshot)
-  //       snapshot.docs.forEach(
-  //         doc => {
-  //           var datos = doc.data();
-  //           var objeto = datos.linkObject;
-  //           var fecha = datos.createdAt.toDate();
-  //           var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(fecha);
-  //           lista.push({ ...objeto, count, fechitalo });
-  //           // console.log(lista);
-  //           count++;
+    await db.collection('registros').orderBy("createdAt", "desc").get().then(
+      (snapshot) => {
+        snapshot.docs.forEach(
+          doc => {
+            var datos = doc.data();
+            var objeto = datos.registro[0];
+            var fecha = datos.createdAt.toDate();
+            var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(fecha);
+            lista.push({ ...objeto, count, fechitalo });
+            // var fecha = datos.createdAt.toDate();
+            // var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(fecha);
+            console.log(lista);
+            count++;
 
-  //         }
-  //       );
-  //       setData(lista)
-  //       console.log(lista);
-  //       console.log(count);
+          }
+        );
+        setData(lista)
+        // console.log(lista);
+        // console.log(count);
 
 
-  //     }
-  //   ).catch((err => setError(err)))
-  // }
+      }
+    ).catch((err => setError(err)))
+  }
 
   const handleInput = (e) => {
     setValues(e.target.value);
@@ -64,54 +65,53 @@ const Home = () => {
     // console.log(value);  
 
     await db.collection('personas').where("linkObject.ci", "==", ci).get().then(
-      snapshot => {
+      (snapshot) => {
         if (!snapshot.empty) {
           snapshot.forEach(doc => {
-            console.log("ta ok")
+            // console.log("ta ok")
             var datos = doc.data();
             var objeto = datos.linkObject;
+            var fecha = datos.createdAt.toDate();
+            var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(fecha);
             console.log(objeto);
-          })
+            lista.push({ ...objeto, count, fechitalo });
+          });
+          count++;
+          setRegistro(lista);
+
         }
         if (snapshot.empty) {
           console.log("error")
           setError("Persona no encontrada");
           setTimeout(() => setError(''), 4000);
         }
-        // if (!doc.empty) {
-        //   console.log(doc.query)
-        //   // var datos = doc.data();
-        //   // var objeto = datos.linkObject;
-        //   // console.log(objeto);
-        //   // return;
-        // } else {
-        //   setError("Persona no encontrada");
-        //   setTimeout(() => setError(''), 4000);
-        // }
-        // if (!doc.exists) {
-        //   console.log("todo mal")
-        //   return;
-        // } else {
-        //   var datos = doc.data();
-        //   var objeto = datos.linkObject;
-        //   console.log(objeto);
-        //   return;
-        // }
-      }
+        // setRegistro(lista);
+        //   registrar(registro)
+        // )
+      })
+    registrar()
+  }
 
-    );
-    setRegistro(lista);
-    // console.log(lista);
+  const registrar = async () => {
+    if (registro) {
+      console.log(registro)
+      await db.collection('registros').add({ registro, createdAt: timestamp });
+      // console.log("Registro guardado :D")
+      loadRegistros();
+      resetStates();
+    }
+  }
 
-    // .catch(err => {
-    //   setError("Error al consultar")
-    //   setTimeout(() => setError(''), 4000);
-    // });
-
+  const resetStates = () => {
+    setRegistro(null);
+    setValues(null)
   }
 
   const crearPersona = () => {
-    history.push('/registro')
+    // history.push('/registro')
+    history.push({
+      pathname: "/registro",
+    })
   }
 
 
@@ -125,7 +125,7 @@ const Home = () => {
             <input id="ci-home"
               required
               className="col-6"
-              type="text"
+              type="number"
               name="ci"
               // autoComplete="off"
               onChange={handleInput}

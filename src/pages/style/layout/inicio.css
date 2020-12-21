@@ -9,7 +9,7 @@
     border: none;
     border-radius: 30px;
     margin: 0 auto;
-    margin-top: var(--spacer-xl);
+    /* margin-top: var(--spacer-xl); */
 }
 
 .row-home {

@@ -7,8 +7,8 @@ import React, { useState } from 'react';
 // import "../../CrearEmpresa/style.css";
 
 const RegistroForm = (props) => {
-    var idUsuario = 42;
-    // var enviado = false;
+    // var idUsuario = 42;
+    // var enviado = false;c
 
     // const initialStateValues = {
     //     ci: '',

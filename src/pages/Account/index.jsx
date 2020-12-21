@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
 import AccountForm from './components/accountForm';
-// import '../CrearEmpresa/style.css';
 import { db, timestamp } from "../../services/firebase";
 
 
@@ -14,6 +12,7 @@ const Account = () => {
         console.log("Registro guardado :)")
         loadEmpresaGetDocs();
     }
+
 
     const loadEmpresaGetDocs = async () => {
         var lista = [];

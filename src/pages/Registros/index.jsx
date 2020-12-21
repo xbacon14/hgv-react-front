@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RegistroForm from './components/registroForm.jsx';
-import { timestamp, db } from "../../services/firebase";
+import { timestamp, db, auth } from "../../services/firebase";
 
 
 // import '../CrearEmpresa/style.css';
@@ -9,9 +9,11 @@ import { Link } from '@material-ui/core';
 const Registro = () => {
 
     const [data, setData] = useState([]);
+    const [user, setUser] = useState('');
 
     const addOrEditLink = async (linkObject) => {
-        await db.collection('personas').doc().set({ linkObject, createdAt: timestamp });
+        console.log(user);
+        await db.collection('personas').doc().set({ linkObject, createdAt: timestamp, user });
         console.log('Registro guardado :)');
         loadRegistroGetDocs();
     }
@@ -46,6 +48,8 @@ const Registro = () => {
 
     useEffect(() => {
         loadRegistroGetDocs();
+        const user = auth.currentUser.uid;
+        setUser(user);
     }, [])
 
     return (
