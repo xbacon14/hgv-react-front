@@ -34,16 +34,11 @@ const Home = () => {
             var fecha = datos.createdAt.toDate();
             var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(fecha);
             lista.push({ ...objeto, count, fechitalo });
-            // var fecha = datos.createdAt.toDate();
-            // var fechitalo = new Intl.DateTimeFormat('es-PY', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(fecha);
-            console.log(lista);
             count++;
 
           }
         );
         setData(lista)
-        // console.log(lista);
-        // console.log(count);
 
 
       }
@@ -52,23 +47,18 @@ const Home = () => {
 
   const handleInput = (e) => {
     setValues(e.target.value);
-
-    // setValues({ name, value });
   }
 
   const consultarCi = async (e) => {
     e.preventDefault();
     const ci = values;
-    // console.log(ci)
     var lista = [];
     var count = 1;
-    // console.log(value);  
 
     await db.collection('personas').where("linkObject.ci", "==", ci).get().then(
       (snapshot) => {
         if (!snapshot.empty) {
           snapshot.forEach(doc => {
-            // console.log("ta ok")
             var datos = doc.data();
             var objeto = datos.linkObject;
             var fecha = datos.createdAt.toDate();
@@ -85,9 +75,6 @@ const Home = () => {
           setError("Persona no encontrada");
           setTimeout(() => setError(''), 4000);
         }
-        // setRegistro(lista);
-        //   registrar(registro)
-        // )
       })
     registrar()
   }
@@ -96,7 +83,6 @@ const Home = () => {
     if (registro) {
       console.log(registro)
       await db.collection('registros').add({ registro, createdAt: timestamp });
-      // console.log("Registro guardado :D")
       loadRegistros();
       resetStates();
     }

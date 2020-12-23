@@ -18,6 +18,7 @@ const Login = () => {
 
 
     const handleSubmit = async (e) => {
+        setLoading(true);
         e.preventDefault();
         try {
             const response = await login(email, password);
@@ -69,14 +70,19 @@ const Login = () => {
                             <input type="email" className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
                             <label htmlFor="passLabel" className="text-headline">Contraseña</label>
                             <input type="password" className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
-                        </div></center>
+                        </div>
+                        </center>
                     <center>
                         <button type="submit" className="btn btn-primary btn-lg">Entrar</button>
 
                     </center>
                 </form>
                 {loading && <img src={Spinner} alt="Cargando" />}
-                <center><p className="align-text-bottom p-login">No posees una cuenta? Contacte con nostros <a href="https://wa.me/595981383068"> aquí</a></p></center>
+                <center><p className="align-text-bottom p-login">No posees una cuenta? Contacte con nostros
+                 <a 
+                 target="popup"
+                 href="https://wa.me/595981383068"
+                 > aquí</a></p></center>
             </div>
         </div >
     );

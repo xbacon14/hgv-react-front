@@ -6,6 +6,7 @@ import PrivateRoute from './services/PrivateRoute';
 import logo from './assets/login/logo-login.png';
 
 import SignIn from './pages/Login/signIn/index';
+import SignUp from './pages/Login/signUp/index';
 import Inicio from './pages/Inicio/index';
 import Registro from './pages/Registros/index';
 import Account from './pages/Account/index';
@@ -74,6 +75,7 @@ const Routes = () => {
                         <PrivateRoute path="/registro" component={Registro} />
                         <PrivateRoute path="/reportes" component={Reportes} />
                         <Route path="/signIn" exact component={SignIn} />
+                        <Route path="/signUp" exact component={SignUp} />
                         {/* <Route path="/error404" component={Error404} /> */}
 
 
