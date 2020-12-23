@@ -63,11 +63,16 @@ import { auth } from '../services/firebase';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState({});
 
   useEffect(() => {
     auth.onAuthStateChanged(setCurrentUser)
-  })
+    const user = localStorage.getItem("fbase_key")
+    if (user) {
+      setCurrentUser(user);
+      console.log(user)
+    }
+  }, [])
 
   return (
     <AuthContext.Provider value={{ currentUser }}>

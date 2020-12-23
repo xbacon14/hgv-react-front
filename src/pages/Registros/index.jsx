@@ -4,7 +4,7 @@ import { timestamp, db, auth } from "../../services/firebase";
 
 
 // import '../CrearEmpresa/style.css';
-import { Link } from '@material-ui/core';
+// import { Link } from 'react-router-dom';
 
 const Registro = () => {
 
