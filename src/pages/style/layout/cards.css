@@ -1,12 +1,15 @@
 /* LAYOUT */
 
 .card {
-    background-color: var(--color-primary);
+    /* background-color: var(--color-primary); */
+    background: rgb(36, 150, 53);
+    background: radial-gradient(circle, rgba(36, 150, 53, 1) 57%, rgba(0, 136, 21, 1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-bottom: var(--spacer-m);
+    margin-top: var(--spacer-m);
 }
 
 

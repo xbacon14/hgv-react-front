@@ -3,14 +3,18 @@
 .card-login {
     display: flex;
     flex-direction: column;
-    height: 600 px;
+    max-height: 730px!important;
     min-width: 500px;
     flex-wrap: wrap;
     border-radius: 30px;
     border: none;
     margin: 0 auto;
     margin-top: var(--spacer-l);
+    padding-bottom: var(--spacer-l);
+}
 
+.p-login {
+    margin-top: var(--spacer-s);
 }
 
 .logo {
@@ -26,7 +30,11 @@
 /* COLOR */
 
 .card-login {
-    background-color: var(--color-three);
+    /* background-color: var(--color-secondary); */
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px black;
+    background: rgb(112,112,112);
+background: radial-gradient(circle, rgba(112,112,112,1) 36%, rgba(108,108,108,1) 100%);
 }
 
 .title-login {

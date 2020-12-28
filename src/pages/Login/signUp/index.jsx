@@ -29,8 +29,8 @@ const SignUp = () => {
     }
   }
 
-  const handleSubmit = () =>{
-setLoading(true)
+  const handleSubmit = () => {
+    setLoading(true)
   }
 
   return (
@@ -40,30 +40,34 @@ setLoading(true)
       <div className="card-body align-content-center">
         <center>
           <div className="logo">
-            <img src={logo} alt="HGV"/>
+            <img src={logo} alt="HGV" />
           </div>
         </center>
         <center>
           <div>
-          {error && <p className='error'>{error}</p>}
-          <h1 className="title-display title-login ">Crear cuenta</h1>
+            {error && <p className='error'>{error}</p>}
+            <h1 className="title-display title-login ">Crear cuenta</h1>
           </div>
         </center>
         <form onSubmit={handleSubmit}>
-        <center>
-                        <div className="form-group">
-                            <label htmlFor="emailLabel" className="text-headline">Correo</label>
-                            <input type="email" className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
-                            <label htmlFor="passLabel" className="text-headline">Contraseña</label>
-                            <input type="password" className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
-                        </div>
-                        </center>
-                    <center>
-                        <button type="submit" className="btn btn-primary btn-lg">Entrar</button>
+          <center>
+            <div className="form-group">
+              <label htmlFor="emailLabel" className="text-headline">Nombre del Usuario</label>
+              <input type="email" className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
+              <label htmlFor="emailLabel" className="text-headline">Correo del Usuario</label>
+              <input type="email" className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
+              <label htmlFor="passLabel" className="text-headline">Contraseña</label>
+              <input type="password" className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
+              <label htmlFor="confPassLabel" className="text-headline">Repita su Contraseña</label>
+              <input type="password" className="form-control" id="confPassInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
+            </div>
+          </center>
+          <center>
+            <button type="submit" className="btn btn-primary btn-lg">Crear</button>
 
-                    </center>
-                </form>
-                {loading && <img src={Spinner} alt="Cargando" />}
+          </center>
+        </form>
+        {loading && <img src={Spinner} alt="Cargando" />}
 
       </div>
     </div>
