@@ -23,7 +23,7 @@ const Login = () => {
         try {
             const response = await login(email, password);
             console.log(response);
-            // setCurrentUser(response);
+            setLoading(false);
             history.push("/");
 
         } catch (error) {

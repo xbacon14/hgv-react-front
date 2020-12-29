@@ -6,10 +6,13 @@ import { timestamp, db, auth } from "../../services/firebase";
 // import '../CrearEmpresa/style.css';
 // import { Link } from 'react-router-dom';
 
-const Registro = () => {
+const Registro = (props) => {
 
     const [data, setData] = useState([]);
     const [user, setUser] = useState('');
+    const [ci, setCi] = useState('');
+    
+    // var newCi = props.location.state;
 
     const addOrEditLink = async (linkObject) => {
         console.log(user);
@@ -21,6 +24,7 @@ const Registro = () => {
     const loadRegistroGetDocs = async () => {
         var lista = [];
         var count = 1;
+
 
 
         await db.collection('personas').orderBy("createdAt", "desc").get().then(
@@ -48,15 +52,19 @@ const Registro = () => {
 
     useEffect(() => {
         loadRegistroGetDocs();
-        const user = auth.currentUser.uid;
-        setUser(user);
+        const user = localStorage.getItem("fbase_key")
+        if (user) {
+          setUser(user);
+          console.log(user)
+        }
+       
     }, [])
 
     return (
 
         <div className="row col-10">
 
-            <RegistroForm addOrEditLink={addOrEditLink} />
+            <RegistroForm addOrEditLink={addOrEditLink} ci={ci}  />
 
             <div className="col-5 container-1">
 
