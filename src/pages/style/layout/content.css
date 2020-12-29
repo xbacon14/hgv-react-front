@@ -23,11 +23,11 @@
     /* flex-flow: row column; */
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .row-registro {
         flex-direction: column;
     }
-}
+} */
 
 
 /* .container{

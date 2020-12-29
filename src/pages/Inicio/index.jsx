@@ -76,7 +76,7 @@ const Home = () => {
           setTimeout(() => setError(''), 4000);
         }
       })
-    registrar()
+    // registrar()
   }
 
   const registrar = async () => {
