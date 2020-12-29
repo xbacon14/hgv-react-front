@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // import moment from 'moment';
 // import GetCurrentDate from '../../../components/date/getCurrentDate';
 // import api from '../../../services/api';
@@ -10,9 +10,17 @@ const RegistroForm = (props) => {
     // var idUsuario = 42;
     // var enviado = false;c
 
+    // const initialStateValues = {
+    //     ci: '',
+    //     nombre: '',
+    //     rubro: '',
+    //     direccion: '',
+    //     telefono: '',
+    //     ciudad: '',
+    //     idUsuario: idUsuario,
+    // }
 
     const [values, setValues] = useState();
-    const [ci, setCi] = useState();
 
     const handleInput = (e) => {
         const { name, value } = e.target
@@ -41,15 +49,6 @@ const RegistroForm = (props) => {
 
     }
 
-    useEffect(() => {
-        console.log(props.ci)
-        if(props.ci){
-         setCi(props.ci)
-        }
-        if(!props.ci){
-            setCi('')
-        }
-    }, [props.ci])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -70,7 +69,6 @@ const RegistroForm = (props) => {
                     type="number"
                     maxLength='7'
                     name="ci"
-                    value={ci}
                     // autoComplete="off"
                     onChange={handleInput}
                     placeholder="Ingrese su ci" />
