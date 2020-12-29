@@ -76,15 +76,7 @@ const Home = () => {
           setTimeout(() => setError(''), 4000);
         }
       })
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // registrar()
-=======
     registrar()
->>>>>>> parent of 772d836... Funcionando el registro de inicio
-=======
-    registrar()
->>>>>>> parent of 772d836... Funcionando el registro de inicio
   }
 
   const registrar = async () => {
