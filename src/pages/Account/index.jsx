@@ -52,7 +52,7 @@ const Account = () => {
     // })
 
     return (
-        <div className="row col-10">
+        <div className="row row-registro col-10">
             <AccountForm
                 addOrEditLink={addOrEditLink}
             />

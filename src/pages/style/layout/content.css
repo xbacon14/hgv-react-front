@@ -15,11 +15,18 @@
     margin-bottom: 5vh;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     margin-top: var(--spacer-m);
     margin-bottom: var(--spacer-s);
     /* flex-flow: row column; */
+}
+
+@media (min-width: 768px) {
+    .row-registro {
+        flex-direction: column;
+    }
 }
 
 
@@ -31,9 +38,11 @@
 /* COLORS */
 
 .form-container {
-    background-color: var(--color-secondary);
+    /* background-color: var(--color-secondary); */
     border-radius: 5px;
     box-shadow: 2px 2px 10px black;
+    background: rgb(112, 112, 112);
+    background: radial-gradient(circle, rgba(112, 112, 112, 1) 49%, rgba(84, 86, 84, 1) 100%);
 }
 
 

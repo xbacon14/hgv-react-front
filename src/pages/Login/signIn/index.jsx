@@ -71,18 +71,22 @@ const Login = () => {
                             <label htmlFor="passLabel" className="text-headline">Contraseña</label>
                             <input type="password" className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
                         </div>
-                        </center>
+                    </center>
                     <center>
                         <button type="submit" className="btn btn-primary btn-lg">Entrar</button>
 
                     </center>
                 </form>
                 {loading && <img src={Spinner} alt="Cargando" />}
-                <center><p className="align-text-bottom p-login">No posees una cuenta? Contacte con nostros
-                 <a 
-                 target="popup"
-                 href="https://wa.me/595981383068"
-                 > aquí</a></p></center>
+                <div>
+                    <center>
+                        <p className="align-text-bottom p-login">No posees una cuenta? Contacte con nostros
+                 <a
+                        target="popup"
+                        href="https://wa.me/595981383068"
+                    > aquí</a></p>
+                    </center>
+                    </div>
             </div>
         </div >
     );
