@@ -107,7 +107,9 @@ const Home = () => {
       <div className="registro-form col-6">
         <form>
           <label htmlFor="ci" className="label-home title-title">Consulte por Numero de CI *</label>
-          <div className="row d-flex row-home ">
+          <div
+           className=" row-home "
+           >
             <input id="ci-home"
               required
               className="col-6"
