@@ -25,8 +25,10 @@
 @import url("layout/footer.css");
 @import url("layout/buttons.css");
 @import url("layout/cards.css");
+@import url("layout/errores.css");
 
-/* Variables */
 
+/* Animaciones */
+@import url("animaciones/slide-in-blurred-left.css");
 
 /* @import url("color/color.css"); */

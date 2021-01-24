@@ -4,7 +4,7 @@ import { login } from '../../../services/firebase';
 
 import logo from '../../../assets/login/logo-login.png';
 
-import Spinner from '../../../assets/cargando/spinner.svg'
+import Spinner from '../../../assets/cargando/rolling.svg';
 
 
 const Login = () => {
@@ -18,39 +18,39 @@ const Login = () => {
 
 
     const handleSubmit = async (e) => {
-        setLoading(true);
+        // setLoading(true);
         e.preventDefault();
-        try {
-            const response = await login(email, password);
-            console.log(response);
-            // setCurrentUser(response);
-            history.push("/");
-
-        } catch (error) {
-            setError("Credenciales invalidas");
-            setTimeout(() => setError(''), 4000);
-        }
-        // let response = await login(email, password);
-        // if (response.code === "auth/wrong-password") {
-        //     var error = "Error en las credenciales"
-        //     console.log(error);
-        //     setError(error);
-        //     setTimeout(() => setError(''), 4000);
-        // } else {
-        // console.log(response)
-        // return dispatch({
-        //     type: "SIGNIN",
-        //     payload: response
-        // })
-        // }
-        // console.log("Redireccionando");
+          await login(email, password).then(
+                (value) =>{
+                    setLoading(true);
+                    history.push("/")
+                    console.log(value);
+                },
+                (reason)=>{
+                    if(reason.code==="auth/too-many-requests"){
+                        setError("Demasiados intentos, reintente más tarde")
+                        setTimeout(() => setError(null), 4000)
+                    }
+                    if(reason.code==="auth/wrong-password"){
+                        setError("Credenciales incorrectas, intente nuevamente")
+                        setTimeout(() => setError(null), 4000)
+                    }
+                    setLoading(false);
+                    console.log(reason)
+                }
+            )
+            // .catch(err => {
+            //     console.log(err.code)
+            //     if(err.code === "auth/wrong-password"){
+            //         setError("Credenciales incorrectas")
+            //     }
+            // })
     }
 
 
     return (
 
         <div className="col-4 card-login">
-            {error && <p className='error'>{error}</p>}
             <div className="card-body align-content-center">
                 <center>
                     <div className="logo">
@@ -59,17 +59,17 @@ const Login = () => {
                 </center>
                 <center>
                     <div >
-                        {error && <p className='error'>{error}</p>}
-                        <h1 className="title-display title-login ">Inicie Sesión</h1>
+                        <div className="espacio-error col-12"> {error && <p className='error slide-in-blurred-left'>{error}</p>}</div>
+                        <h1 className="text-jumbo title-login ">Inicie Sesión</h1>
                     </div>
                 </center>
                 <form onSubmit={handleSubmit}>
                     <center>
                         <div className="form-group">
-                            <label htmlFor="emailLabel" className="text-headline">Correo</label>
-                            <input type="email" className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
-                            <label htmlFor="passLabel" className="text-headline">Contraseña</label>
-                            <input type="password" className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
+                            <label htmlFor="emailLabel" className="text-display">Correo</label>
+                            <input type="email" required className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
+                            <label htmlFor="passLabel" className="text-display">Contraseña</label>
+                            <input type="password" required className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
                         </div>
                     </center>
                     <center>

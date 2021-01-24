@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { logout, auth } from "./services/firebase";
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider, AuthContext } from './context/AuthContext';
 import PrivateRoute from './services/PrivateRoute';
 import logo from './assets/login/logo-login.png';
 
@@ -41,7 +41,7 @@ const Routes = () => {
                 <div className="container">
                     {!currentUser ? <div></div> :
                         <div className="navegator">
-                            <nav className="navbar nav-bar navbar-expand-lg navbar-light bg-light col-10 " id="nav-bar">
+                            <nav className="navbar nav-bar navbar-expand-lg navbar-light bg-light col-10 " id="navbarSupportedContent">
                                 <img src={logo} alt="Logo verde" id="logoverde" />
                                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"></span>

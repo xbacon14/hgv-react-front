@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { auth } from '../../../services/firebase';
 
 import logo from '../../../assets/login/logo-login.png';
-import Spinner from '../../../assets/cargando/spinner.svg'
+import Spinner from '../../../assets/cargando/rolling.svg'
 
 const SignUp = () => {
   const [email, setEmail] = useState("");

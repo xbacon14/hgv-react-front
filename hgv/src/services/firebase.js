@@ -15,16 +15,13 @@ const app = firebase.initializeApp({
 });
 
 export const login = async (email, password) => {
-    const user = await firebase.auth().signInWithEmailAndPassword(email, password).catch(err => {
-        console.log(err);
-        return err;
-    });
+    const user = await firebase.auth().signInWithEmailAndPassword(email, password);
     return user;
 }
 
 export const signup = async (email, password) => {
     const user = await firebase.auth().createUserWithEmailAndPassword(email, password).catch(err => {
-        console.log(err);
+        // console.log(err);
         return err;
     });
     return user;
