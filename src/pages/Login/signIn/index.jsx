@@ -66,10 +66,10 @@ const Login = () => {
                 <form onSubmit={handleSubmit}>
                     <center>
                         <div className="form-group">
-                            <label htmlFor="emailLabel" className="text-display">Correo</label>
-                            <input type="email" required className="form-control" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
-                            <label htmlFor="passLabel" className="text-display">Contraseña</label>
-                            <input type="password" required className="form-control" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
+                            <label htmlFor="emailLabel" className="text-title">Correo</label>
+                            <input type="email" required className="form-control label-login" id="emailInput" placeholder="Ingrese su Correo" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value)} />
+                            <label htmlFor="passLabel" className="text-title">Contraseña</label>
+                            <input type="password" required className="form-control label-login" id="passInput" placeholder="Ingrese su Contraseña" onChange={(e) => setPassword(e.target.value)} />
                         </div>
                     </center>
                     <center>

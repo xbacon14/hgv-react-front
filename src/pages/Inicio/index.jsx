@@ -119,8 +119,8 @@ const Home = () => {
               onChange={handleInput}
               // value={(e) => setCi(e.target.value)}
               placeholder="Ingrese su ci" />
-            <button className="btn btn-success" onClick={consultarCi} id="consultar"> <img src={ok} className="svg" alt="Registrar" />  Registrar </button>
-            <button className="btn btn-primary" onClick={crearPersona} id="crear"> <img src={add} className="svg" alt="Crear" /> Crear </button>
+            <button className="btn btn-success " onClick={consultarCi} id="consultar"> <img src={ok} className="svg" alt="Registrar" />  Registrar </button>
+            <button className="btn btn-primary " onClick={crearPersona} id="crear"> <img src={add} className="svg" alt="Crear" /> Crear </button>
           </div>
         </form>
         {error && <p className="error">{error}</p>}

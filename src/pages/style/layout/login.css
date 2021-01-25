@@ -48,3 +48,7 @@ form label {
 .p-login {
     color: white
 }
+
+.label-login{
+    margin-bottom: 10px;
+}
