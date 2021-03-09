@@ -1,19 +1,24 @@
 .btn-header {
-    margin-right: var(--spacer-l);
+  margin-right: var(--spacer-l);
 }
 
 .btn {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-.btn-form{
-    min-width: 250px;
+.btn-form {
+  /* min-width: 250px; */
+  /* width: 100%; */
 }
 
-.btn-inicio{
-   fill: white;
+.btn-inicio {
+  fill: white;
 }
 
-.svg{
-    color: white;
+.btn-registro {
+  background-color: #21a675 !important;
+}
+
+.svg {
+  color: white;
 }

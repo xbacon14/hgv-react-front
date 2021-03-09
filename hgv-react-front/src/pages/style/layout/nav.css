@@ -1,30 +1,30 @@
 .nav a {
-    color: inherit;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: var(--spacer-s);
-    display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: var(--spacer-s);
+  display: inline-block;
 }
 
 .nav a:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .nav a.active {
-    border-bottom: 2px solid;
+  border-bottom: 2px solid;
 }
 
 #logoverde {
-    width: 5%;
-    min-width: 80px;
+  width: 5%;
+  min-width: 80px;
 }
 
 .nav-bar {
-    background-color: var(--color-header);
-    padding-top: var(--space-m);
-    padding-bottom: var(--space-m);
-    border: none;
-    border-radius: 25px;
-    margin: 0 auto;
-    /* margin-top: 20px; */
+  background-color: var(--color-header);
+  padding-top: var(--space-m);
+  padding-bottom: var(--space-m);
+  border: none;
+  border-radius: 10px;
+  margin: 0 auto;
+  /* margin-top: 20px; */
 }
