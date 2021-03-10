@@ -17,6 +17,10 @@
     margin-bottom: 10px;
 }
 
+input{
+    padding-left: 10px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
